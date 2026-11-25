@@ -39,7 +39,7 @@
       // with an area picked: the chip number (main area, = the section) plus the cross-listed ones, said apart
       var chip = area && tools.querySelector('.chip[data-area="' + area + '"]');
       var cross = chip ? +chip.dataset.cross : 0, extra = '';
-      if (chip && cross && !anySub.length && !y && !t.length) {
+      if (chip && cross && +chip.dataset.main && !anySub.length && !y && !t.length) {
         extra = ' (' + chip.dataset.main + ' + ' + cross + ' cross-listed)';
       }
       out.value = n + ' of ' + cards.length + extra;
