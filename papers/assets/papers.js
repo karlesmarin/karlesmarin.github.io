@@ -158,9 +158,8 @@
     }
     var tab = []; for (i = N - 1; i >= 0; i--) tab.push(1 + N + i);
     F.push({ v: tab, k: 2, odd: 0 });                        // the table
-    // the blues of the drawing: [shadow, light] per kind of face
-    // avatar_diamante_final.png: pyramid #1f78d8..#5cb4ef..#b3c8ec, band #1e4585..#2a5cb0..#1196e8
-    var COL = [[[22, 98, 206], [120, 186, 246]], [[24, 66, 140], [12, 150, 236]], [[11, 45, 125], [40, 112, 214]]];
+    // glass: ice blue and pale cyan, [shade, light] per kind of face (#7cc4ff, #a8d8ff, #cfe9ff and lighter)
+    var COL = [[[84, 168, 250], [232, 246, 255]], [[70, 152, 240], [207, 233, 255]], [[90, 165, 240], [190, 226, 255]]];
     function norm(v) { var n = Math.hypot(v[0], v[1], v[2]) || 1; return [v[0] / n, v[1] / n, v[2] / n]; }
     var L = norm([-0.55, 0.45, 0.75]), HV = norm([L[0], L[1], L[2] + 1]);
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -184,11 +183,9 @@
         return { x: x, y: y2, z: z2, sx: cx + x * s * f, sy: cy - y2 * s * f };
       });
       g.clearRect(0, 0, w, w);
-      // soft shadow below
-      var by = cy + (C + 0.36) * s, sh = g.createRadialGradient(cx, by, 0, cx, by, 1.05 * s);
-      sh.addColorStop(0, 'rgba(2,8,26,.6)'); sh.addColorStop(1, 'rgba(2,8,26,0)');
-      g.save(); g.translate(cx, by); g.scale(1, 0.2); g.translate(-cx, -by); g.fillStyle = sh;
-      g.fillRect(0, by - 1.1 * s, w, 2.2 * s); g.restore();
+      // glass: every face is drawn, back to front; the back ones faint, the front ones ice blue and partly
+      // transparent (the back facets and the background show through), white edges with a light rim, a strong white
+      // highlight on the faces that look at the light and an inner reflection; the halo and the shadow go behind
       var faces = [];
       F.forEach(function (fc) {
         var p0 = P[fc.v[0]], p1 = P[fc.v[1]], p2 = P[fc.v[2]];
@@ -197,23 +194,54 @@
         var c = [0, 0, 0];
         fc.v.forEach(function (k) { c[0] += P[k].x; c[1] += P[k].y; c[2] += P[k].z; });
         c = c.map(function (q) { return q / fc.v.length; });
-        if (n[0] * -c[0] + n[1] * -c[1] + n[2] * (D - c[2]) <= 0) return;   // back face
-        faces.push({ fc: fc, n: n, z: c[2] });
+        faces.push({ fc: fc, n: n, z: c[2], front: n[0] * -c[0] + n[1] * -c[1] + n[2] * (D - c[2]) > 0 });
       });
-      faces.sort(function (p, q) { return p.z - q.z; });
-      g.lineJoin = 'round'; g.lineWidth = 1.5 * dpr; g.strokeStyle = 'rgba(255,255,255,.92)';
-      faces.forEach(function (o) {
-        var n = o.n, dif = Math.max(0, n[0] * L[0] + n[1] * L[1] + n[2] * L[2]);
-        var spec = Math.pow(Math.max(0, n[0] * HV[0] + n[1] * HV[1] + n[2] * HV[2]), 30);
-        var k = (o.fc.k === 1 ? 0.3 + 0.7 * dif : Math.min(0.92, 0.1 + 0.85 * dif * dif)) * (o.fc.odd ? 0.9 : 1),
-          cc = COL[o.fc.k];
-        var rgb = [0, 1, 2].map(function (j) {
-          return Math.round(Math.min(255, cc[0][j] + (cc[1][j] - cc[0][j]) * k + 255 * 0.5 * spec));
-        });
+      faces.sort(function (p, q) { return (p.front - q.front) || (p.z - q.z); });
+      g.lineJoin = 'round';
+      function path(o) {
         g.beginPath();
         o.fc.v.forEach(function (vi, m) { var p = P[vi]; if (m) g.lineTo(p.sx, p.sy); else g.moveTo(p.sx, p.sy); });
-        g.closePath(); g.fillStyle = 'rgb(' + rgb.join(',') + ')'; g.fill(); g.stroke();
+        g.closePath();
+      }
+      faces.forEach(function (o) {
+        path(o);
+        if (!o.front) {                                           // seen through the glass
+          g.fillStyle = 'rgba(168,216,255,.22)'; g.fill();
+          g.lineWidth = 1 * dpr; g.strokeStyle = 'rgba(255,255,255,.30)'; g.stroke();
+          return;
+        }
+        var n = o.n, dif = Math.max(0, n[0] * L[0] + n[1] * L[1] + n[2] * L[2]);
+        var spec = Math.pow(Math.max(0, n[0] * HV[0] + n[1] * HV[1] + n[2] * HV[2]), 22);
+        var k = (0.08 + 0.92 * Math.pow(dif, 1.4)) * (o.fc.odd ? 0.9 : 1), cc = COL[o.fc.k];
+        var rgb = [0, 1, 2].map(function (j) {
+          return Math.round(Math.min(255, cc[0][j] + (cc[1][j] - cc[0][j]) * k + 255 * 0.9 * spec));
+        });
+        g.fillStyle = 'rgba(' + rgb.join(',') + ',' + (0.74 + 0.22 * spec).toFixed(3) + ')'; g.fill();
       });
+      // inner reflections: translucent white bands across the glass (only where the gem is)
+      var rf = g.createLinearGradient(cx - 1.1 * s, cy - 1.3 * s, cx + 0.9 * s, cy + 0.7 * s);
+      rf.addColorStop(0, 'rgba(255,255,255,0)'); rf.addColorStop(0.30, 'rgba(255,255,255,.24)');
+      rf.addColorStop(0.40, 'rgba(255,255,255,0)'); rf.addColorStop(0.58, 'rgba(255,255,255,.12)');
+      rf.addColorStop(0.64, 'rgba(255,255,255,0)'); rf.addColorStop(1, 'rgba(255,255,255,0)');
+      g.globalCompositeOperation = 'source-atop'; g.fillStyle = rf; g.fillRect(0, 0, w, w);
+      g.globalCompositeOperation = 'source-over';
+      // white edges with a light rim
+      faces.forEach(function (o) {
+        if (!o.front) return;
+        path(o);
+        g.lineWidth = 2.4 * dpr; g.strokeStyle = 'rgba(220,240,255,.45)'; g.stroke();
+        g.lineWidth = 1.1 * dpr; g.strokeStyle = '#ffffff'; g.stroke();
+      });
+      // behind the gem: a faint light halo and the soft shadow
+      g.globalCompositeOperation = 'destination-over';
+      var hl = g.createRadialGradient(cx, cy - 0.25 * s, 0.2 * s, cx, cy - 0.25 * s, 1.45 * s);
+      hl.addColorStop(0, 'rgba(200,235,255,.22)'); hl.addColorStop(1, 'rgba(200,235,255,0)');
+      g.fillStyle = hl; g.fillRect(0, 0, w, w);
+      var by = cy + (C + 0.36) * s, sh = g.createRadialGradient(cx, by, 0, cx, by, 1.05 * s);
+      sh.addColorStop(0, 'rgba(2,8,26,.6)'); sh.addColorStop(1, 'rgba(2,8,26,0)');
+      g.save(); g.translate(cx, by); g.scale(1, 0.2); g.translate(-cx, -by); g.fillStyle = sh;
+      g.fillRect(0, by - 1.1 * s, w, 2.2 * s); g.restore();
+      g.globalCompositeOperation = 'source-over';
       // the rainbow: the inner light leaves by the girdle corner on the right, spread into its colours
       var cor = P[1]; for (i = 2; i <= N; i++) if (P[i].sx > cor.sx) cor = P[i];
       var len = 0.9 * s, ang = -0.55;           // five bands of 0.16 rad: wide enough to tell them apart
