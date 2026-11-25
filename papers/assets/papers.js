@@ -216,9 +216,9 @@
       });
       // the rainbow: the inner light leaves by the girdle corner on the right, spread into its colours
       var cor = P[1]; for (i = 2; i <= N; i++) if (P[i].sx > cor.sx) cor = P[i];
-      var len = 0.75 * s, ang = -0.42;
+      var len = 0.9 * s, ang = -0.55;           // five bands of 0.16 rad: wide enough to tell them apart
       RAYS.forEach(function (col, j) {
-        var a0 = ang + j * 0.11, a1 = a0 + 0.11, gr = g.createLinearGradient(cor.sx, cor.sy, cor.sx + len, cor.sy);
+        var a0 = ang + j * 0.16, a1 = a0 + 0.16, gr = g.createLinearGradient(cor.sx, cor.sy, cor.sx + len, cor.sy);
         gr.addColorStop(0, 'rgba(' + col + ',.85)'); gr.addColorStop(1, 'rgba(' + col + ',0)');
         g.beginPath(); g.moveTo(cor.sx, cor.sy);
         g.lineTo(cor.sx + len * Math.cos(a0), cor.sy + len * Math.sin(a0));
