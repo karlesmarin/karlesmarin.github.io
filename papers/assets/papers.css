@@ -108,6 +108,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 650; letter-spacing: -.01em
   padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line);
   box-shadow: inset 0 1px 0 var(--rim), 0 1px 3px rgba(0, 0, 0, .18); }
 .motto { margin: 4px 0 0; font: italic 400 1rem/1.4 var(--serif); color: var(--muted); max-width: 60ch; }
+.motto-2 { margin: 3px 0 0; font: italic 400 .88rem/1.4 var(--serif); color: var(--muted); opacity: .82; max-width: 60ch; }
 .mark { vertical-align: -6px; margin-right: 4px; filter: var(--emoji-shadow); }
 /* emojis and icons with a short relief shadow (buttons, tags, chips, crumbs) */
 .pi, .te, .chip > span[aria-hidden], .card-title > span[aria-hidden] { display: inline-block; filter: var(--emoji-shadow);
@@ -310,6 +311,7 @@ summary { cursor: pointer; color: var(--link); }
   .who { margin-top: 0; gap: 12px; }
   .name { font-size: 1.1rem; }
   .motto { font-size: .9rem; }
+  .motto-2 { font-size: .8rem; }
   .card-in { padding: 16px 16px 14px; }
   .paper-main section { padding: 20px 16px 18px; }
   .pager { grid-template-columns: 1fr 1fr; }
