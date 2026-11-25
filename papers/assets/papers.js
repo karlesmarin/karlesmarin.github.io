@@ -159,9 +159,10 @@
     var tab = []; for (i = N - 1; i >= 0; i--) tab.push(1 + N + i);
     F.push({ v: tab, k: 2, odd: 0 });                        // the table
     // the blues of the drawing: [shadow, light] per kind of face
-    var COL = [[[26, 98, 205], [168, 210, 250]], [[18, 66, 160], [22, 156, 240]], [[11, 45, 125], [45, 120, 220]]];
+    // avatar_diamante_final.png: pyramid #1f78d8..#5cb4ef..#b3c8ec, band #1e4585..#2a5cb0..#1196e8
+    var COL = [[[22, 98, 206], [120, 186, 246]], [[24, 66, 140], [12, 150, 236]], [[11, 45, 125], [40, 112, 214]]];
     function norm(v) { var n = Math.hypot(v[0], v[1], v[2]) || 1; return [v[0] / n, v[1] / n, v[2] / n]; }
-    var L = norm([-0.5, 0.7, 0.6]), HV = norm([L[0], L[1], L[2] + 1]);
+    var L = norm([-0.55, 0.45, 0.75]), HV = norm([L[0], L[1], L[2] + 1]);
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     function size() { var w = av.clientWidth || 104; cv.width = w * dpr; cv.height = w * dpr; }
     size(); window.addEventListener('resize', size);
@@ -174,7 +175,7 @@
       g.restore();
     }
     function draw(yaw, pitch, now) {
-      var w = cv.width, s = w * 0.355, cx = w / 2, cy = w / 2 + 0.10 * s;
+      var w = cv.width, s = w * (+av.dataset.gemScale || 0.355), cx = w / 2, cy = w / 2 + 0.10 * s;
       var cyw = Math.cos(yaw), syw = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
       var P = V.map(function (p) {
         var x = p[0] * cyw + p[2] * syw, z = -p[0] * syw + p[2] * cyw, y = p[1] - 0.30;
@@ -204,9 +205,10 @@
       faces.forEach(function (o) {
         var n = o.n, dif = Math.max(0, n[0] * L[0] + n[1] * L[1] + n[2] * L[2]);
         var spec = Math.pow(Math.max(0, n[0] * HV[0] + n[1] * HV[1] + n[2] * HV[2]), 30);
-        var k = Math.min(0.88, 0.1 + 0.85 * dif * dif) * (o.fc.odd ? 0.9 : 1), cc = COL[o.fc.k];
+        var k = (o.fc.k === 1 ? 0.3 + 0.7 * dif : Math.min(0.92, 0.1 + 0.85 * dif * dif)) * (o.fc.odd ? 0.9 : 1),
+          cc = COL[o.fc.k];
         var rgb = [0, 1, 2].map(function (j) {
-          return Math.round(Math.min(255, cc[0][j] + (cc[1][j] - cc[0][j]) * k + 255 * 0.55 * spec));
+          return Math.round(Math.min(255, cc[0][j] + (cc[1][j] - cc[0][j]) * k + 255 * 0.5 * spec));
         });
         g.beginPath();
         o.fc.v.forEach(function (vi, m) { var p = P[vi]; if (m) g.lineTo(p.sx, p.sy); else g.moveTo(p.sx, p.sy); });
@@ -241,7 +243,8 @@
       if (hot) { off(); return; }
       on(); clearTimeout(tmr); tmr = setTimeout(off, 2000);
     });
-    av._gem = { on: on, off: off };                                       // for the captures
+    var fixed = false;                                                    // captures: a given pose, no loop
+    av._gem = { on: on, off: off, pose: function (y, p, t) { fixed = true; draw(y, p, t); } };
     if (reduce) { draw(yaw, 0, 0); return; }
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(av);
     function frame(now) {
@@ -250,7 +253,7 @@
       w += ((hot ? FAST_W : REST_W) - w) * kw;
       pitch += ((hot ? TILT : 0) - pitch) * kp;
       yaw += w * dt;
-      if (visible && !document.hidden) draw(yaw, pitch, now);
+      if (visible && !document.hidden && !fixed) draw(yaw, pitch, now);
       requestAnimationFrame(frame);
     }
     draw(yaw, 0, last);
