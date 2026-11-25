@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anomaly- and Tadpole-Compatible Fermion Completion of Six-Dimensional SU(4) Gauge-Higgs Unification (Part I)</title>
+<meta name="description" content="In gauge–Higgs unification the cancellation of gauge anomalies is necessary, but is it sufficient for a viable fermion sector? On an orbifold the answer involves genuinely local data — anomalies and tadpoles bound to the fixed points — that a bulk count misses. We make the question concrete for a …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/ghu-fermion-completion/">
+<meta name="citation_title" content="Anomaly- and Tadpole-Compatible Fermion Completion of Six-Dimensional SU(4) Gauge-Higgs Unification (Part I)">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/07/21">
+<meta name="citation_online_date" content="2026/07/21">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/ghu-fermion-completion/ghu_completion.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/ghu-fermion-completion/">
+<meta name="citation_doi" content="10.5281/zenodo.21466367">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.21466367">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="gauge-Higgs unification; orbifold; localized anomalies; localized tadpoles; SU(4); extra dimensions; six dimensions; fermion completion; two-Higgs-doublet model; Standard Model quarks; Lean 4; machine-checked proof; exact computation; high-energy physics; hep-ph; hep-th">
+<meta name="DC.title" content="Anomaly- and Tadpole-Compatible Fermion Completion of Six-Dimensional SU(4) Gauge-Higgs Unification (Part I)">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.21466367">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Anomaly- and Tadpole-Compatible Fermion Completion of Six-Dimensional SU(4) Gauge-Higgs Unification (Part I)">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/ghu-fermion-completion/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:36">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Physics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(0 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(60 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(120 12 12)" stroke-width="1.3"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span>Physics</p>
+    <h1>Anomaly- and Tadpole-Compatible Fermion Completion of Six-Dimensional SU(4) Gauge-Higgs Unification (Part I)</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-07-21">2026-07-21</time><span>Version v2</span><span>DOI <a href="https://doi.org/10.5281/zenodo.21466367">10.5281/zenodo.21466367</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:36">🌌 Gauge–Higgs unification</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag tag-serie">🌌 Gauge–Higgs unification series</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="ghu_completion.pdf" title="PDF, 616 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.21466367" rel="noopener" title="10.5281/zenodo.21466367"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/21466367" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/21466367/files/ghu_completion_es.pdf?download=1" rel="noopener" title="ghu_completion_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a><a class="pill pill-suplemento" href="https://zenodo.org/records/21466367/files/SUPPLEMENT.md?download=1" rel="noopener" title="SUPPLEMENT.md"><span class="pi" aria-hidden="true">📎</span>Supplement</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>In gauge–Higgs unification the cancellation of gauge anomalies is necessary, but is it sufficient for a viable fermion sector? On an orbifold the answer involves genuinely <em>local</em> data — anomalies and tadpoles bound to the fixed points — that a bulk count misses. We make the question concrete for a colored quark block embedded in the dimension-60 representation (3,<strong>60</strong>) of SU(4) on T²/Z₂, built over the two-Higgs-doublet gauge sector of Akamatsu, Hirose, Maru and Nago (AHMN, arXiv:2603.05857); the fermion embedding is our own.</p><p>We fix the unique unbroken hypercharge that reproduces the Standard-Model quark charges (Y = (-7q₈+4q₁₅)/18), show by an exhaustive scan that (3,<strong>60</strong>) is the minimal SU(4) representation able to host a full quark generation, and organize every consistency requirement into a reproducible hierarchy of exact conditions: the irreducible six- and four-dimensional anomalies, the localized non-Abelian cubic residues (certified axiom-free in the Lean 4 proof assistant), the localized tadpole, the global SU(2) (Witten) constraint, and the boundary-mass matching of exotic zero modes.</p><p>We then exhibit — and independently verify in exact rational arithmetic — a 45-multiplet completion that cancels the eight anomaly coefficients and the localized tadpole together, with integral local cubic residues, so that here anomaly freedom and the tadpole condition are <em>compatible</em>.</p><p>This is not accidental: we prove an <strong>Existence theorem</strong> — on the fermion library the tadpole is linearly independent of the anomalies (the combined map has rank 10 = 8+2) and freely adjustable (its image on the anomaly-neutral non-negative cone is all of R²), so <em>every</em> anomaly-free completion of the block admits a tadpole-compatible one; the witness realizes a structural guarantee. The certificate is machine-checked in Lean 4 (depending only on <code>propext</code>). The same exact rank-and-cone test is released as a reusable tool, <code>ghu_preflight.py</code>, that decides for any orbifold fermion library whether a localized functional is an independent obstruction or is always absorbable. The decisive remaining test — whether the exotics can be given mass without lifting the Standard-Model quarks — is cast as an exact bipartite-matching gate and left open pending the full brane spectrum. Every step is a finite exact computation; the results reported are certificates, not estimates.</p><p>English and Spanish versions are included, together with two Lean 4 certificates, the reusable preflight tool, the exact SageMath verification scripts, and the full spectrum. The exact computations were carried out and cross-checked with Claude (Anthropic) as an AI research assistant against a common machine-verifiable ground truth.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="ghu_completion.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (616 kB)</a></p>
+    <p class="note">Identical to the file ghu_completion.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Anomaly- and Tadpole-Compatible Fermion Completion of Six-Dimensional SU(4) Gauge-Higgs Unification (Part I). Zenodo, 2026. doi:10.5281/zenodo.21466367</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026anomaly,
+  author    = {Carles Marín Muñoz},
+  title     = {Anomaly- and Tadpole-Compatible Fermion Completion of Six-Dimensional SU(4) Gauge-Higgs Unification (Part I)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21466367},
+  url       = {https://doi.org/10.5281/zenodo.21466367}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/21466367">Zenodo</a></p></footer>
+</body>
+</html>

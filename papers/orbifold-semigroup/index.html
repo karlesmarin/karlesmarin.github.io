@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An Affine Semigroup from Orbifold Boundary Conditions: cut, phylogenetic and hierarchical models in the unit-weight sector, and weighted configurations beyond them (Part IX-B)</title>
+<meta name="description" content="The equivalence classes of orbifold boundary conditions are the fibres of a marginal map, and are indexed by the elements of an affine semigroup. This note identifies that semigroup. When the alphabet carries no weights the object already has a name and a literature, and the note says so plainly: …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/orbifold-semigroup/">
+<meta name="citation_title" content="An Affine Semigroup from Orbifold Boundary Conditions: cut, phylogenetic and hierarchical models in the unit-weight sector, and weighted configurations beyond them (Part IX-B)">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/09/02">
+<meta name="citation_online_date" content="2026/09/02">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/orbifold-semigroup/orbifold_semigroup.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/orbifold-semigroup/">
+<meta name="citation_doi" content="10.5281/zenodo.22254864">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.22254864">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="gauge-Higgs unification; orbifold; boundary conditions; space group; Clifford theory; equivalence classes; extra dimensions; Wilson line; certified computation; exact arithmetic; reproducibility; affine semigroup; toric ideal; complete intersection; gluing; cut ideal; group-based model; phylogenetic invariants; hierarchical model; Markov basis; indispensable binomial; Cohen-Macaulay type; h*-vector; Hilbert series">
+<meta name="DC.title" content="An Affine Semigroup from Orbifold Boundary Conditions: cut, phylogenetic and hierarchical models in the unit-weight sector, and weighted configurations beyond them (Part IX-B)">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.22254864">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An Affine Semigroup from Orbifold Boundary Conditions: cut, phylogenetic and hierarchical models in the unit-weight sector, and weighted configurations beyond them (Part IX-B)">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/orbifold-semigroup/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:36">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Physics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(0 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(60 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(120 12 12)" stroke-width="1.3"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span>Physics</p>
+    <h1>An Affine Semigroup from Orbifold Boundary Conditions: cut, phylogenetic and hierarchical models in the unit-weight sector, and weighted configurations beyond them (Part IX-B)</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-09-02">2026-09-02</time><span>Version v1</span><span>DOI <a href="https://doi.org/10.5281/zenodo.22254864">10.5281/zenodo.22254864</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:36">🌌 Gauge–Higgs unification</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">🌌 Gauge–Higgs unification series</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="orbifold_semigroup.pdf" title="PDF, 489 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.22254864" rel="noopener" title="10.5281/zenodo.22254864"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/22254864" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/orbifold-semigroup/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/orbifold-semigroup/index.html?lab=prop:allk" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Lab</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Formalizations/RingTheory/AffineSemigroup" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Lean</a><a class="pill pill-es" href="https://zenodo.org/records/22254864/files/orbifold_semigroup_es.pdf?download=1" rel="noopener" title="orbifold_semigroup_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p><strong>The equivalence classes of orbifold boundary conditions are the fibres of a marginal map, and are indexed by the elements of an affine semigroup. This note identifies that semigroup.</strong></p><p>When the alphabet carries no weights the object already has a name and a literature, and the note says so plainly: over Z<sub>2</sub> it is the cut configuration of an explicit graph in the sense of Sturmfels and Sullivant — the four-cycle for T²/Z<sub>2</sub> and the wheel W<sub>4</sub> for S<sup>1</sup>/Z<sub>2</sub> × S<sup>1</sup>/Z<sub>2</sub>, verified as an equality of point configurations; over Z<sub>m</sub> with equal cone orders it is a group-based phylogenetic model on a claw tree; and for the higher products it is the binary hierarchical model of the boundary complex of a cross-polytope. The ring of the product orbifold is a row of a 2008 table — codimension, degree, minimal generators, normality — every invariant of which this machinery reproduced without knowing that table existed.</p><p><strong>What is established here:</strong> thirteen gluing trees, the unitary, orthogonal and symplectic realisations of every case; the group-based model on the tripod for <em>every</em> finite abelian group — a complete intersection exactly when |G| ≤ 3; that (S<sup>1</sup>/Z<sub>2</sub>)<sup>k</sup> is not a complete intersection for any k ≥ 3 and is not a cut ideal either, for a reason that is a count of edges; the exceptional case as a list of invariants rather than a negation — normal, Cohen–Macaulay, normalised volume 64, not a complete intersection, Cohen–Macaulay type 9; and that its minimal Markov basis is <em>unique up to signs</em>, sixteen indispensable binomials in exactly two orbits of eight under an automorphism group of order 128.</p><p>One distinction is drawn explicitly because the vocabulary collides: Casanellas, Fernández-Sánchez and Michałek prove these varieties are complete intersections <em>in a Zariski open set</em>; the question here is the global one, about the toric ideal itself, and the Z<sub>4</sub> tripod separates the two.</p><p>Companion to Part IX-A: that note determines which generators exist, this one which relations hold among them. Paper in English and Spanish; every ancillary script and its receipt travel with the record.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="orbifold_semigroup.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (489 kB)</a></p>
+    <p class="note">Identical to the file orbifold_semigroup.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, An Affine Semigroup from Orbifold Boundary Conditions: cut, phylogenetic and hierarchical models in the unit-weight sector, and weighted configurations beyond them (Part IX-B). Zenodo, 2026. doi:10.5281/zenodo.22254864</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026an,
+  author    = {Carles Marín Muñoz},
+  title     = {An Affine Semigroup from Orbifold Boundary Conditions: cut, phylogenetic and hierarchical models in the unit-weight sector, and weighted configurations beyond them (Part IX-B)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22254864},
+  url       = {https://doi.org/10.5281/zenodo.22254864}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/22254864">Zenodo</a></p></footer>
+</body>
+</html>

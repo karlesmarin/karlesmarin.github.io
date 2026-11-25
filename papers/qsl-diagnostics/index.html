@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certified Speed-Limit Diagnostics for Deployed Superconducting Quantum Processors</title>
+<meta name="description" content="How far are deployed quantum gates from the fastest evolution quantum mechanics allows? We answer for pre-Heron IBM processors, mainly Falcon and Eagle, using public, version-pinned calibration snapshots and inequalities whose proofs are machine-checked in Lean 4. Heron snapshots lack a …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/qsl-diagnostics/">
+<meta name="citation_title" content="Certified Speed-Limit Diagnostics for Deployed Superconducting Quantum Processors">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/11/04">
+<meta name="citation_online_date" content="2026/11/04">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/qsl-diagnostics/qsl-diagnostics.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/qsl-diagnostics/">
+<meta name="citation_doi" content="10.5281/zenodo.23946239">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.23946239">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="quantum speed limit; superconducting qubits; transmon; gate time; cross-resonance; Mandelstam-Tamm; Margolus-Levitin; entangling time; optimal control; IBM Quantum; formal verification; Lean 4; reproducible computation; quantum state transfer; modular quantum computing; Lindblad master equation; Isabelle/HOL">
+<meta name="DC.title" content="Certified Speed-Limit Diagnostics for Deployed Superconducting Quantum Processors">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.23946239">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Certified Speed-Limit Diagnostics for Deployed Superconducting Quantum Processors">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/qsl-diagnostics/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:36">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Physics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(0 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(60 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(120 12 12)" stroke-width="1.3"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span>Physics</p>
+    <h1>Certified Speed-Limit Diagnostics for Deployed Superconducting Quantum Processors</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-11-04">2026-11-04</time><span>Version 3</span><span>DOI <a href="https://doi.org/10.5281/zenodo.23946239">10.5281/zenodo.23946239</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:36">🧲 Quantum control &amp; speed limits</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag" style="--h:148">🦉 Isabelle/HOL</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">🧲 Quantum hardware limits</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="qsl-diagnostics.pdf" title="PDF, 646 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.23946239" rel="noopener" title="10.5281/zenodo.23946239"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/23946239" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/qsl-diagnostics/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/qsl-diagnostics/index.html?lab=q:gap" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Labs (8)</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Formalizations/Physics/QuantumMechanics/SpeedLimit" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Isabelle + Lean</a><a class="pill pill-es" href="https://zenodo.org/records/23946239/files/qsl-diagnostics-es.pdf?download=1" rel="noopener" title="qsl-diagnostics-es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a><a class="pill pill-mathstodon" href="https://mathstodon.xyz/@karlesmarin/117526868462315529" rel="noopener"><span class="pi" aria-hidden="true">🧵</span>Thread</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>How far are deployed quantum gates from the fastest evolution quantum mechanics allows? We answer for pre-Heron IBM processors, mainly Falcon and Eagle, using public, version-pinned calibration snapshots and inequalities whose proofs are machine-checked in Lean 4. Heron snapshots lack a Hamiltonian. For single-qubit gates, with the drive-strength convention fixed by IBM's calibrated π pulses, the X gate lasts a median 11.3 times the two-level speed limit at full drive amplitude (1646 qubits, 41 backends). Most of this gap is a design choice: IBM drives at about a tenth of the anharmonicity, and at that drive its pulses are about 2 times the square-pulse limit. Within each device's full amplitude, optimal control on IBM's model gives gates about 10 times faster than the median. For two-qubit gates (1758 coupled pairs, 43 backends), the known qubit-subspace minimal time of controlled-NOT-class gates under exchange coupling (literature) gives a median ratio 4.22; across the snapshots it rose, not monotonically, from 2.78 (2021) to 4.26 (2025) as gates got longer, coinciding with the change from Falcon to Eagle. With the second level and fast arbitrary local control, the minimal time of a controlled-Z gate with ideal local control lies between 0.295 and 0.331 of the qubit-only exchange time (a two-copy bound and a certified explicit protocol, version 3); bounded local control reaches 0.35. We also formalize an entangling-time bound in arbitrary local dimension, known for qubits and new only as a machine-checked assembly. Applied to IBM's chip-to-chip state transfer (version 2), the same diagnostic places the transfers at 5.8--7.9 times the single-mode minimal time, whose lower bound is machine-checked in Isabelle, and the coherence error of the fastest protocol four to six times below the measured errors. The contribution is a reproducible diagnostic built on the machine-checked inequalities, with explicit guarantees.</p><p>Companion site (blueprint): <a href="https://karlesmarin.github.io/blueprints/qsl-diagnostics/" rel="noopener">https://karlesmarin.github.io/blueprints/qsl-diagnostics/</a></p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="qsl-diagnostics.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (646 kB)</a></p>
+    <p class="note">Identical to the file qsl-diagnostics.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Certified Speed-Limit Diagnostics for Deployed Superconducting Quantum Processors. Zenodo, 2026. doi:10.5281/zenodo.23946239</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026certified,
+  author    = {Carles Marín Muñoz},
+  title     = {Certified Speed-Limit Diagnostics for Deployed Superconducting Quantum Processors},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23946239},
+  url       = {https://doi.org/10.5281/zenodo.23946239}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/23946239">Zenodo</a></p></footer>
+</body>
+</html>

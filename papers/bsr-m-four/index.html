@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every m×4 biquadratic sum of squares is a sum of 3m−1 squares (5 ≤ m ≤ 16)</title>
+<meta name="description" content="Let BSR(m,n) be the least r such that every real biquadratic sum of squares in m+n variables is a sum of r squares of bilinear forms. We prove BSR(m,4) ≤ 3m−1 for 5 ≤ m ≤ 16, one square below the previous bound 3m. In particular BSR(5,4) ≤ 14, the upper half of the conjecture BSR(5,4) = 14 proposed …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/bsr-m-four/">
+<meta name="citation_title" content="Every m×4 biquadratic sum of squares is a sum of 3m−1 squares (5 ≤ m ≤ 16)">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_author" content="Liqun Qi">
+<meta name="citation_author" content="Chen Ouyang">
+<meta name="citation_publication_date" content="2026/11/25">
+<meta name="citation_online_date" content="2026/11/25">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/bsr-m-four/Marin_Qi_Ouyang_BSR_m4.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/bsr-m-four/">
+<meta name="citation_doi" content="10.5281/zenodo.24522234">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.24522234">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="sums of squares; biquadratic forms; SOS rank; Pythagoras number; boundary of sums of squares; Hankel multiplier; inertia; Barvinok–Pataki bound">
+<meta name="DC.title" content="Every m×4 biquadratic sum of squares is a sum of 3m−1 squares (5 ≤ m ≤ 16)">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.creator" content="Liqun Qi">
+<meta name="DC.creator" content="Chen Ouyang">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.24522234">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Every m×4 biquadratic sum of squares is a sum of 3m−1 squares (5 ≤ m ≤ 16)">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/bsr-m-four/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>Every m×4 biquadratic sum of squares is a sum of 3m−1 squares (5 ≤ m ≤ 16)</h1>
+    <p class="authors">Carles Marín Muñoz, Liqun Qi and Chen Ouyang</p>
+    <p class="facts"><time datetime="2026-11-25">2026-11-25</time><span>Version 1</span><span>DOI <a href="https://doi.org/10.5281/zenodo.24522234">10.5281/zenodo.24522234</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:186">🧮 Sums of squares &amp; real algebraic geometry</span><span class="tag" style="--h:148">🦉 Isabelle/HOL</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">🧮 Biquadratic sums of squares (BSR)</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="Marin_Qi_Ouyang_BSR_m4.pdf" title="PDF, 1.7 MB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.24522234" rel="noopener" title="10.5281/zenodo.24522234"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/24522234" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/bsr-m-four/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/bsr-m-four/index.html?lab=thm:main" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Labs (4)</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Isabelle/BoundaryInertia" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Isabelle</a><a class="pill pill-es" href="https://zenodo.org/records/24522234/files/Marin_Qi_Ouyang_BSR_m4_es.pdf?download=1" rel="noopener" title="Marin_Qi_Ouyang_BSR_m4_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a><a class="pill pill-suplemento" href="https://zenodo.org/records/24522234/files/supplement.zip?download=1" rel="noopener" title="supplement.zip"><span class="pi" aria-hidden="true">📎</span>Supplement</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>Let BSR(m,n) be the least r such that every real biquadratic sum of squares in m+n variables is a sum of r squares of bilinear forms. We prove BSR(m,4) ≤ 3m−1 for 5 ≤ m ≤ 16, one square below the previous bound 3m. In particular BSR(5,4) ≤ 14, the upper half of the conjecture BSR(5,4) = 14 proposed by two of the present authors, Qi and Ouyang; with the known lower bounds this gives 13 ≤ BSR(5,4) ≤ 14 and 16 ≤ BSR(6,4) ≤ 17. As a corollary, BSR(m,5) ≤ 4m−1 for every m ≥ 2, one below the Choi–Lam–Reznick bound 4m for 5 ≤ m ≤ 10.</p><p>The proof studies boundary points of the sets of sums of a fixed number of squares. Minimality of a representation bounds the negative index q of its Hankel multiplier through the dimension of its syzygies, a boundary inertia inequality (a transport to this setting of the negative-index bound of Boumal, Voroninski and Bandeira for Burer–Monteiro critical points) whose case q = 1 recovers the Barvinok–Pataki bound. For m×4 forms it gives q ≤ ⌊(m+13)/6⌋, which is at most 4 exactly for m ≤ 16. A classification of isotropic restrictions involving at most four rows and a low-negative-index lemma for q ≤ 4 then exclude the remaining boundary configurations; compression to fewer rows handles the smaller supports, and an explicit inductive family of tuples gives the regular points. The argument first fails at m = 17.</p><p>English and Spanish versions, LaTeX sources and the scripts that check the computational steps are included. The arithmetic, the enumeration of cases and several linear-algebra steps are checked in Isabelle/HOL (<a href="https://github.com/karlesmarin/formalizations" rel="noopener">https://github.com/karlesmarin/formalizations</a>) or by exact computation; these checks cover individual steps, not the whole theorem. The companion site <a href="https://karlesmarin.github.io/blueprints/bsr-m-four/" rel="noopener">https://karlesmarin.github.io/blueprints/bsr-m-four/</a> says, for each statement, what is formalized and what is checked by computation. We worked with an AI assistant.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="Marin_Qi_Ouyang_BSR_m4.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (1.7 MB)</a></p>
+    <p class="note">Identical to the file Marin_Qi_Ouyang_BSR_m4.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Liqun Qi and Chen Ouyang, Every m×4 biquadratic sum of squares is a sum of 3m−1 squares (5 ≤ m ≤ 16). Zenodo, 2026. doi:10.5281/zenodo.24522234</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026every,
+  author    = {Carles Marín Muñoz and Liqun Qi and Chen Ouyang},
+  title     = {Every m×4 biquadratic sum of squares is a sum of 3m−1 squares (5 ≤ m ≤ 16)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24522234},
+  url       = {https://doi.org/10.5281/zenodo.24522234}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/24522234">Zenodo</a></p></footer>
+</body>
+</html>

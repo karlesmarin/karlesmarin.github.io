@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One transform and one duality: a machine-checked core of music theory in Lean 4</title>
+<meta name="description" content="A machine-checked library, in Lean 4 on top of Mathlib, of core results in the mathematics of music theory over the chromatic universe Z_12, organized so that one object and one phenomenon do most of the work. The object is the autocorrelation, or power spectrum |A-hat|^2, of a pitch-class set: the …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/music-theory-core/">
+<meta name="citation_title" content="One transform and one duality: a machine-checked core of music theory in Lean 4">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/06/27">
+<meta name="citation_online_date" content="2026/06/27">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/music-theory-core/corpus_paper.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/music-theory-core/">
+<meta name="citation_doi" content="10.5281/zenodo.20953768">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.20953768">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="mathematical music theory; pitch-class set theory; discrete Fourier transform; interval vector; homometry; Z-relation; Babbitt hexachord theorem; neo-Riemannian theory; Tonnetz; transformational theory; Crans-Fiore-Satyendra duality; Wielandt centralizer theorem; maximal evenness; well-formed scales; three-gap theorem; regular temperament theory; Lean 4; formal verification; Mathlib">
+<meta name="DC.title" content="One transform and one duality: a machine-checked core of music theory in Lean 4">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.20953768">
+<meta property="og:type" content="article">
+<meta property="og:title" content="One transform and one duality: a machine-checked core of music theory in Lean 4">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/music-theory-core/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>One transform and one duality: a machine-checked core of music theory in Lean 4</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-06-27">2026-06-27</time><span></span><span>DOI <a href="https://doi.org/10.5281/zenodo.20953768">10.5281/zenodo.20953768</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:186">🎵 Mathematics of music</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag tag-serie">🎵 Mathematics of music</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="corpus_paper.pdf" title="PDF, 633 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.20953768" rel="noopener" title="10.5281/zenodo.20953768"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/20953768" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/20953768/files/corpus_paper_es.pdf?download=1" rel="noopener" title="corpus_paper_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>A machine-checked library, in Lean 4 on top of Mathlib, of core results in the mathematics of music theory over the chromatic universe Z_12, organized so that one object and one phenomenon do most of the work. The object is the autocorrelation, or power spectrum |A-hat|^2, of a pitch-class set: the interval vector, Babbitt's hexachord theorem, homometry and the Z-relation read as the crystallographic phase problem, deep scales, rhythmic oddity, and the common-tone theorems are all functions of it, and maximal evenness reconnects to it in the scale theory. The phenomenon is duality: the neo-Riemannian PLR group is the centralizer of the regular T/I action on the 24 triads (Crans-Fiore-Satyendra, via the regular case of Wielandt's centralizer theorem, a lemma added over Mathlib), and the same shape recurs as a tritone-centered order-12 self-duality of the Petrushka set class 6-30 and as the val-comma lattice duality of regular temperament theory. The library is organized in three pillars (Fourier invariants of pitch-class sets; transformational duality; scales and tuning), ~275 theorems and lemmas across 9 Lean files, every theorem sorry-free with a clean axiom audit (propext, Classical.choice, Quot.sound; the finite maximal-evenness censuses additionally use native_decide). The mathematics is classical; the contributions are the formalization itself - the first comprehensive one in this area, since prior proof-assistant work covers only the T/I action - an autocorrelation/DFT organizing lens, and two results that appear not to have been noted in the literature: the 6-30 self-duality and a unified phase taxonomy of the |A-hat|^2 invariants. This corpus paper is the umbrella over three notes of the Mathematics of Music series (the 6-30 self-duality, the phase taxonomy, the Tonnetz spectrum), adding the connective tissue and the scale-and-tuning pillar. Not new mathematics - a unified, certified account. This record bundles the English and Spanish versions of the paper.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="corpus_paper.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (633 kB)</a></p>
+    <p class="note">Identical to the file corpus_paper.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, One transform and one duality: a machine-checked core of music theory in Lean 4. Zenodo, 2026. doi:10.5281/zenodo.20953768</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026one,
+  author    = {Carles Marín Muñoz},
+  title     = {One transform and one duality: a machine-checked core of music theory in Lean 4},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20953768},
+  url       = {https://doi.org/10.5281/zenodo.20953768}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/20953768">Zenodo</a></p></footer>
+</body>
+</html>

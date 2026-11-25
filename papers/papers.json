@@ -1,0 +1,1596 @@
+{
+ "nota": "generado por excovery.publicaciones; no editar a mano",
+ "papers": [
+  {
+   "rec": "21467892",
+   "concepto": "20100128",
+   "slug": "a-closed-form-ring-identity-for-the-smeft-higgs-trilinear",
+   "titulo": "A closed-form ring identity for the SMEFT Higgs trilinear-quartic deviation [NOVELTY CLAIM WITHDRAWN: the identity is a corollary of geoSMEFT]",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-21",
+   "pdf": "1_Letter_en.pdf",
+   "md5": "888224718d42e7415501f611f58741a7",
+   "pdf_url": "https://zenodo.org/records/21467892/files/1_Letter_en.pdf?download=1",
+   "areas": [
+    "physics"
+   ],
+   "subareas": [
+    "physics/particle-phenomenology"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "20787671",
+   "concepto": "20787670",
+   "slug": "airy-function",
+   "titulo": "How a Falling Particle Counts Its Floors: the Airy function as a verified entire solution of y''=xy, its oscillation, and the quantum-bouncer spectrum, machine-checked in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-21",
+   "pdf": "airy-bouncer-lean.pdf",
+   "md5": "41966fa741bc568fa7053b5feb66a2ac",
+   "pdf_url": "https://karlesmarin.github.io/papers/airy-function/airy-bouncer-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/analysis",
+    "proof/lean"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "21299266",
+   "concepto": "21299265",
+   "slug": "attention-lean-backbone",
+   "titulo": "A Machine-Checked Backbone for the Thermodynamic Attention Framework: Lean/Mathlib Identities, Zero Sorries, and the Errata the Prover Caught",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-10",
+   "pdf": "attend_formalization.pdf",
+   "md5": "2670d9768d1812374be29490ae724044",
+   "pdf_url": "https://karlesmarin.github.io/papers/attention-lean-backbone/attend_formalization.pdf",
+   "areas": [
+    "computing",
+    "proof"
+   ],
+   "subareas": [
+    "computing/transformers",
+    "proof/lean"
+   ],
+   "serie": "how-transformers-attend"
+  },
+  {
+   "rec": "20573120",
+   "concepto": "20573119",
+   "slug": "bass-determinant",
+   "titulo": "Folding Edges into Vertices: A Machine-Checked Proof of Bass's Determinant Formula for the Ihara Zeta Function in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-06",
+   "pdf": "ihara-bass-lean.pdf",
+   "md5": "d09b3dae048782a94c9be5dec5ea1960",
+   "pdf_url": "https://karlesmarin.github.io/papers/bass-determinant/ihara-bass-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "24055900",
+   "concepto": "24055899",
+   "slug": "bsr-four-four",
+   "titulo": "Every 4×4 biquadratic sum of squares is a sum of eleven squares",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-08",
+   "pdf": "bsr44.pdf",
+   "md5": "95ca367222354fee4b46648c2b32e662",
+   "pdf_url": "https://karlesmarin.github.io/papers/bsr-four-four/bsr44.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/real-algebraic-geometry",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "bsr"
+  },
+  {
+   "rec": "24522234",
+   "concepto": "24522233",
+   "slug": "bsr-m-four",
+   "titulo": "Every m×4 biquadratic sum of squares is a sum of 3m−1 squares (5 ≤ m ≤ 16)",
+   "autores": [
+    "Carles Marín Muñoz",
+    "Liqun Qi",
+    "Chen Ouyang"
+   ],
+   "fecha": "2026-11-25",
+   "pdf": "Marin_Qi_Ouyang_BSR_m4.pdf",
+   "md5": "0ca1f78ef17621612665b7c742c60234",
+   "pdf_url": "https://karlesmarin.github.io/papers/bsr-m-four/Marin_Qi_Ouyang_BSR_m4.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/real-algebraic-geometry",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "bsr"
+  },
+  {
+   "rec": "24051362",
+   "concepto": "24048316",
+   "slug": "bsr-width-three",
+   "titulo": "For m ≥ 2, every m×3 biquadratic sum of squares is a sum of 2m squares",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-08",
+   "pdf": "bsr_m3.pdf",
+   "md5": "12b7c156116fbd7273fd99f50c41b384",
+   "pdf_url": "https://karlesmarin.github.io/papers/bsr-width-three/bsr_m3.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/real-algebraic-geometry",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "bsr"
+  },
+  {
+   "rec": "20736143",
+   "concepto": "20736142",
+   "slug": "budan-fourier",
+   "titulo": "Counting with the Derivative Tower: the Budan-Fourier Theorem, Machine-Checked in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-17",
+   "pdf": "budan-fourier-lean.pdf",
+   "md5": "e7c3f034b6ed5d6070c884689624e61e",
+   "pdf_url": "https://karlesmarin.github.io/papers/budan-fourier/budan-fourier-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/analysis",
+    "proof/lean"
+   ],
+   "serie": "real-roots-lean"
+  },
+  {
+   "rec": "20649056",
+   "concepto": "20649055",
+   "slug": "certified-short-cycle-counts-for-the-ieee-802-11n-wifi-ldpc",
+   "titulo": "Certified Short-Cycle Counts for the IEEE 802.11n (WiFi) LDPC Codes",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-11",
+   "pdf": "ldpc-census.pdf",
+   "md5": "df92f3283643086c6349aba651443085",
+   "pdf_url": "https://zenodo.org/records/20649056/files/ldpc-census.pdf?download=1",
+   "areas": [
+    "computing",
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "computing/coding-theory",
+    "mathematics/combinatorics",
+    "proof/lean",
+    "proof/certificates"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "22847477",
+   "concepto": "22847476",
+   "slug": "character-ring-segment",
+   "titulo": "The ring of character values depends only on the segment: SU(n), Sp(2m) and GL(n) at a torsion element",
+   "autores": [
+    "Carles Marin Munoz"
+   ],
+   "fecha": "2026-09-19",
+   "pdf": "segmento.pdf",
+   "md5": "3a9821124a65571a23d90ec674bc0f18",
+   "pdf_url": "https://karlesmarin.github.io/papers/character-ring-segment/segmento.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/number-theory",
+    "proof/lean"
+   ],
+   "serie": "characters"
+  },
+  {
+   "rec": "24073781",
+   "concepto": "22683560",
+   "slug": "characters-at-aP",
+   "titulo": "Integer character values on the ρ-line of Sp(2m)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-09",
+   "pdf": "characters_at_aP.pdf",
+   "md5": "81aae67af8a209bbc3491310938c7aed",
+   "pdf_url": "https://karlesmarin.github.io/papers/characters-at-aP/characters_at_aP.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/number-theory",
+    "proof/certificates",
+    "proof/lean",
+    "lab/browser-labs"
+   ],
+   "serie": "characters"
+  },
+  {
+   "rec": "23061900",
+   "concepto": "22813216",
+   "slug": "conductor-rho-line",
+   "titulo": "Where the character values of Sp(2m) at a torsion element fail to generate the ring of integers",
+   "autores": [
+    "Carles Marin Munoz"
+   ],
+   "fecha": "2026-09-30",
+   "pdf": "conductor_rho_line.pdf",
+   "md5": "766647de1d75c2f208b8dd0a34de67aa",
+   "pdf_url": "https://karlesmarin.github.io/papers/conductor-rho-line/conductor_rho_line.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/music",
+    "mathematics/number-theory",
+    "proof/certificates",
+    "proof/lean"
+   ],
+   "serie": "characters"
+  },
+  {
+   "rec": "20762280",
+   "concepto": "20762279",
+   "slug": "connes-kreimer-foissy",
+   "titulo": "How a Tree Remembers Its Cuts: the Connes--Kreimer--Foissy Hopf Algebra of Rooted Trees, Machine-Checked in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-19",
+   "pdf": "rooted-trees-hopf-lean.pdf",
+   "md5": "a5e1e063af66af42230ee9316b226eb9",
+   "pdf_url": "https://karlesmarin.github.io/papers/connes-kreimer-foissy/rooted-trees-hopf-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "mathematics/algebra",
+    "proof/lean"
+   ],
+   "serie": "rooted-trees"
+  },
+  {
+   "rec": "20736391",
+   "concepto": "20736390",
+   "slug": "descartes-sturm-budan",
+   "titulo": "One Engine, Three Counts: Descartes, Sturm and Budan-Fourier through one sign-variation engine in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-17",
+   "pdf": "sign-variation-lean.pdf",
+   "md5": "d5bea215b27971d245ad0ceb8c4553fc",
+   "pdf_url": "https://karlesmarin.github.io/papers/descartes-sturm-budan/sign-variation-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/analysis",
+    "proof/lean"
+   ],
+   "serie": "real-roots-lean"
+  },
+  {
+   "rec": "23671607",
+   "concepto": "20675270",
+   "slug": "dilogarithm-clock",
+   "titulo": "The Clock That Never Ticks: a machine-checked path from the dilogarithm to quantum speed limits in Lean 4",
+   "autores": [
+    "Marín Muñoz, Carles"
+   ],
+   "fecha": "2026-10-26",
+   "pdf": "clock-never-ticks.pdf",
+   "md5": "baf483145cf1094273173d33f1d83700",
+   "pdf_url": "https://zenodo.org/records/23671607/files/clock-never-ticks.pdf?download=1",
+   "areas": [
+    "physics",
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "physics/quantum-control",
+    "mathematics/analysis",
+    "proof/lean",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "dilogarithm"
+  },
+  {
+   "rec": "20682716",
+   "concepto": "20682715",
+   "slug": "dilogarithm-pentagon",
+   "titulo": "The Pentagon, Machine-Checked: Abel's five-term relation for the dilogarithm in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-13",
+   "pdf": "five-term-lean.pdf",
+   "md5": "2ba3c796ece8a0d005a40cf601f77165",
+   "pdf_url": "https://karlesmarin.github.io/papers/dilogarithm-pentagon/five-term-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/analysis",
+    "proof/lean"
+   ],
+   "serie": "dilogarithm"
+  },
+  {
+   "rec": "24536373",
+   "concepto": "24536372",
+   "slug": "dyck-divisors",
+   "titulo": "How Many Dyck Words Do the Divisors of an Integer Make? Exact Counts and Quasipolynomial Growth",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-25",
+   "pdf": "Marin_Dyck_words_of_divisors.pdf",
+   "md5": "e8e9b7f1953843a4044f4050c3ae91f3",
+   "pdf_url": "https://karlesmarin.github.io/papers/dyck-divisors/Marin_Dyck_words_of_divisors.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/certificates",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "19986818",
+   "concepto": "19986817",
+   "slug": "erratum-predicting-how-transformers-attend-5-2-theorem-5-2",
+   "titulo": "Erratum: Predicting How Transformers Attend §5.2 Theorem 5.2 — Heat capacity coefficient at γ=1",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-05-02",
+   "pdf": "erratum_paper1_cv_hagedorn_2026-05-02.pdf",
+   "md5": "52d518149cdf7b9a8634065fff151dcd",
+   "pdf_url": "https://karlesmarin.github.io/papers/erratum-predicting-how-transformers-attend-5-2-theorem-5-2/erratum_paper1_cv_hagedorn_2026-05-02.pdf",
+   "areas": [
+    "computing"
+   ],
+   "subareas": [
+    "computing/transformers"
+   ],
+   "serie": "how-transformers-attend"
+  },
+  {
+   "rec": "20774821",
+   "concepto": "20774820",
+   "slug": "eulerian-idempotent",
+   "titulo": "How a Tree Forgets Its Order: the Eulerian idempotent and the Adams spectrum on the commutative Connes–Kreimer–Butcher Hopf algebra of rooted trees, machine-checked in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-20",
+   "pdf": "eulerian-idempotent-lean.pdf",
+   "md5": "b405fb6dab7db2db3f5eb39dff2fae2c",
+   "pdf_url": "https://karlesmarin.github.io/papers/eulerian-idempotent/eulerian-idempotent-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "mathematics/algebra",
+    "proof/lean"
+   ],
+   "serie": "rooted-trees"
+  },
+  {
+   "rec": "21466370",
+   "concepto": "21438226",
+   "slug": "ghu-centre-charge",
+   "titulo": "A Centre-Charge Selection Rule for the Wilson-Line Potential: The Fundamental Domain of Gauge-Higgs Unification Is Representation-Dependent (Part III)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-21",
+   "pdf": "ghu_notch.pdf",
+   "md5": "b4f5ca978f580771649b04b6ba47f005",
+   "pdf_url": "https://karlesmarin.github.io/papers/ghu-centre-charge/ghu_notch.pdf",
+   "areas": [
+    "physics",
+    "proof"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "proof/lean",
+    "proof/certificates"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "21466367",
+   "concepto": "21432625",
+   "slug": "ghu-fermion-completion",
+   "titulo": "Anomaly- and Tadpole-Compatible Fermion Completion of Six-Dimensional SU(4) Gauge-Higgs Unification (Part I)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-21",
+   "pdf": "ghu_completion.pdf",
+   "md5": "f51ffb8e9b6a6b717774db75f7b173b6",
+   "pdf_url": "https://karlesmarin.github.io/papers/ghu-fermion-completion/ghu_completion.pdf",
+   "areas": [
+    "physics",
+    "proof"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "proof/lean",
+    "proof/certificates"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "21727095",
+   "concepto": "21727094",
+   "slug": "ghu-higgs-cannot-see",
+   "titulo": "What the Higgs Potential Cannot See: Bulk Matter That Cannot Help Select a Boundary Condition (Part V)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-31",
+   "pdf": "ghu_observability.pdf",
+   "md5": "5bc689a71571d7a5255671049140251a",
+   "pdf_url": "https://karlesmarin.github.io/papers/ghu-higgs-cannot-see/ghu_observability.pdf",
+   "areas": [
+    "physics",
+    "proof"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "proof/lean",
+    "proof/certificates"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "21466369",
+   "concepto": "21432627",
+   "slug": "ghu-quark-generation",
+   "titulo": "Three Gates to a Quark Generation: An Exact Criterion for Which SU(4) Representations Contain the Standard Model (Part II)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-21",
+   "pdf": "ghu_cell.pdf",
+   "md5": "b68f4ab49421a8cf9b7bd6f295db756a",
+   "pdf_url": "https://karlesmarin.github.io/papers/ghu-quark-generation/ghu_cell.pdf",
+   "areas": [
+    "physics",
+    "proof"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "proof/certificates"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "20600948",
+   "concepto": "20517349",
+   "slug": "godsil-gutman",
+   "titulo": "Random Signs into Matchings: A Godsil-Gutman Identity, Formalized in Lean 4 (Part I)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-02",
+   "pdf": "godsil-gutman-lean.pdf",
+   "md5": "feca25f6a43dda0420b6b294a4b38a60",
+   "pdf_url": "https://karlesmarin.github.io/papers/godsil-gutman/godsil-gutman-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "20617199",
+   "concepto": "20613246",
+   "slug": "godsil-moment",
+   "titulo": "When Walks Become a Spectrum: A Machine-Checked Proof of Godsil's Moment Theorem in Lean 4 (Part IV)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-09",
+   "pdf": "moment-theorem-lean.pdf",
+   "md5": "7351a8267e197bfe8e92f391c4da9683",
+   "pdf_url": "https://karlesmarin.github.io/papers/godsil-moment/moment-theorem-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "20561832",
+   "concepto": "20561831",
+   "slug": "heilmann-lieb",
+   "titulo": "Unfolding a Graph into a Tree: A Machine-Checked Proof of the Heilmann-Lieb Theorem in Lean 4 (Part II)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-05",
+   "pdf": "heilmann-lieb-lean.pdf",
+   "md5": "b8a56f65dd35141404f37bb8dbe6016f",
+   "pdf_url": "https://karlesmarin.github.io/papers/heilmann-lieb/heilmann-lieb-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "mathematics/analysis",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "23123219",
+   "concepto": "23121103",
+   "slug": "huddling-scales",
+   "titulo": "Huddling, diatonic and pentatonic scales in Z12: Fourier maxima and convex-energy minima formalized in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-10-03",
+   "pdf": "huddling_note.pdf",
+   "md5": "b1f06b25c33c89ccb26eb158db313213",
+   "pdf_url": "https://karlesmarin.github.io/papers/huddling-scales/huddling_note.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/music",
+    "proof/lean",
+    "lab/browser-labs"
+   ],
+   "serie": "music"
+  },
+  {
+   "rec": "23656979",
+   "concepto": "23656978",
+   "slug": "integer-frieze-sign-changes",
+   "titulo": "Integer frieze patterns and Tabachnikov's four sign changes",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-10-26",
+   "pdf": "nota.pdf",
+   "md5": "4607677eabe6d7e081c3195c764a87cb",
+   "pdf_url": "https://karlesmarin.github.io/papers/integer-frieze-sign-changes/nota.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/lean",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "19194911",
+   "concepto": "19177450",
+   "slug": "inter-layer-alignment-re-rise-predicts-grokking-in",
+   "titulo": "Inter-Layer Alignment Re-Rise Predicts Grokking in Transformers: A Pilot Study",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-03-23",
+   "pdf": "main.pdf",
+   "md5": "fb995e81efd2deaef935f0a19d813fd0",
+   "pdf_url": "https://karlesmarin.github.io/papers/inter-layer-alignment-re-rise-predicts-grokking-in/main.pdf",
+   "areas": [
+    "computing"
+   ],
+   "subareas": [
+    "computing/transformers"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "23481332",
+   "concepto": "23481331",
+   "slug": "inversion-height-two",
+   "titulo": "Inversion height two in the free field of the free group: strict hierarchies and a non-membership criterion",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-10-19",
+   "pdf": "inversion_height_two.pdf",
+   "md5": "451f067f0072e550b147bc1745e07b6a",
+   "pdf_url": "https://karlesmarin.github.io/papers/inversion-height-two/inversion_height_two.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/algebra",
+    "proof/lean",
+    "lab/browser-labs"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "20578470",
+   "concepto": "20578469",
+   "slug": "jacobi-newton",
+   "titulo": "What a Determinant's Derivative Knows: Jacobi's Formula and Newton's Identity for Matrix Traces in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-07",
+   "pdf": "jacobi-newton-lean.pdf",
+   "md5": "0c95d488ade79bc7f95d08de7e883fc9",
+   "pdf_url": "https://karlesmarin.github.io/papers/jacobi-newton/jacobi-newton-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "mathematics/algebra",
+    "mathematics/analysis",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "20629746",
+   "concepto": "20629745",
+   "slug": "matrix-tree",
+   "titulo": "Counting Trees Without Listing Them: A Machine-Checked Proof of Kirchhoff's Matrix-Tree Theorem in Lean 4 (Part V)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-10",
+   "pdf": "matrix-tree-lean.pdf",
+   "md5": "2b85090e5b728f1db19692908493c154",
+   "pdf_url": "https://karlesmarin.github.io/papers/matrix-tree/matrix-tree-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "24250501",
+   "concepto": "24250500",
+   "slug": "memory-floors",
+   "titulo": "Exact limits on writing a superconducting quantum memory: when can pulse shaping beat the resonant swap?",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-15",
+   "pdf": "memory-floors.pdf",
+   "md5": "5b6451012b5dd2edfa6dad315863b6a2",
+   "pdf_url": "https://karlesmarin.github.io/papers/memory-floors/memory-floors.pdf",
+   "areas": [
+    "physics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "physics/quantum-control",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "quantum-hardware"
+  },
+  {
+   "rec": "20953768",
+   "concepto": "20953767",
+   "slug": "music-theory-core",
+   "titulo": "One transform and one duality: a machine-checked core of music theory in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-27",
+   "pdf": "corpus_paper.pdf",
+   "md5": "1ae389b77cc39df8c890b36f237bb46f",
+   "pdf_url": "https://karlesmarin.github.io/papers/music-theory-core/corpus_paper.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/music",
+    "proof/lean"
+   ],
+   "serie": "music"
+  },
+  {
+   "rec": "20693064",
+   "concepto": "20693063",
+   "slug": "newton-inequalities",
+   "titulo": "The Inward Bow of a Real-Rooted Polynomial: Newton's Inequalities, Machine-Checked in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-14",
+   "pdf": "newton-inequalities-lean.pdf",
+   "md5": "106dcaebd8c6a5c92a9dd49e5bd3a02c",
+   "pdf_url": "https://karlesmarin.github.io/papers/newton-inequalities/newton-inequalities-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/analysis",
+    "proof/lean"
+   ],
+   "serie": "real-roots-lean"
+  },
+  {
+   "rec": "22254862",
+   "concepto": "22254861",
+   "slug": "orbifold-alphabet",
+   "titulo": "The Alphabet of Orbifold Boundary Conditions: a boundary condition is a representation, and the alphabet is forced by the fixed-point counts (Part IX-A)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-09-02",
+   "pdf": "orbifold_alphabet.pdf",
+   "md5": "02111c78c80833ccf7686ffcad67decb",
+   "pdf_url": "https://karlesmarin.github.io/papers/orbifold-alphabet/orbifold_alphabet.pdf",
+   "areas": [
+    "physics",
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "mathematics/combinatorics",
+    "proof/certificates",
+    "proof/lean"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "22254864",
+   "concepto": "22254863",
+   "slug": "orbifold-semigroup",
+   "titulo": "An Affine Semigroup from Orbifold Boundary Conditions: cut, phylogenetic and hierarchical models in the unit-weight sector, and weighted configurations beyond them (Part IX-B)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-09-02",
+   "pdf": "orbifold_semigroup.pdf",
+   "md5": "5a8a82d8cf53f7fa8b97322608c6e5b9",
+   "pdf_url": "https://karlesmarin.github.io/papers/orbifold-semigroup/orbifold_semigroup.pdf",
+   "areas": [
+    "physics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "proof/certificates",
+    "proof/lean",
+    "lab/browser-labs"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "20600326",
+   "concepto": "20600325",
+   "slug": "path-tree-walks",
+   "titulo": "Walks that Forget the Cycles: A Machine-Checked Bijection between Tree-Like Walks and Godsil's Path Tree in Lean 4 (Part III)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-08",
+   "pdf": "path-tree-walks-lean.pdf",
+   "md5": "ead86460a79df7b4b0b652978244a8ba",
+   "pdf_url": "https://karlesmarin.github.io/papers/path-tree-walks/path-tree-walks-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "20971090",
+   "concepto": "20971089",
+   "slug": "per-voice-fourier",
+   "titulo": "The per-voice Fourier signature: the bass is the spectrally purest voice",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-27",
+   "pdf": "per_voice_note.pdf",
+   "md5": "52026ab3a3858faf985adc60a217d15a",
+   "pdf_url": "https://karlesmarin.github.io/papers/per-voice-fourier/per_voice_note.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/music",
+    "proof/lean"
+   ],
+   "serie": "music"
+  },
+  {
+   "rec": "20826774",
+   "concepto": "20826773",
+   "slug": "phase-taxonomy",
+   "titulo": "The phase taxonomy of pitch-class set invariants",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-24",
+   "pdf": "phase_taxonomy_note.pdf",
+   "md5": "1cb22013e48c1c2b9332700b4daf586e",
+   "pdf_url": "https://karlesmarin.github.io/papers/phase-taxonomy/phase_taxonomy_note.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/music",
+    "proof/lean"
+   ],
+   "serie": "music"
+  },
+  {
+   "rec": "22886541",
+   "concepto": "22886540",
+   "slug": "prescribed-moments-I",
+   "titulo": "Subsets of F_p with two prescribed moments, Part I: the pair (1,3) — a moment subset sum over F_p: exact counts of totally split squarefree polynomials with a non-consecutive pair of prescribed coefficients, and exactly when those counts are elementary",
+   "autores": [
+    "Carles Marin Munoz"
+   ],
+   "fecha": "2026-09-22",
+   "pdf": "P3c.pdf",
+   "md5": "eaf782d353ce58cf05d3a04289e36338",
+   "pdf_url": "https://karlesmarin.github.io/papers/prescribed-moments-I/P3c.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "mathematics/number-theory",
+    "proof/lean"
+   ],
+   "serie": "s-matrix-moments"
+  },
+  {
+   "rec": "22886543",
+   "concepto": "22886542",
+   "slug": "prescribed-moments-II",
+   "titulo": "Subsets of F_p with two prescribed moments, Part II: every exponent — the classification, the Cauchy-Liouville-Mirimanoff polynomials that decide the column n=3, and where this moment subset sum stops being PORC",
+   "autores": [
+    "Carles Marin Munoz"
+   ],
+   "fecha": "2026-09-22",
+   "pdf": "P3d.pdf",
+   "md5": "87fc278967c77ffe9b7b3fdd26fda865",
+   "pdf_url": "https://karlesmarin.github.io/papers/prescribed-moments-II/P3d.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "mathematics/number-theory",
+    "proof/lean",
+    "lab/browser-labs"
+   ],
+   "serie": "s-matrix-moments"
+  },
+  {
+   "rec": "23946239",
+   "concepto": "23783382",
+   "slug": "qsl-diagnostics",
+   "titulo": "Certified Speed-Limit Diagnostics for Deployed Superconducting Quantum Processors",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-04",
+   "pdf": "qsl-diagnostics.pdf",
+   "md5": "10bf0640ae6e190af27a7b3d169b185c",
+   "pdf_url": "https://karlesmarin.github.io/papers/qsl-diagnostics/qsl-diagnostics.pdf",
+   "areas": [
+    "physics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "physics/quantum-control",
+    "proof/lean",
+    "proof/isabelle",
+    "proof/certificates",
+    "lab/browser-labs"
+   ],
+   "serie": "quantum-hardware"
+  },
+  {
+   "rec": "24413664",
+   "concepto": "24387751",
+   "slug": "real-rational-integer",
+   "titulo": "Rational sums-of-squares lengths of biquadratic forms and orthogonal dilations",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-21",
+   "pdf": "lengths.pdf",
+   "md5": "0f0be3572f42737ded74816bccf93eb5",
+   "pdf_url": "https://karlesmarin.github.io/papers/real-rational-integer/lengths.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/real-algebraic-geometry",
+    "mathematics/combinatorics",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "bsr"
+  },
+  {
+   "rec": "23836450",
+   "concepto": "23836449",
+   "slug": "relay-floors",
+   "titulo": "Quantum state transfer through a lossy bus: fundamental error limits for every control pulse, with application to IBM's meter-scale interconnects",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-10-31",
+   "pdf": "relay-floors.pdf",
+   "md5": "9b073103b07d450f46eecc485751de12",
+   "pdf_url": "https://karlesmarin.github.io/papers/relay-floors/relay-floors.pdf",
+   "areas": [
+    "physics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "physics/quantum-control",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "quantum-hardware"
+  },
+  {
+   "rec": "24250503",
+   "concepto": "24250502",
+   "slug": "robust-offset",
+   "titulo": "Robust qubit–memory transfer against quasi-static frequency noise costs time and exposure: exact bounds from Dubins curves",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-15",
+   "pdf": "robust-offset.pdf",
+   "md5": "af2049cd1563ea824d5aff024ed00ee0",
+   "pdf_url": "https://karlesmarin.github.io/papers/robust-offset/robust-offset.pdf",
+   "areas": [
+    "physics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "physics/quantum-control",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "quantum-hardware"
+  },
+  {
+   "rec": "20787666",
+   "concepto": "20787665",
+   "slug": "runge-kutta-order",
+   "titulo": "What Order a Method Knows: certified Runge–Kutta order conditions over rooted trees, machine-checked in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-21",
+   "pdf": "runge-kutta-order-conditions-lean.pdf",
+   "md5": "f55b20635b47c704e31525bc9eddda9b",
+   "pdf_url": "https://karlesmarin.github.io/papers/runge-kutta-order/runge-kutta-order-conditions-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "mathematics/algebra",
+    "mathematics/analysis",
+    "proof/lean",
+    "proof/certificates"
+   ],
+   "serie": "rooted-trees"
+  },
+  {
+   "rec": "22848530",
+   "concepto": "22848529",
+   "slug": "s-matrix-orders-I",
+   "titulo": "The order generated by a column of the SU(n)_k S-matrix is locally a numerical semigroup ring (Part I)",
+   "autores": [
+    "Carles Marin Munoz"
+   ],
+   "fecha": "2026-09-19",
+   "pdf": "P3a.pdf",
+   "md5": "edf53fc92125c0589bbec138fdc6a393",
+   "pdf_url": "https://karlesmarin.github.io/papers/s-matrix-orders-I/P3a.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/number-theory",
+    "proof/lean"
+   ],
+   "serie": "s-matrix-moments"
+  },
+  {
+   "rec": "22864267",
+   "concepto": "22864266",
+   "slug": "s-matrix-orders-II",
+   "titulo": "The order generated by a column of the SU(n)_k S-matrix is locally a numerical semigroup ring (Part II)",
+   "autores": [
+    "Carles Marin Munoz"
+   ],
+   "fecha": "2026-09-20",
+   "pdf": "P3b.pdf",
+   "md5": "78ee467a1aeb6ae4aa3dc1b0a4948175",
+   "pdf_url": "https://karlesmarin.github.io/papers/s-matrix-orders-II/P3b.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/number-theory",
+    "proof/lean"
+   ],
+   "serie": "s-matrix-moments"
+  },
+  {
+   "rec": "21708812",
+   "concepto": "21463000",
+   "slug": "schur-o4-closed-form",
+   "titulo": "Schur Functions at (1,-1,t,t^{-1}): A Closed Form on the Non-Identity Component of O(4) (Part IV)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-30",
+   "pdf": "ghu_secondfixed.pdf",
+   "md5": "ac54b30a4f0768a73a05cb5fa511be82",
+   "pdf_url": "https://karlesmarin.github.io/papers/schur-o4-closed-form/ghu_secondfixed.pdf",
+   "areas": [
+    "physics",
+    "proof"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "proof/certificates"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "24036320",
+   "concepto": "24036319",
+   "slug": "segre-persistence-bsr",
+   "titulo": "Quadratic persistence of Segre varieties and a linear gap between biquadratic SOS rank and Zarankiewicz bounds",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-08",
+   "pdf": "qp_bsr.pdf",
+   "md5": "11c7ea20853ab6afd6bf63707b94e29d",
+   "pdf_url": "https://karlesmarin.github.io/papers/segre-persistence-bsr/qp_bsr.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/real-algebraic-geometry",
+    "mathematics/combinatorics",
+    "proof/lean",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "bsr"
+  },
+  {
+   "rec": "20385792",
+   "concepto": "20385791",
+   "slug": "self-similar-blowup",
+   "titulo": "Instability order and the selection mechanism of self-similar blowup in the Sabra shell model, and a family-type dichotomy of blowup universality",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-05-25",
+   "pdf": "sabra_blowup_selection.pdf",
+   "md5": "bcf3a9bacb61414df768ece2bf841535",
+   "pdf_url": "https://karlesmarin.github.io/papers/self-similar-blowup/sabra_blowup_selection.pdf",
+   "areas": [
+    "physics"
+   ],
+   "subareas": [
+    "physics/turbulence"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "21419285",
+   "concepto": "21419284",
+   "slug": "separation-canon",
+   "titulo": "When Separation Fails, a Canon Appears: One counting identity behind separation, synchronization, and symmetry-breaking in permutation groups, formalized in Lean 4 (Part I)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-17",
+   "pdf": "neumann-separation-lean.pdf",
+   "md5": "e47bff422c46b904deaa51885be4efb3",
+   "pdf_url": "https://karlesmarin.github.io/papers/separation-canon/neumann-separation-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "mathematics/algebra",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "20707348",
+   "concepto": "20707347",
+   "slug": "sturm",
+   "titulo": "The Staircase of Signs: Sturm's Root-Counting Theorem, Machine-Checked in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-15",
+   "pdf": "sturm-lean.pdf",
+   "md5": "ea2af49dc4a43ac52de08fcbc22c7ae8",
+   "pdf_url": "https://karlesmarin.github.io/papers/sturm/sturm-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/analysis",
+    "proof/lean"
+   ],
+   "serie": "real-roots-lean"
+  },
+  {
+   "rec": "22159037",
+   "concepto": "22159036",
+   "slug": "su7-certified-gap",
+   "titulo": "A Certified 2.68 TeV Gap in the Closed-Form Map of the Compactification Scale in SU(7) Grand Gauge-Higgs Unification, and the Invariant Its Two Observables Cannot See (Part VIII)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-08-29",
+   "pdf": "su7_reachable.pdf",
+   "md5": "8415a281c095164ba7d4c2624c0367ee",
+   "pdf_url": "https://karlesmarin.github.io/papers/su7-certified-gap/su7_reachable.pdf",
+   "areas": [
+    "physics",
+    "proof"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "proof/certificates",
+    "proof/lean",
+    "proof/isabelle"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "22033303",
+   "concepto": "22033302",
+   "slug": "su7-proton-decay",
+   "titulo": "Proton Decay in SU(7) Grand Gauge-Higgs Unification: An Obstruction, Its Minimal Escapes, and the One Row of Their Table 1 That Can Pay for Them (Part VI)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-08-20",
+   "pdf": "su7_proton_row.pdf",
+   "md5": "3939e4cc896ae69c7ba047fc8abd1af4",
+   "pdf_url": "https://karlesmarin.github.io/papers/su7-proton-decay/su7_proton_row.pdf",
+   "areas": [
+    "physics",
+    "proof"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "proof/certificates",
+    "proof/lean",
+    "proof/isabelle"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "22087252",
+   "concepto": "22087251",
+   "slug": "su7-scale-bound",
+   "titulo": "An Upper Bound on the Compactification Scale of SU(7) Grand Gauge-Higgs Unification, and the Dijet Angular Distribution That Tests It (Part VII)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-08-24",
+   "pdf": "su7_hierarchy.pdf",
+   "md5": "01959fc3ae4397f6ec4f5fa6676ba663",
+   "pdf_url": "https://karlesmarin.github.io/papers/su7-scale-bound/su7_hierarchy.pdf",
+   "areas": [
+    "physics",
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "physics/gauge-higgs",
+    "mathematics/analysis",
+    "proof/lean",
+    "proof/certificates"
+   ],
+   "serie": "ghu"
+  },
+  {
+   "rec": "23121105",
+   "concepto": "20862821",
+   "slug": "tonnetz-spectrum",
+   "titulo": "The Tonnetz spectrum is the generating triad's Fourier balance profile",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-10-03",
+   "pdf": "spectral_note.pdf",
+   "md5": "34efcdda194f9bcf7db1547aab9d11a8",
+   "pdf_url": "https://karlesmarin.github.io/papers/tonnetz-spectrum/spectral_note.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/music",
+    "mathematics/combinatorics",
+    "proof/lean"
+   ],
+   "serie": "music"
+  },
+  {
+   "rec": "24379538",
+   "concepto": "19826342",
+   "slug": "transformers-attend-I-full",
+   "titulo": "How Transformers Attend — Part I: Measured Profiles, Conditional Power-Law Models, and an Evidence Audit",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-19",
+   "pdf": "How_Transformers_Attend_Part_I_formal_EN.pdf",
+   "md5": "60d1ca98570623f8c17aeb5b76e6e3dc",
+   "pdf_url": "https://karlesmarin.github.io/papers/transformers-attend-I-full/How_Transformers_Attend_Part_I_formal_EN.pdf",
+   "areas": [
+    "computing",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "computing/transformers",
+    "proof/lean",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": "how-transformers-attend"
+  },
+  {
+   "rec": "19960573",
+   "concepto": "19960572",
+   "slug": "transformers-attend-II",
+   "titulo": "Predicting How Transformers Attend, Part II: A Six-Axis Decomposition with the Learned Imprint ν = -1/(2π), Sink-Dominated Precision Boundaries, Bimodal Phase Structure, and Honest Revisions",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-05-01",
+   "pdf": "Predicting How Transformers Attend_part2.pdf",
+   "md5": "eded1b9bdf23d6606530acbc0543bec5",
+   "pdf_url": "https://karlesmarin.github.io/papers/transformers-attend-II/Predicting%20How%20Transformers%20Attend_part2.pdf",
+   "areas": [
+    "computing",
+    "proof"
+   ],
+   "subareas": [
+    "computing/transformers",
+    "proof/lean"
+   ],
+   "serie": "how-transformers-attend"
+  },
+  {
+   "rec": "21288264",
+   "concepto": "21288263",
+   "slug": "transformers-attend-III",
+   "titulo": "Predicting How Transformers Attend, Part III: From Attention to Residual Computation — Separating Transport, Writing, and Commitment",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-10",
+   "pdf": "attend_part3.pdf",
+   "md5": "5bd4f8a3d5db0c97f7715bf1f92d0d87",
+   "pdf_url": "https://karlesmarin.github.io/papers/transformers-attend-III/attend_part3.pdf",
+   "areas": [
+    "computing",
+    "proof"
+   ],
+   "subareas": [
+    "computing/transformers",
+    "proof/lean"
+   ],
+   "serie": "how-transformers-attend"
+  },
+  {
+   "rec": "21470202",
+   "concepto": "21470201",
+   "slug": "transversal-matroids",
+   "titulo": "The Set That Says No: Transversal Matroids in Lean 4, a Tight-Set Proof of Augmentation, and the Canonical Obstruction It Makes Possible",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-07-21",
+   "pdf": "the-set-that-says-no.pdf",
+   "md5": "a61100106daabe37e34c054d3abe1a29",
+   "pdf_url": "https://karlesmarin.github.io/papers/transversal-matroids/the-set-that-says-no.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "20820962",
+   "concepto": "20820961",
+   "slug": "tritone-self-duality",
+   "titulo": "A tritone-centered self-duality: the set class 6-30 and its order-12 neo-Riemannian dual",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-24",
+   "pdf": "sixthirty_note.pdf",
+   "md5": "e43fd654ee73d5d862c6356a51c9eee1",
+   "pdf_url": "https://karlesmarin.github.io/papers/tritone-self-duality/sixthirty_note.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/music",
+    "proof/lean"
+   ],
+   "serie": "music"
+  },
+  {
+   "rec": "19199838",
+   "concepto": "19199837",
+   "slug": "universal-specialization-coordination-structure-in-language",
+   "titulo": "Universal Specialization-Coordination Structure in Language Model Training",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-03-24",
+   "pdf": "main.pdf",
+   "md5": "a198c1414a81d886e181822aa8286f09",
+   "pdf_url": "https://zenodo.org/records/19199838/files/main.pdf?download=1",
+   "areas": [
+    "computing"
+   ],
+   "subareas": [
+    "computing/transformers"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "20736336",
+   "concepto": "20736335",
+   "slug": "virtual-roots",
+   "titulo": "Roots That Are Always There: the Virtual Roots of a Real Polynomial, Machine-Checked in Lean 4",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-17",
+   "pdf": "virtual-roots-lean.pdf",
+   "md5": "048d01ec2436290ee0f79eae89dc4ae9",
+   "pdf_url": "https://karlesmarin.github.io/papers/virtual-roots/virtual-roots-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/analysis",
+    "proof/lean"
+   ],
+   "serie": "real-roots-lean"
+  },
+  {
+   "rec": "20648853",
+   "concepto": "20648488",
+   "slug": "walks-remember-cycles",
+   "titulo": "The Walks That Remember the Cycles: a machine-checked sharp gap law between the matching polynomial and the non-backtracking spectrum in Lean 4 (Part VI)",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-06-11",
+   "pdf": "gap-window-lean.pdf",
+   "md5": "31afb41b31bc0d6fd6b4b7497d31c5e7",
+   "pdf_url": "https://karlesmarin.github.io/papers/walks-remember-cycles/gap-window-lean.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/lean"
+   ],
+   "serie": "graph-walks-lean"
+  },
+  {
+   "rec": "22847375",
+   "concepto": "22847374",
+   "slug": "weighted-partial-sums",
+   "titulo": "Zeros of weighted partial sums of completely multiplicative functions: Dirichlet characters, the Euler factor at 2 and Conrey's sine series",
+   "autores": [
+    "Carles Marin Munoz"
+   ],
+   "fecha": "2026-09-19",
+   "pdf": "segmento_II.pdf",
+   "md5": "73201203082e7f621bc1cefcc29b7fc8",
+   "pdf_url": "https://karlesmarin.github.io/papers/weighted-partial-sums/segmento_II.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "mathematics/number-theory",
+    "proof/lean",
+    "proof/isabelle"
+   ],
+   "serie": ""
+  },
+  {
+   "rec": "23860725",
+   "concepto": "23778502",
+   "slug": "zl-three-blocks",
+   "titulo": "Why three blocks? The limited augmented Zarankiewicz number in fixed width",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-01",
+   "pdf": "zl_hollow_triangles.pdf",
+   "md5": "eec1ef500fc8474dc05b0593bacb96cf",
+   "pdf_url": "https://karlesmarin.github.io/papers/zl-three-blocks/zl_hollow_triangles.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/real-algebraic-geometry",
+    "mathematics/combinatorics",
+    "proof/lean",
+    "proof/isabelle",
+    "proof/certificates",
+    "lab/browser-labs"
+   ],
+   "serie": "bsr"
+  }
+ ],
+ "excluidos": [
+  {
+   "rec": "23090540",
+   "tipo": "Dataset",
+   "titulo": "Conductors of orders generated by character values of Sp(2m): programs and outputs"
+  },
+  {
+   "rec": "23085315",
+   "tipo": "Dataset",
+   "titulo": "Reading Iwasawa λ-invariants from Mahler matrices modulo p: programs, data and Lean files"
+  },
+  {
+   "rec": "22834099",
+   "tipo": "Software",
+   "titulo": "Computing the conductor and index of orders generated by character values: an exact, dependency-free Python tool for SU(n), Sp(2m) and GL(n) (segmento.py)"
+  }
+ ]
+}

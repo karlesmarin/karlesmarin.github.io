@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integer character values on the ρ-line of Sp(2m)</title>
+<meta name="description" content="Kostant&#x27;s element a P is one point of a line, and this paper is about the rest of it: which points give integer character values, when the character vanishes, and—in type C—what it is when it does not, sign included. Kostant&#x27;s 1976 paper singles out two elements of a compact simple group at which …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/characters-at-aP/">
+<meta name="citation_title" content="Integer character values on the ρ-line of Sp(2m)">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/11/09">
+<meta name="citation_online_date" content="2026/11/09">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/characters-at-aP/characters_at_aP.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/characters-at-aP/">
+<meta name="citation_doi" content="10.5281/zenodo.24073781">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.24073781">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="Weyl character formula; classical groups; characters at elements of finite order; Kostant element a_P; roots of unity; integrality; vanishing criterion; factorisation into dimensions; symplectic group; alcove; root system statistics; Galois-stable spectrum; exact computation; math.RT; math.CO">
+<meta name="DC.title" content="Integer character values on the ρ-line of Sp(2m)">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.24073781">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Integer character values on the ρ-line of Sp(2m)">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/characters-at-aP/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>Integer character values on the ρ-line of Sp(2m)</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-11-09">2026-11-09</time><span>Version 2</span><span>DOI <a href="https://doi.org/10.5281/zenodo.24073781">10.5281/zenodo.24073781</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:186">💠 Number theory &amp; characters</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">💠 Characters at torsion elements</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="characters_at_aP.pdf" title="PDF, 1.2 MB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.24073781" rel="noopener" title="10.5281/zenodo.24073781"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/24073781" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/characters-at-aP/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/characters-at-aP/index.html?lab=thm:clasif" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Labs (2)</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Formalizations/RepresentationTheory/Symplectic" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Lean</a><a class="pill pill-es" href="https://zenodo.org/records/24073781/files/characters_at_aP_es.pdf?download=1" rel="noopener" title="characters_at_aP_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p><strong>Kostant's element a<sub>P</sub> is one point of a line, and this paper is about the rest of it: which points give integer character values, when the character vanishes, and—in type C—what it is when it does not, sign included.</strong></p>
+
+<p>Kostant's 1976 paper singles out two elements of a compact simple group at which every character is 0 or ±1; one of them is a<sub>P</sub> = ρ(ζ<sub>t</sub>) with t = 2m+2. That element sits on the line θ ↦ exp(2πiθρ<sup>♯</sup>), and the argument that settles it—an argument about alcoves—needs ρ to be a regular point of the relevant arrangement. At the powers of lower order, a<sub>P</sub><sup>k</sup> with gcd(k, 2m+2) &gt; 1, it is not: ρ moves onto the walls, the argument degenerates, and the values that were 0 and ±1 run to 72 one power later in a group of rank three. Beyond q &gt; 2m no positive root of C<sub>m</sub> takes a value above 2ρ<sub>1</sub> = 2m, so regularity returns and the line has <em>three</em> regimes rather than two.</p>
+
+<p><strong>Three things are proved.</strong></p>
+
+<ol>
+<li><strong>A classification.</strong> Of all rational points g<sub>1/q</sub> of the line, exactly four families make <em>every</em> character of Sp(2m) an integer: q | 2m, q | 2m+1, q | 2m+2, and a sporadic q = 6 with m ≡ 1 (mod 3). Integrality forces the characteristic polynomial of the natural representation into <strong>Z</strong>[X], so the spectrum must be stable under the Galois group; classifying the stable spectra is then elementary. The necessity also follows from the field computation of Gannon–Schopieray (2019). The powers of a<sub>P</sub> are the family q | 2m+2 — one case of a list, not the boundary of what can be said.</li>
+<li><strong>A vanishing criterion.</strong> With ℓ = λ+ρ and N<sub>q</sub>(x) = #{α &gt; 0 : q | (x,α)}, the character is non-zero exactly when N<sub>q</sub>(ℓ) = N<sub>q</sub>(ρ). The count can never come out below; equality is the whole condition.</li>
+<li><strong>The value, in type C, for every power and with its sign:</strong> χ<sub>λ</sub>(a<sub>P</sub><sup>k</sup>) = (−1)<sup>E<sub>p,q</sub>(λ)</sup> Z<sub>q</sub>(λ+ρ)/Z<sub>q</sub>(ρ) on the surviving weights and 0 elsewhere, with Z<sub>q</sub> a product of root statistics and E<sub>p,q</sub> a sum of floors. That modulus <strong>factors as κ(λ) ∈ {1, 2} times a product of dimensions of irreducible representations of GL<sub>n</sub>, Sp<sub>2n</sub> and SO<sub>2n+1</sub></strong>, one per folded class. A closed count of the surviving weights follows for every q, and G<sub>2</sub> is settled in closed form at q = 3.</li>
+</ol>
+
+<p><strong>What is not new, stated plainly.</strong> At a<sub>P</sub> <em>itself</em>, nothing here is new. The criterion and its sign are Corollary 3.2 of Cellini–Möseneder Frajria–Papi (2007), in every type and on this very line; read on coroots the count is Corollary 3.7 of Nadimpalli–Pattanayak–Prasad; the principal specialisation the argument runs on is classical; and at q = 2 the factorisation into dimensions has the two-block form of Theorem 5.1 of Karmakar. The paper carries a table that says, line by line, which statement is whose. What is done here is the <em>powers</em>, where ρ is no longer regular — and, in type C, the exact value with its sign, the factorisation into dimensions at q ≥ 3, and the closed count.</p>
+
+<p><strong>What is formalized, and what is not.</strong> In Lean 4 with Mathlib (repository karlesmarin/formalizations, commit 6283de8, no <code>sorry</code>, standard axioms only): the type-C<sub>m</sub> statements on the root products F<sub>x</sub> and their quotient Q — including that F<sub>ρ</sub> divides F<sub>ℓ</sub> over any commutative ring — the spectral classification behind the first theorem, and, stated for Q(ζ), the criterion, the value with its sign and the factorisation into dimensions in both parities. Outside Lean: the identification of Q(ζ) with the character (Weyl's formula), the equivalence between spectral and character integrality, that the ν<sup>(c)</sup> are partitions, and the step from a dominant λ to ℓ. The paper's section “Formalization” gives the scope statement by statement, and the companion site links every statement to its declarations.</p>
+
+<p><strong>Every number is checked, and the checks travel.</strong> The floating-point checks of version 1 are replaced by exact certificates (C1–C4: Laurent-polynomial identities, arithmetic in <strong>Z</strong>[ζ<sub>q</sub>] and the row lemma), each with a control built to fail. Eleven verification gates — on the figures, the formulas, the numbering, the cited attributions, the bibliography, the EN/ES parity and the overlap with the author's own arXiv:2609.02630 — run over the document itself, each with a control. The ancillary archive carries 107 files: the scripts that produce every framed formula and every count, the certificates and the gates, together with their archived output.</p>
+
+<p><strong>Version 2</strong> adds the Lean formalization, the exact certificates, the companion site, and corrections throughout (attributions checked against the sources, the scope of every claim). <strong>Included:</strong> the paper in English (36 pp) and Spanish (37 pp), and the ancillary archive of scripts and their runs.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="characters_at_aP.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (1.2 MB)</a></p>
+    <p class="note">Identical to the file characters_at_aP.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Integer character values on the ρ-line of Sp(2m). Zenodo, 2026. doi:10.5281/zenodo.24073781</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026integer,
+  author    = {Carles Marín Muñoz},
+  title     = {Integer character values on the ρ-line of Sp(2m)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24073781},
+  url       = {https://doi.org/10.5281/zenodo.24073781}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/24073781">Zenodo</a></p></footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three Gates to a Quark Generation: An Exact Criterion for Which SU(4) Representations Contain the Standard Model (Part II)</title>
+<meta name="description" content="The companion paper (Part I, DOI 10.5281/zenodo.21432625) embedded a full Standard-Model quark generation in the dimension-60 representation (3, 60 ) of SU(4) on T²/Z₂ and showed, by an exhaustive scan, that (3, 60 ) is the smallest representation able to do so. This Part II turns that scanned fact …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/ghu-quark-generation/">
+<meta name="citation_title" content="Three Gates to a Quark Generation: An Exact Criterion for Which SU(4) Representations Contain the Standard Model (Part II)">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/07/21">
+<meta name="citation_online_date" content="2026/07/21">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/ghu-quark-generation/ghu_cell.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/ghu-quark-generation/">
+<meta name="citation_doi" content="10.5281/zenodo.21466369">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.21466369">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="gauge-Higgs unification; orbifold; SU(4); Standard Model quarks; representation theory; Levi branching; Clebsch-Gordan; Littlewood-Richardson; centre charge; n-ality; Pati-Salam; hypercharge; classification; exact computation; extra dimensions; high-energy physics; hep-ph; hep-th">
+<meta name="DC.title" content="Three Gates to a Quark Generation: An Exact Criterion for Which SU(4) Representations Contain the Standard Model (Part II)">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.21466369">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Three Gates to a Quark Generation: An Exact Criterion for Which SU(4) Representations Contain the Standard Model (Part II)">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/ghu-quark-generation/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:36">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Physics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(0 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(60 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(120 12 12)" stroke-width="1.3"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span>Physics</p>
+    <h1>Three Gates to a Quark Generation: An Exact Criterion for Which SU(4) Representations Contain the Standard Model (Part II)</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-07-21">2026-07-21</time><span>Version v2</span><span>DOI <a href="https://doi.org/10.5281/zenodo.21466369">10.5281/zenodo.21466369</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:36">🌌 Gauge–Higgs unification</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag tag-serie">🌌 Gauge–Higgs unification series</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="ghu_cell.pdf" title="PDF, 505 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.21466369" rel="noopener" title="10.5281/zenodo.21466369"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/21466369" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/21466369/files/ghu_cell_es.pdf?download=1" rel="noopener" title="ghu_cell_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>The companion paper (Part I, DOI 10.5281/zenodo.21432625) embedded a full Standard-Model quark generation in the dimension-60 representation (3,<strong>60</strong>) of SU(4) on T²/Z₂ and showed, by an exhaustive scan, that (3,<strong>60</strong>) is the <em>smallest</em> representation able to do so. This Part II turns that scanned fact into an exact law: <em>which</em> SU(4) representations can hold a quark generation, and why only those.</p><p>An irreducible representation with Dynkin labels (a,b,c) contains the Standard-Model quark cell {Q(2,1/6), u(1,2/3), d(1,−1/3)} in its T²/Z₂ chiral zero modes <strong>if and only if</strong> (a+2b+3c) is odd ∧ b≥1 ∧ a+b+c≥3 — an arithmetic condition (the Z₄ centre charge), a geometric one (the middle node of SU(4) excited), and a size one. We derive the criterion by deleting the middle node of the SU(4) Dynkin diagram, exposing a Levi subgroup SU(2)ₗ×SU(2)ₕ×U(1), and projecting the resulting Clebsch–Gordan tower onto the orbifold's chiral zero modes; the projection collapses the tower to a closed-form zero-mode count N = (b+1)(a+c+1)/2.</p><p>We are explicit about credit: the centre gate is classical, the branching is Littlewood–Richardson, and the midpoint property (the doublet's 1/6 is the mean of the singlets' 2/3 and −1/3) reflects the Pati–Salam hypercharge relation. What is new is the orbifold chiral projection that yields the closed count, the packaged three-gate criterion, and the reading of the ±1/2 cell as the invariant. A node-independence lemma (a simply-laced / Weyl-orbit fact) is included. Finally we place SU(4) in a family: the cell imposes three charge constraints on a hypercharge functional with rank(G)−1 free parameters, so it is a <em>rigid</em> obstruction exactly at rank 3 — SU(4) is the marginal case, and for higher rank a generic representation admits; the same counting explains why a pinned hypercharge in higher-rank models leaves quarks with integer charges and forces them onto a brane.</p><p>Every count is machine-checked in exact rational arithmetic (SageMath): the criterion is verified against the direct construction on all representations to dimension 900. English and Spanish versions are included, with the exact scripts. The computations were carried out and cross-checked with Claude (Anthropic) as an AI research assistant against a common machine-verifiable ground truth.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="ghu_cell.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (505 kB)</a></p>
+    <p class="note">Identical to the file ghu_cell.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Three Gates to a Quark Generation: An Exact Criterion for Which SU(4) Representations Contain the Standard Model (Part II). Zenodo, 2026. doi:10.5281/zenodo.21466369</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026three,
+  author    = {Carles Marín Muñoz},
+  title     = {Three Gates to a Quark Generation: An Exact Criterion for Which SU(4) Representations Contain the Standard Model (Part II)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21466369},
+  url       = {https://doi.org/10.5281/zenodo.21466369}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/21466369">Zenodo</a></p></footer>
+</body>
+</html>

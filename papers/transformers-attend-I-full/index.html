@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Transformers Attend — Part I: Measured Profiles, Conditional Power-Law Models, and an Evidence Audit</title>
+<meta name="description" content="Revised Part I of How Transformers Attend (19 November 2026). The 129-page English paper and 140-page Spanish translation distinguish measured attention profiles, conditional finite power-law calculations, configuration candidates and task outcomes. The Spanish edition uses Babel; its 2,272 …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/transformers-attend-I-full/">
+<meta name="citation_title" content="How Transformers Attend — Part I: Measured Profiles, Conditional Power-Law Models, and an Evidence Audit">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/11/19">
+<meta name="citation_online_date" content="2026/11/19">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/transformers-attend-I-full/How_Transformers_Attend_Part_I_formal_EN.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/transformers-attend-I-full/">
+<meta name="citation_doi" content="10.5281/zenodo.24379538">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.24379538">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="transformers; attention measurement; RoPE; power-law candidate; maximum entropy; KV cache; formal verification; Isabelle; Lean; instrument bias; reproducibility">
+<meta name="DC.title" content="How Transformers Attend — Part I: Measured Profiles, Conditional Power-Law Models, and an Evidence Audit">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.24379538">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Transformers Attend — Part I: Measured Profiles, Conditional Power-Law Models, and an Evidence Audit">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/transformers-attend-I-full/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:268">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Computing · AI-LLM" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="1"><rect x="3.0" y="3.0" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="6.7" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="6.7" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="10.4" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="14.1" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="17.8" y="17.8" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/></g></svg></span>Computing · AI-LLM</p>
+    <h1>How Transformers Attend — Part I: Measured Profiles, Conditional Power-Law Models, and an Evidence Audit</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-11-19">2026-11-19</time><span>Version 4 (formal revision)</span><span>DOI <a href="https://doi.org/10.5281/zenodo.24379538">10.5281/zenodo.24379538</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:268">🤖 Transformers &amp; LLM</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag" style="--h:148">🦉 Isabelle/HOL</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">🤖 How Transformers Attend</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="How_Transformers_Attend_Part_I_formal_EN.pdf" title="PDF, 1.4 MB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.24379538" rel="noopener" title="10.5281/zenodo.24379538"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/24379538" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/transformers-attend-I-full/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/transformers-attend-I-full/index.html?lab=def:dead_active" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Labs (4)</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Isabelle/TransformerAttentionPartI" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Isabelle + Lean</a><a class="pill pill-es" href="https://zenodo.org/records/24379538/files/How_Transformers_Attend_Part_I_formal_ES.pdf?download=1" rel="noopener" title="How_Transformers_Attend_Part_I_formal_ES.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>Revised Part I of <em>How Transformers Attend</em> (19 November 2026). The 129-page English paper and 140-page Spanish translation distinguish measured attention profiles, conditional finite power-law calculations, configuration candidates and task outcomes. The Spanish edition uses Babel; its 2,272 mathematical spans, labels, references and numerical items were checked against the English source.</p><p>The paper integrates eight groups of conditional mathematical results. The accompanying Isabelle source verifies stated mathematical implications; Lean covers parts of four body results. These proofs do not establish a universal learned attention exponent, circuit causality or quality after KV compression. Historical interventions and instrument biases are reported with their limits.</p><p>This version deposits both full-paper PDFs, a separate Spanish theorem note, SHA-256 receipts and one source/data/program/proof archive (840 files, including 198 programs and 423 data files). A historical D3 result JSON is unavailable and is explicitly not reconstructed. The companion <a href="https://karlesmarin.github.io/blueprints/transformers-attend-I-full/" rel="noopener">Blueprint</a> maps the statements and four illustrative labs. The <a href="https://karlesmarin.github.io/transformers-guide/" rel="noopener">field guide</a> gives measurement and application routes; <a href="https://karlesmarin.github.io/tafagent/" rel="noopener">TAF Agent</a> calculates candidates or imports protocol-bound observations. The author remains responsible for the research and claims.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="How_Transformers_Attend_Part_I_formal_EN.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (1.4 MB)</a></p>
+    <p class="note">Identical to the file How_Transformers_Attend_Part_I_formal_EN.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, How Transformers Attend — Part I: Measured Profiles, Conditional Power-Law Models, and an Evidence Audit. Zenodo, 2026. doi:10.5281/zenodo.24379538</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026how,
+  author    = {Carles Marín Muñoz},
+  title     = {How Transformers Attend — Part I: Measured Profiles, Conditional Power-Law Models, and an Evidence Audit},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24379538},
+  url       = {https://doi.org/10.5281/zenodo.24379538}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/24379538">Zenodo</a></p></footer>
+</body>
+</html>

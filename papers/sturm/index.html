@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Staircase of Signs: Sturm&#x27;s Root-Counting Theorem, Machine-Checked in Lean 4</title>
+<meta name="description" content="A machine-checked, sorry -free formalization, in Lean 4 over Mathlib, of Sturm&#x27;s theorem (1829): for a squarefree real polynomial p and an interval ( a , b ] whose endpoints are not roots, the number of distinct real roots of p in ( a , b ] equals V( a ) − V( b ), where V( x ) is the number of sign …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/sturm/">
+<meta name="citation_title" content="The Staircase of Signs: Sturm&#x27;s Root-Counting Theorem, Machine-Checked in Lean 4">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/06/15">
+<meta name="citation_online_date" content="2026/06/15">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/sturm/sturm-lean.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/sturm/">
+<meta name="citation_doi" content="10.5281/zenodo.20707348">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.20707348">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="Lean 4; Mathlib; formalization of mathematics; interactive theorem proving; machine-checked proof; Sturm&#x27;s theorem; Sturm sequence; real root counting; sign variation; Descartes&#x27; rule of signs; signed remainder sequence; real-closed fields">
+<meta name="DC.title" content="The Staircase of Signs: Sturm&#x27;s Root-Counting Theorem, Machine-Checked in Lean 4">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.20707348">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Staircase of Signs: Sturm&#x27;s Root-Counting Theorem, Machine-Checked in Lean 4">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/sturm/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>The Staircase of Signs: Sturm&#x27;s Root-Counting Theorem, Machine-Checked in Lean 4</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-06-15">2026-06-15</time><span></span><span>DOI <a href="https://doi.org/10.5281/zenodo.20707348">10.5281/zenodo.20707348</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:186">📉 Analysis &amp; real roots</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag tag-serie">📉 Real roots, machine-checked</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="sturm-lean.pdf" title="PDF, 462 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.20707348" rel="noopener" title="10.5281/zenodo.20707348"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/20707348" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/20707348/files/sturm-lean-es.pdf?download=1" rel="noopener" title="sturm-lean-es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>A machine-checked, <code>sorry</code>-free formalization, in Lean 4 over Mathlib, of <strong>Sturm's theorem</strong> (1829): for a squarefree real polynomial <em>p</em> and an interval (<em>a</em>,<em>b</em>] whose endpoints are not roots, the number of <em>distinct</em> real roots of <em>p</em> in (<em>a</em>,<em>b</em>] equals V(<em>a</em>) − V(<em>b</em>), where V(<em>x</em>) is the number of sign changes of the <em>Sturm sequence</em> <em>p</em>, <em>p</em>′, −(<em>p</em> mod <em>p</em>′), … evaluated at <em>x</em> (zeros discarded). No root is ever located; two integers are subtracted.</p><p>The mathematics is entirely classical and the result has been formalized before in other systems (Coq, by Cohen, within the construction of the real algebraic numbers; Isabelle/HOL, by Eberl, and in the Sturm–Tarski form by Li and Paulson; and HOL Light). To the best of the author's knowledge — based on searches of Loogle and Mathlib in June 2026 — this is the <strong>first proof of Sturm's theorem in Lean</strong>; it is a first-in-Lean and not a first-in-any-system. The contribution is therefore the formalization itself together with its reusable machinery: a small theory of sign variation, an inductive <em>flank-reduction</em> relation (<code>FlankReduce</code>) that decouples the chain's combinatorics from its algebra, and the local-to-global passage from a single root crossing to the interval count. A by-product is that Mathlib's existing count of coefficient sign variations (Descartes' rule, <code>Polynomial.signVariations</code>) and the count used here are, after unfolding, the same function — so the toolkit transfers verbatim to Descartes.</p><p>The headline theorem <code>Sturm.sturm</code> depends only on the three standard axioms <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>; no <code>native_decide</code> and no custom axiom. The whole proof is a single file (<code>Sturm.lean</code>, about 1,220 lines, ~60 declarations) depending on Mathlib alone. Scope, stated plainly: the theorem is proved for squarefree <em>p</em> over the reals; the passage to <em>p</em>/gcd(<em>p</em>,<em>p</em>′) for arbitrary polynomials is not formalized here. English and Spanish editions are included.</p><p>Formalized with AI assistance (Claude, Anthropic); the mathematics and all claims are the author's responsibility, and the Lean kernel — not the assistant — certifies the proofs.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="sturm-lean.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (462 kB)</a></p>
+    <p class="note">Identical to the file sturm-lean.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, The Staircase of Signs: Sturm&#x27;s Root-Counting Theorem, Machine-Checked in Lean 4. Zenodo, 2026. doi:10.5281/zenodo.20707348</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026the,
+  author    = {Carles Marín Muñoz},
+  title     = {The Staircase of Signs: Sturm&#x27;s Root-Counting Theorem, Machine-Checked in Lean 4},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20707348},
+  url       = {https://doi.org/10.5281/zenodo.20707348}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/20707348">Zenodo</a></p></footer>
+</body>
+</html>

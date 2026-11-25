@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Machine-Checked Backbone for the Thermodynamic Attention Framework: Lean/Mathlib Identities, Zero Sorries, and the Errata the Prover Caught</title>
+<meta name="description" content="Companion formalization paper to the “Predicting How Transformers Attend” series (Marín 2026), Parts I–III. The Thermodynamic Attention Framework (TAF) rests on a dense web of closed-form algebraic identities — a Möbius transform relating the attention-decay exponent γ to the RoPE configuration, a …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/attention-lean-backbone/">
+<meta name="citation_title" content="A Machine-Checked Backbone for the Thermodynamic Attention Framework: Lean/Mathlib Identities, Zero Sorries, and the Errata the Prover Caught">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/07/10">
+<meta name="citation_online_date" content="2026/07/10">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/attention-lean-backbone/attend_formalization.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/attention-lean-backbone/">
+<meta name="citation_doi" content="10.5281/zenodo.21299266">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.21299266">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="formal verification; machine-checked proof; Lean 4; Mathlib; Thermodynamic Attention Framework; attention mechanism; attention decay; gamma exponent; Mobius transform; renormalization group; beta function; Hagedorn heat capacity; critical exponents; Pade approximant; RoPE; adversarial audit; errata; honest revision; interpretability; transformer; LLM">
+<meta name="DC.title" content="A Machine-Checked Backbone for the Thermodynamic Attention Framework: Lean/Mathlib Identities, Zero Sorries, and the Errata the Prover Caught">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.21299266">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Machine-Checked Backbone for the Thermodynamic Attention Framework: Lean/Mathlib Identities, Zero Sorries, and the Errata the Prover Caught">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/attention-lean-backbone/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:268">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Computing · AI-LLM" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="1"><rect x="3.0" y="3.0" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="6.7" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="6.7" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="10.4" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="14.1" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="17.8" y="17.8" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/></g></svg></span>Computing · AI-LLM</p>
+    <h1>A Machine-Checked Backbone for the Thermodynamic Attention Framework: Lean/Mathlib Identities, Zero Sorries, and the Errata the Prover Caught</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-07-10">2026-07-10</time><span>Version v1</span><span>DOI <a href="https://doi.org/10.5281/zenodo.21299266">10.5281/zenodo.21299266</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:268">🤖 Transformers &amp; LLM</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag tag-serie">🤖 How Transformers Attend</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="attend_formalization.pdf" title="PDF, 335 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.21299266" rel="noopener" title="10.5281/zenodo.21299266"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/21299266" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/21299266/files/attend_formalization_es.pdf?download=1" rel="noopener" title="attend_formalization_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>Companion <em>formalization</em> paper to the “Predicting How Transformers Attend” series (Marín 2026), Parts I–III. The Thermodynamic Attention Framework (TAF) rests on a dense web of closed-form algebraic identities — a Möbius transform relating the attention-decay exponent γ to the RoPE configuration, a renormalisation-group β-function, a Hagedorn heat-capacity C<sub>V</sub>, critical-exponent tautologies, and a Cayley fixed point. Dense formula tables are exactly where sign and factor errors hide.</p><p>We mechanise this backbone in Lean 4 / Mathlib: <strong>52 theorems, zero <code>sorry</code>s</strong>, each statement pinned to the paper section it supports. Formalization is used here not as decoration but as an <em>adversarial audit</em> — and it earned its keep: it caught three factor/sign errors in the published formula tables (the V/β potential, off by a factor of 2; the C<sub>V</sub> coefficient at the Hagedorn point, ¼ → 1/12, a factor of 3; and the critical-exponent identity η = 2γ, residual non-zero throughout Phase A), and it distinguished a genuine <em>prediction</em> from a <em>tautology</em> by proving that the “information horizon” d<sub>horizon</sub> = T is an identity of the Padé formula, not an empirical coincidence.</p><p>It also yields two positive results: the γ–Möbius collapse γ = (1−u)/(1+u) with u = T/(θ√2) (the √2 is load-bearing), and an arithmetic–geometric-mean bound γ<sub>χ</sub> ≥ 2√2. All errata were incorporated into the corrected Parts I–II; this paper is the honest-revision ledger, machine-checked line by line.</p><p>Repository: <a href="https://github.com/karlesmarin/lean-taf" rel="noopener">github.com/karlesmarin/lean-taf</a> (Lean toolchain leanprover/lean4:v4.30.0-rc2; Mathlib pinned; <code>lake build</code> re-verifies the whole library). English and Spanish editions included. Prepared with the assistance of an AI system (Claude, Anthropic); the mathematics and all claims are the author's responsibility.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="attend_formalization.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (335 kB)</a></p>
+    <p class="note">Identical to the file attend_formalization.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, A Machine-Checked Backbone for the Thermodynamic Attention Framework: Lean/Mathlib Identities, Zero Sorries, and the Errata the Prover Caught. Zenodo, 2026. doi:10.5281/zenodo.21299266</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026a,
+  author    = {Carles Marín Muñoz},
+  title     = {A Machine-Checked Backbone for the Thermodynamic Attention Framework: Lean/Mathlib Identities, Zero Sorries, and the Errata the Prover Caught},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21299266},
+  url       = {https://doi.org/10.5281/zenodo.21299266}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/21299266">Zenodo</a></p></footer>
+</body>
+</html>

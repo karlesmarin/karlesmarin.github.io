@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schur Functions at (1,-1,t,t^{-1}): A Closed Form on the Non-Identity Component of O(4) (Part IV)</title>
+<meta name="description" content="For every partition with at most four rows, the Schur function sλ(1,−1,t,t⁻¹) is either zero or ± a product of exactly three SU(2) characters read off the 2-quotient of λ — with no hypothesis on the shape of λ. Part III (concept DOI 10.5281/zenodo.21438226) classified which SU(4) representations …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/schur-o4-closed-form/">
+<meta name="citation_title" content="Schur Functions at (1,-1,t,t^{-1}): A Closed Form on the Non-Identity Component of O(4) (Part IV)">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/07/30">
+<meta name="citation_online_date" content="2026/07/30">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/schur-o4-closed-form/ghu_secondfixed.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/schur-o4-closed-form/">
+<meta name="citation_doi" content="10.5281/zenodo.21708812">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.21708812">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="Schur function; symmetric functions; character factorization; orthogonal group; non-identity component; 2-quotient; core and quotient; SU(2) characters; bialternant; Jacobi-Trudi; log-concavity; discrete box spline; cumulants; Casimir invariants; invariant ring; gauge-Higgs unification; Wilson line; exact computation; math.CO; math.RT; hep-th">
+<meta name="DC.title" content="Schur Functions at (1,-1,t,t^{-1}): A Closed Form on the Non-Identity Component of O(4) (Part IV)">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.21708812">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Schur Functions at (1,-1,t,t^{-1}): A Closed Form on the Non-Identity Component of O(4) (Part IV)">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/schur-o4-closed-form/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:36">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Physics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(0 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(60 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(120 12 12)" stroke-width="1.3"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span>Physics</p>
+    <h1>Schur Functions at (1,-1,t,t^{-1}): A Closed Form on the Non-Identity Component of O(4) (Part IV)</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-07-30">2026-07-30</time><span>Version v4</span><span>DOI <a href="https://doi.org/10.5281/zenodo.21708812">10.5281/zenodo.21708812</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:36">🌌 Gauge–Higgs unification</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag tag-serie">🌌 Gauge–Higgs unification series</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="ghu_secondfixed.pdf" title="PDF, 641 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.21708812" rel="noopener" title="10.5281/zenodo.21708812"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/21708812" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/21708812/files/ghu_secondfixed_es.pdf?download=1" rel="noopener" title="ghu_secondfixed_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p><strong>For every partition with at most four rows, the Schur function sλ(1,−1,t,t⁻¹) is either zero or ± a product of exactly three SU(2) characters read off the 2-quotient of λ — with no hypothesis on the shape of λ.</strong></p><p>Part III (concept DOI 10.5281/zenodo.21438226) classified which SU(4) representations have identically-vanishing character on the non-identity component of O(4), and exported the underlying question about symmetric functions. This Part IV answers it with a closed form, of which that vanishing classification is exactly the zero locus. The alphabet {1,−1,t,t⁻¹} is the generic semisimple element of the determinant-−1 component of O(4); it sits between the reciprocal-pair factorisation programme of Ciucu–Krattenthaler and Ayyer–Behrend and the root-of-unity line of Littlewood, Prasad, Ayyer–Kumari and Karmakar, and belongs to neither. The obstruction that kept it untreated is one unstated hypothesis: the block argument needs every inversion-fixed point of the alphabet to contribute a <em>constant</em> row of the bialternant, which +1 does and −1 does not. Replacing the two fixed-point rows by even/odd column indicators repairs the argument at rank one, and not at rank two, which is where we stop and say so.</p><p><strong>The actual result is a reduction, not the identity.</strong> Conditionally on the closed form, every quantity that survives Part III's leading cancellation — the whole tower of even moments of the twist-imbalance distribution δ(m) — factors through three integers read off the 2-quotient: Φ = F ∘ Q. An arbitrarily large four-row partition is compressed to (p,q,r) with no loss of anything the physics can see, and weight enumeration is replaced by explicit polynomial formulae. The normalised moment tower lives in the invariant ring ℚ[Cₚ,Cₔ,C₟]^{S₃} of the three SU(2) Casimirs; in particular the variance is one third of the sum of the three Casimirs.</p><p><strong>Status, stated exactly.</strong> The closed form is an <em>Observation</em>: verified exhaustively by two independent implementations on all 3060 partitions with four parts ≤14 and all 4845 with parts ≤16, with no mismatch, against the bialternant in exact integer arithmetic — and <em>not proved</em>. The zero-locus statement is a Proposition, proved independently in Part III. Everything else is graded in the paper as Proposition, Observation, Inherited, or Open, and the grades are not blurred.</p><p><strong>Honesty ledger.</strong> Several ingredients are classical and we claim none of them: that log-concavity is preserved under convolution (Hoggar 1974) and gives a unimodal spectrum (Stanley 1989); that the coefficient sequence is a threefold discrete-uniform convolution whose moments are polynomial, because cumulants of a discrete uniform are polynomial in its width and add (Neuschel; Bradley–Gupta); and that the distribution has a piecewise-polynomial closed form by inclusion–exclusion (De Moivre; André 1876; Comtet; the object is a discrete box spline, Dahmen–Micchelli 1988). The involution character value reproduced along the way is Karmakar (arXiv:2412.17324); read in full for version 3, his Thm. 1A <em>is</em> the first branch of the zero locus and his Thm. 1B is the 2-quotient factorisation at t = 1, so only free t is ours there. The mechanism — characters of a disconnected group on a non-identity component, that is, twining characters — is Jantzen (1977) and Kumar–Lusztig–Prasad (2009), cited from version 3 onward; the surrounding programme is Nadimpalli–Pattanayak–Prasad (arXiv:2504.14684). Ours are: the closed form itself at free t, the fixed-point-pair repair, the second branch of the zero locus, the reduction Φ = F ∘ Q, and the Casimir reading of the moments. Rank two is open, and the shape of what is missing there is stated precisely enough to be attacked.</p><p><strong>Version 4 (30 July 2026).</strong> One claim is withdrawn, one is proved, and one is new. <em>Withdrawn:</em> versions 1–3 offered the rank-two partition (3,2,2,1,1,0) as a third cause of vanishing, and it is not one — written with the six parts rank two requires it is self-complementary of odd width, which is the second cause exactly; and that cause is not confined to rank one, since the folklore argument uses only that the alphabet is inversion-stable with determinant −1. The dichotomy is therefore forced rather than provisional, and the reason is two lines that were available all along: two of the three factors can never vanish, so the size-three profile never does. <em>New:</em> the reduction Φ = F ∘ Q is invertible in closed form — three moments return the three integers, because M₀² = ∏(Cₖ+1) means M₀ is not a normalisation but carries the third symmetric function — and the sign ζ, which versions 1–3 could not interpret, is the sign of the parity index n₊ − n₋ of the orbifold involution on Vλ, whose magnitude is the volume of the box: (p+1)(q+1)(r+1) = |n₊ − n₋|. The vanishing criterion is thus the statement that the orbifold projection is exactly balanced. <em>Corrections:</em> the symbol ζ carried two meanings between sections 3 and 5, which differ on 700 of 3060 partitions; the counts 560 = 420 + 140 are by mechanism, while the two λ-shorthands split the same 560 as 420 and 240 with 100 in both; the zero-locus plate is redrawn over the range the text quotes; and one count printed since version 1 (“0 of 105 cases”) proved unreproducible and is restated with its range as 0 of 109.</p><p><strong>Included:</strong> the paper in English and Spanish, each with its own four plates; the figure generators; and seven verification runs with their archived output, so that every number printed in the paper can be located in a saved run rather than taken on trust. The scripts check the closed form, the sign, the index identity, the inversion, and the four counts that had no archived run before this version, each against the bialternant in exact rational arithmetic and each with a control built to fail.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="ghu_secondfixed.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (641 kB)</a></p>
+    <p class="note">Identical to the file ghu_secondfixed.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Schur Functions at (1,-1,t,t^{-1}): A Closed Form on the Non-Identity Component of O(4) (Part IV). Zenodo, 2026. doi:10.5281/zenodo.21708812</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026schur,
+  author    = {Carles Marín Muñoz},
+  title     = {Schur Functions at (1,-1,t,t^{-1}): A Closed Form on the Non-Identity Component of O(4) (Part IV)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21708812},
+  url       = {https://doi.org/10.5281/zenodo.21708812}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/21708812">Zenodo</a></p></footer>
+</body>
+</html>

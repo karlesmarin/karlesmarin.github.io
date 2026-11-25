@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Alphabet of Orbifold Boundary Conditions: a boundary condition is a representation, and the alphabet is forced by the fixed-point counts (Part IX-A)</title>
+<meta name="description" content="Each count of orbifold boundary conditions has so far been a separate piece of work, because the boundary conditions were a list of matrices to be found per orbifold. They are not a list. An orbifold boundary condition is an action on the gauge fields; in the inner, zero-flux sector it admits a …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/orbifold-alphabet/">
+<meta name="citation_title" content="The Alphabet of Orbifold Boundary Conditions: a boundary condition is a representation, and the alphabet is forced by the fixed-point counts (Part IX-A)">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/09/02">
+<meta name="citation_online_date" content="2026/09/02">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/orbifold-alphabet/orbifold_alphabet.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/orbifold-alphabet/">
+<meta name="citation_doi" content="10.5281/zenodo.22254862">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.22254862">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="gauge-Higgs unification; orbifold; boundary conditions; space group; Clifford theory; equivalence classes; extra dimensions; Wilson line; certified computation; exact arithmetic; reproducibility; Möbius inversion; induced representations; Frobenius-Schur; symplectic group; cyclotomic field; Latimer-MacDuffee; crystallographic restriction; class number; table of marks; equivariant bundle; &#x27;t Hooft flux">
+<meta name="DC.title" content="The Alphabet of Orbifold Boundary Conditions: a boundary condition is a representation, and the alphabet is forced by the fixed-point counts (Part IX-A)">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.22254862">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Alphabet of Orbifold Boundary Conditions: a boundary condition is a representation, and the alphabet is forced by the fixed-point counts (Part IX-A)">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/orbifold-alphabet/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:36">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Physics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(0 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(60 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(120 12 12)" stroke-width="1.3"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span>Physics</p>
+    <h1>The Alphabet of Orbifold Boundary Conditions: a boundary condition is a representation, and the alphabet is forced by the fixed-point counts (Part IX-A)</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-09-02">2026-09-02</time><span>Version v1</span><span>DOI <a href="https://doi.org/10.5281/zenodo.22254862">10.5281/zenodo.22254862</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:186"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg>Mathematics</span><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:36">🌌 Gauge–Higgs unification</span><span class="tag" style="--h:186">🕸️ Combinatorics &amp; graphs</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag tag-serie">🌌 Gauge–Higgs unification series</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="orbifold_alphabet.pdf" title="PDF, 579 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.22254862" rel="noopener" title="10.5281/zenodo.22254862"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/22254862" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/22254862/files/orbifold_alphabet_es.pdf?download=1" rel="noopener" title="orbifold_alphabet_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p><strong>Each count of orbifold boundary conditions has so far been a separate piece of work, because the boundary conditions were a list of matrices to be found per orbifold. They are not a list.</strong></p><p>An orbifold boundary condition is an action on the gauge fields; in the inner, zero-flux sector it admits a linear lift, and after the lift it is a <em>representation of the space group</em> Λ ⋊ Z<sub>m</sub>. Its letters are the irreducibles induced from characters of Λ whose stabiliser fixes only finitely many characters — the rest are the Wilson lines; the weight of a letter is its dimension; and how many letters of each weight there are is a Möbius count over |det(I − A<sup>k</sup>)|, the number of fixed points of the k-th power of the rotation.</p><p>From that one identification follow the twelve closed-form counts published for this programme, from a single argument with no free parameter, with the degree of each read off the cone signature; the class count of S<sup>1</sup>/Z<sub>2</sub> × S<sup>1</sup>/Z<sub>2</sub> — the orbifold of Parts VI to VIII — which is <strong>2809</strong> at rank 4, with the gauge transformation that closes it written down; and the symplectic column, which the programme had not reached because it is not another orbifold but another type of defining space: alphabets, counts, closed forms and all twenty-one labels built as matrices.</p><p>Theorem 1 states the alphabet for Z<sup>r</sup> ⋊<sub>A</sub> Z<sub>m</sub> in any rank, identifies the hypothesis as the condition that every eigenvalue of A have order exactly m, and gives the fixed-point counts in closed arithmetic form — so the alphabet depends on the order of the rotation and the rank of the lattice and on nothing else.</p><p><strong>What is not claimed.</strong> The completeness of the local datum is proved here in the generality the counts need and no priority is claimed for it. The trace conservation laws, the local gauge groups, the classification of Z<sub>N</sub> embeddings and the identification of the surviving class with the ’t Hooft flux are inherited. And the whole of the arithmetic section except one line is inherited: Latimer–MacDuffee (1933), Diederichsen–Reiner, Charlap (1965), Montgomery–Uchida (1971) and Hiller (1985). A Ledger table says which is which, line by line.</p><p>Paper in English and Spanish; every ancillary script and its archived receipt travel with the record, and the script list is read off the paper itself.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="orbifold_alphabet.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (579 kB)</a></p>
+    <p class="note">Identical to the file orbifold_alphabet.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, The Alphabet of Orbifold Boundary Conditions: a boundary condition is a representation, and the alphabet is forced by the fixed-point counts (Part IX-A). Zenodo, 2026. doi:10.5281/zenodo.22254862</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026the,
+  author    = {Carles Marín Muñoz},
+  title     = {The Alphabet of Orbifold Boundary Conditions: a boundary condition is a representation, and the alphabet is forced by the fixed-point counts (Part IX-A)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22254862},
+  url       = {https://doi.org/10.5281/zenodo.22254862}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/22254862">Zenodo</a></p></footer>
+</body>
+</html>

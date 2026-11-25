@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every 4×4 biquadratic sum of squares is a sum of eleven squares</title>
+<meta name="description" content="Let BSR(m,n) be the largest number of squares of real bilinear forms needed to write an m×n biquadratic sum of squares. We prove BSR(4,4) = 11. The lower bound is Qi and Cui&#x27;s BSR(4,4) ≥ z 2A (4,4) = 11; the previous upper bound was 12. The upper bound follows the boundary strategy of Blekherman, …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/bsr-four-four/">
+<meta name="citation_title" content="Every 4×4 biquadratic sum of squares is a sum of eleven squares">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/11/08">
+<meta name="citation_online_date" content="2026/11/08">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/bsr-four-four/bsr44.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/bsr-four-four/">
+<meta name="citation_doi" content="10.5281/zenodo.24055900">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.24055900">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="sums of squares; biquadratic forms; SOS rank; Pythagoras number; Segre variety; Hankel multiplier; boundary strategy">
+<meta name="DC.title" content="Every 4×4 biquadratic sum of squares is a sum of eleven squares">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.24055900">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Every 4×4 biquadratic sum of squares is a sum of eleven squares">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/bsr-four-four/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>Every 4×4 biquadratic sum of squares is a sum of eleven squares</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-11-08">2026-11-08</time><span>Version 1</span><span>DOI <a href="https://doi.org/10.5281/zenodo.24055900">10.5281/zenodo.24055900</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:186">🧮 Sums of squares &amp; real algebraic geometry</span><span class="tag" style="--h:148">🦉 Isabelle/HOL</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">🧮 Biquadratic sums of squares (BSR)</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="bsr44.pdf" title="PDF, 420 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.24055900" rel="noopener" title="10.5281/zenodo.24055900"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/24055900" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/bsr-four-four/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/bsr-four-four/index.html?lab=lem:regular" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Lab</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Isabelle/BSRFourFour" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Isabelle</a><a class="pill pill-es" href="https://zenodo.org/records/24055900/files/bsr44_es.pdf?download=1" rel="noopener" title="bsr44_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a><a class="pill pill-suplemento" href="https://zenodo.org/records/24055900/files/supplement.zip?download=1" rel="noopener" title="supplement.zip"><span class="pi" aria-hidden="true">📎</span>Supplement</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>Let BSR(m,n) be the largest number of squares of real bilinear forms needed to write an m×n biquadratic sum of squares. We prove BSR(4,4) = 11. The lower bound is Qi and Cui's BSR(4,4) ≥ z<sub>2A</sub>(4,4) = 11; the previous upper bound was 12. The upper bound follows the boundary strategy of Blekherman, Dunbar and Sinn, as in our note on width three: at a hypothetical boundary point of the set of sums of eleven squares inside the cone, a Hankel multiplier of rank at most five satisfies first and second order conditions. A classification of such multipliers without simple tensors in their image leaves, up to exchanging the factors, only two support and rank triples. For support 3×4, alternating variations parametrized by R<sup>3</sup>⊗Λ<sup>2</sup>R<sup>4</sup> have a 17-dimensional image in a quadratic space of positive index at most 16. For support 3×3, we use either the width-three trace argument or a syzygy involving the radicals in both factors.</p><p>English and Spanish versions, LaTeX sources and the scripts that check the computational steps are included. Four elementary steps of the proof are formalized in Isabelle/HOL (<a href="https://github.com/karlesmarin/formalizations" rel="noopener">https://github.com/karlesmarin/formalizations</a>); the companion site <a href="https://karlesmarin.github.io/blueprints/bsr-four-four/" rel="noopener">https://karlesmarin.github.io/blueprints/bsr-four-four/</a> says, for each statement, what is formalized and what is checked by computation. We worked with an AI assistant.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="bsr44.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (420 kB)</a></p>
+    <p class="note">Identical to the file bsr44.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Every 4×4 biquadratic sum of squares is a sum of eleven squares. Zenodo, 2026. doi:10.5281/zenodo.24055900</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026every,
+  author    = {Carles Marín Muñoz},
+  title     = {Every 4×4 biquadratic sum of squares is a sum of eleven squares},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24055900},
+  url       = {https://doi.org/10.5281/zenodo.24055900}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/24055900">Zenodo</a></p></footer>
+</body>
+</html>

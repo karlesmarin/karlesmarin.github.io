@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Diamante propio (22-nov), estilo emoji 3D: punta arriba, facetas con degradados, luz que nace DENTRO del cristal
+       y sale por las facetas con dispersión espectral, destellos en las aristas y sombra de contacto difusa. -->
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8f7ff"/><stop offset="1" stop-color="#7cc4fb"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9dcff"/><stop offset="1" stop-color="#3d8ff0"/></linearGradient>
+    <linearGradient id="g3" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fb6f8"/><stop offset="1" stop-color="#2468d8"/></linearGradient>
+    <linearGradient id="g4" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f86ea"/><stop offset="1" stop-color="#1546a8"/></linearGradient>
+    <linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a62c9"/><stop offset="1" stop-color="#0d2f78"/></linearGradient>
+    <linearGradient id="g6" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5aa7f5"/><stop offset="1" stop-color="#1c56bd"/></linearGradient>
+    <radialGradient id="nucleo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/><stop offset="0.35" stop-color="#dff4ff" stop-opacity="0.55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="rayo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="esp_r" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff5d5d" stop-opacity="0.95"/><stop offset="0.7" stop-color="#ff5d5d" stop-opacity="0.6"/><stop offset="1" stop-color="#ff5d5d" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="esp_a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffc83d" stop-opacity="0.95"/><stop offset="0.7" stop-color="#ffc83d" stop-opacity="0.6"/><stop offset="1" stop-color="#ffc83d" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="esp_v" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4fd17a" stop-opacity="0.95"/><stop offset="0.7" stop-color="#4fd17a" stop-opacity="0.6"/><stop offset="1" stop-color="#4fd17a" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="esp_z" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5aa0ff" stop-opacity="0.95"/><stop offset="0.7" stop-color="#5aa0ff" stop-opacity="0.6"/><stop offset="1" stop-color="#5aa0ff" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="esp_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9b6bff" stop-opacity="0.95"/><stop offset="0.7" stop-color="#9b6bff" stop-opacity="0.6"/><stop offset="1" stop-color="#9b6bff" stop-opacity="0.2"/></linearGradient>
+    <filter id="difusa" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="brillo" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+    <clipPath id="gema"><polygon points="256,62 420,292 340,398 172,398 92,292"/></clipPath>
+  </defs>
+
+  <!-- sombra de contacto (estilo emoji) -->
+  <ellipse cx="262" cy="452" rx="150" ry="20" fill="#0a1a3a" opacity="0.38" filter="url(#difusa)"/>
+  <ellipse cx="260" cy="446" rx="100" ry="10" fill="#0a1a3a" opacity="0.30" filter="url(#brillo)"/>
+
+  <!-- canto inferior (volumen) -->
+  <polygon points="92,292 172,398 340,398 420,292 420,304 342,412 170,412 92,304" fill="#0b2a6b"/>
+
+  <!-- pabellón: cinco caras grandes que suben a la punta -->
+  <g stroke="#ffffff" stroke-opacity="0.55" stroke-width="2" stroke-linejoin="round">
+    <polygon points="92,292 158,292 256,62" fill="url(#g2)"/>
+    <polygon points="158,292 224,292 256,62" fill="url(#g1)"/>
+    <polygon points="224,292 288,292 256,62" fill="url(#g2)"/>
+    <polygon points="288,292 354,292 256,62" fill="url(#g3)"/>
+    <polygon points="354,292 420,292 256,62" fill="url(#g4)"/>
+    <!-- corona: caras pequeñas hasta la mesa -->
+    <polygon points="92,292 172,398 158,292" fill="url(#g6)"/>
+    <polygon points="158,292 172,398 228,398 224,292" fill="url(#g3)"/>
+    <polygon points="224,292 228,398 284,398 288,292" fill="url(#g4)"/>
+    <polygon points="288,292 284,398 340,398 354,292" fill="url(#g5)"/>
+    <polygon points="354,292 340,398 420,292" fill="url(#g5)"/>
+  </g>
+  <line x1="92" y1="292" x2="420" y2="292" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2.5"/>
+
+  <!-- luz que nace dentro del cristal (recortada a la gema) -->
+  <g clip-path="url(#gema)">
+    <circle cx="232" cy="232" r="120" fill="url(#nucleo)"/>
+    <polygon points="232,232 120,292 150,292" fill="#ffffff" opacity="0.35"/>
+    <polygon points="232,232 200,110 214,104" fill="#ffffff" opacity="0.45"/>
+    <polygon points="232,232 330,292 300,292" fill="#ffffff" opacity="0.25"/>
+    <polygon points="232,232 250,398 226,398" fill="#ffffff" opacity="0.22"/>
+    <polygon points="170,180 186,180 120,292 100,292" fill="#ffffff" opacity="0.18"/>
+  </g>
+
+  <!-- la luz SALE por las facetas: rayos y dispersión espectral -->
+  <!-- abanico espectral que nace en un punto de la faceta derecha y se desvanece -->
+  <g>
+    <!-- sale de la esquina derecha de la cintura y se abre más -->
+    <polygon points="420,292 512,206 512,236" fill="url(#esp_r)"/>
+    <polygon points="420,292 512,236 512,266" fill="url(#esp_a)"/>
+    <polygon points="420,292 512,266 512,296" fill="url(#esp_v)"/>
+    <polygon points="420,292 512,296 512,326" fill="url(#esp_z)"/>
+    <polygon points="420,292 512,326 512,356" fill="url(#esp_m)"/>
+  </g>
+
+  <!-- destellos que nacen de las aristas -->
+  <g fill="#ffffff" stroke="#6fb3f5" stroke-width="1.5" stroke-linejoin="round">
+    <g transform="translate(256 62)"><circle r="16" fill="#ffffff" opacity="0.35" filter="url(#brillo)"/><path d="M0,-34 C3,-6 6,-3 34,0 C6,3 3,6 0,34 C-3,6 -6,3 -34,0 C-6,-3 -3,-6 0,-34 Z"/></g>
+    <g transform="translate(158 292)"><circle r="10" fill="#ffffff" opacity="0.35" filter="url(#brillo)"/><path d="M0,-20 C2,-4 4,-2 20,0 C4,2 2,4 0,20 C-2,4 -4,2 -20,0 C-4,-2 -2,-4 0,-20 Z"/></g>
+    <g transform="translate(206 150)" opacity="0.9"><path d="M0,-14 C1.5,-3 3,-1.5 14,0 C3,1.5 1.5,3 0,14 C-1.5,3 -3,1.5 -14,0 C-3,-1.5 -1.5,-3 0,-14 Z"/></g>
+  </g>
+</svg>

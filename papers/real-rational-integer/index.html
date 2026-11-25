@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rational sums-of-squares lengths of biquadratic forms and orthogonal dilations</title>
+<meta name="description" content="For a rational symmetric matrix H of order n with spectrum in [−1, 1], how many squares of rational bilinear forms are needed to write P_H(x, y) = (x₁² + x₂²)|y|² + 2x₁x₂ yᵀHy? Over the reals the answer is n or n + 1 (Blekherman–Plaumann–Sinn–Vinzant, Hanselka–Sinn). Over the rationals it is the …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/real-rational-integer/">
+<meta name="citation_title" content="Rational sums-of-squares lengths of biquadratic forms and orthogonal dilations">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/11/21">
+<meta name="citation_online_date" content="2026/11/21">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/real-rational-integer/lengths.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/real-rational-integer/">
+<meta name="citation_doi" content="10.5281/zenodo.24413664">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.24413664">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="sums of squares; biquadratic forms; rational quadratic forms; orthogonal dilations; Hasse–Minkowski; Witt group; Pythagoras number; complete graphs">
+<meta name="DC.title" content="Rational sums-of-squares lengths of biquadratic forms and orthogonal dilations">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.24413664">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rational sums-of-squares lengths of biquadratic forms and orthogonal dilations">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/real-rational-integer/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>Rational sums-of-squares lengths of biquadratic forms and orthogonal dilations</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-11-21">2026-11-21</time><span>Version 2</span><span>DOI <a href="https://doi.org/10.5281/zenodo.24413664">10.5281/zenodo.24413664</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:186">🧮 Sums of squares &amp; real algebraic geometry</span><span class="tag" style="--h:186">🕸️ Combinatorics &amp; graphs</span><span class="tag" style="--h:148">🦉 Isabelle/HOL</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">🧮 Biquadratic sums of squares (BSR)</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="lengths.pdf" title="PDF, 1.7 MB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.24413664" rel="noopener" title="10.5281/zenodo.24413664"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/24413664" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/real-rational-integer/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/real-rational-integer/index.html?lab=thm:gap" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Labs (7)</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Isabelle/AFP/Biquadratic_SOS_Length" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Isabelle</a><a class="pill pill-es" href="https://zenodo.org/records/24413664/files/lengths_es.pdf?download=1" rel="noopener" title="lengths_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a><a class="pill pill-suplemento" href="https://zenodo.org/records/24413664/files/supplement.zip?download=1" rel="noopener" title="supplement.zip"><span class="pi" aria-hidden="true">📎</span>Supplement</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>For a rational symmetric matrix H of order n with spectrum in [−1, 1], how many squares of rational bilinear forms are needed to write P_H(x, y) = (x₁² + x₂²)|y|² + 2x₁x₂ yᵀHy? Over the reals the answer is n or n + 1 (Blekherman–Plaumann–Sinn–Vinzant, Hanselka–Sinn). Over the rationals it is the least dimension of a sum of squares carrying an orthogonal dilation of a contraction with symmetric part H, and the obstruction is arithmetic: a rotation with rational cosine λ has the real sine √(1 − λ²), and what decides is the imaginary quadratic field ℚ(√(λ² − 1)) of its eigenvalues. For H with one interior eigenvalue we reduce the length to a positive complement inside a sum of squares and decide it by an exact finite local procedure; the excess over n is at most 7, and 7 is attained, first in order 6. Two consequences are explicit: ℓ_ℚ(λI_m) in closed form, governed by the number of rational squares needed for 1 − λ², and the length of the normalized complete graphs (J − I)/(n − 1) for every n, which for odd n is n, n + 3 or n + 5 according to squares and n modulo 8. We also give a criterion over ℚ(t), the integer length of every graph and the smallest gaps between ℝ and ℚ.</p><p>English and Spanish versions, LaTeX sources and the scripts that check the computational steps are included. Parts of the proofs are formalized in Isabelle/HOL and Lean 4 (<a href="https://github.com/karlesmarin/formalizations" rel="noopener">https://github.com/karlesmarin/formalizations</a>), some of them relative to named classical theorems; the companion site <a href="https://karlesmarin.github.io/blueprints/real-rational-integer/" rel="noopener">https://karlesmarin.github.io/blueprints/real-rational-integer/</a> says, for each statement, what is formalized, what is checked by computation and what has a written proof only. We worked with an AI assistant.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="lengths.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (1.7 MB)</a></p>
+    <p class="note">Identical to the file lengths.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Rational sums-of-squares lengths of biquadratic forms and orthogonal dilations. Zenodo, 2026. doi:10.5281/zenodo.24413664</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026rational,
+  author    = {Carles Marín Muñoz},
+  title     = {Rational sums-of-squares lengths of biquadratic forms and orthogonal dilations},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24413664},
+  url       = {https://doi.org/10.5281/zenodo.24413664}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/24413664">Zenodo</a></p></footer>
+</body>
+</html>

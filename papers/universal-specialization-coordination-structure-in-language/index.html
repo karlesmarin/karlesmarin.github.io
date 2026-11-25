@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universal Specialization-Coordination Structure in Language Model Training</title>
+<meta name="description" content="We report a universal organizational structure governing how transformer language models train: outer layers specialize while inner layers coordinate, and this reorganization follows a strict temporal order that precedes any measurable change in model performance. Across Pythia-70M, 160M, and 410M …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/universal-specialization-coordination-structure-in-language/">
+<meta name="citation_title" content="Universal Specialization-Coordination Structure in Language Model Training">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/03/24">
+<meta name="citation_online_date" content="2026/03/24">
+<meta name="citation_pdf_url" content="https://zenodo.org/records/19199838/files/main.pdf?download=1">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/universal-specialization-coordination-structure-in-language/">
+<meta name="citation_doi" content="10.5281/zenodo.19199838">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.19199838">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="transformer; CKA; grokking; scaling law; coordination zone; Markov blanket; information bottleneck; mechanistic interpretability; free energy principle; layer specialization">
+<meta name="DC.title" content="Universal Specialization-Coordination Structure in Language Model Training">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.19199838">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Universal Specialization-Coordination Structure in Language Model Training">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/universal-specialization-coordination-structure-in-language/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:268">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Computing · AI-LLM" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="1"><rect x="3.0" y="3.0" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="6.7" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="6.7" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="10.4" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="14.1" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="17.8" y="17.8" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/></g></svg></span>Computing · AI-LLM</p>
+    <h1>Universal Specialization-Coordination Structure in Language Model Training</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-03-24">2026-03-24</time><span></span><span>DOI <a href="https://doi.org/10.5281/zenodo.19199838">10.5281/zenodo.19199838</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag" style="--h:268">🤖 Transformers &amp; LLM</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="https://zenodo.org/records/19199838/files/main.pdf?download=1" rel="noopener" title="PDF on Zenodo, 955 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.19199838" rel="noopener" title="10.5281/zenodo.19199838"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/19199838" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/19199838/files/main_es.pdf?download=1" rel="noopener" title="main_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>  We report a universal organizational structure governing how transformer<br>  language models train: outer layers specialize while inner layers coordinate,<br>  and this reorganization follows a strict temporal order that precedes any<br>  measurable change in model performance.</p>
+<p>  Across Pythia-70M, 160M, and 410M (6, 12, and 24 layers; 35 checkpoints<br>  each, up to step 143K), we show: (1) outer layer pairs develop increasingly<br>  distinct representations as capabilities emerge (inter-layer CKA falls<br>  monotonically, r = −0.93 to −0.96 with LAMBADA accuracy); (2) inner layer<br>  pairs converge to CKA ≈ 1.0, forming a permanent coordination zone whose<br>  fractional depth scales as 1−2/N (33% → 58% → 67% for N = 6, 12, 24);<br>  (3) an informational leading indicator Ob = I(X;Y)/H(Y), estimated via<br>  Gaussian MI with PCA reduction, peaks 500–1000 steps before the CKA<br>  transition, which precedes benchmark improvement — establishing the temporal<br>  chain Ob-peak → CKA reorganization → capability.</p>
+<p>  This same chain was previously observed in 2-layer transformers during<br>  grokking on modular arithmetic [Marín, 2026]. Its replication in large<br>  language models suggests it is a fundamental property of transformer<br>  training, not an artifact of small-scale tasks.</p>
+<p>  Practical implication: Ob provides a leading diagnostic for capability<br>  emergence that requires no benchmarks, no knowledge of the learned<br>  algorithm, and only forward passes through the model. A 72-configuration<br>  hyperparameter sweep (6 values of β2, 6 warmup fractions, 2 learning rates)<br>  confirms that the filter based on early Ob onset correctly identifies all 5<br>  non-grokking configurations (5/5, 100% precision) before 5% of the training<br>  budget is spent.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="https://zenodo.org/records/19199838/files/main.pdf?download=1"><span class="pi" aria-hidden="true">📕</span>Download the PDF (955 kB)</a></p>
+    <p class="note">The PDF is served by Zenodo.</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Universal Specialization-Coordination Structure in Language Model Training. Zenodo, 2026. doi:10.5281/zenodo.19199838</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026universal,
+  author    = {Carles Marín Muñoz},
+  title     = {Universal Specialization-Coordination Structure in Language Model Training},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.19199838},
+  url       = {https://doi.org/10.5281/zenodo.19199838}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/19199838">Zenodo</a></p></footer>
+</body>
+</html>

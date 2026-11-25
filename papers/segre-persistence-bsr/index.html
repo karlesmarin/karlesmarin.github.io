@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadratic persistence of Segre varieties and a linear gap between biquadratic SOS rank and Zarankiewicz bounds</title>
+<meta name="description" content="We compute the quadratic persistence of the Segre varieties P m-1 ×P 2 and P m-1 ×P 3 for every m ≥ 2: the values are m and ⌈4m/3⌉. By the Pythagoras-number bound of Blekherman, Sinn, Smith and Velasco, some m×4 biquadratic sums of squares require at least ⌊8m/3⌋ real bilinear squares. This exceeds …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/segre-persistence-bsr/">
+<meta name="citation_title" content="Quadratic persistence of Segre varieties and a linear gap between biquadratic SOS rank and Zarankiewicz bounds">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/11/08">
+<meta name="citation_online_date" content="2026/11/08">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/segre-persistence-bsr/qp_bsr.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/segre-persistence-bsr/">
+<meta name="citation_doi" content="10.5281/zenodo.24036320">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.24036320">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="sums of squares; biquadratic forms; SOS rank; quadratic persistence; Pythagoras number; Segre variety; Zarankiewicz number">
+<meta name="DC.title" content="Quadratic persistence of Segre varieties and a linear gap between biquadratic SOS rank and Zarankiewicz bounds">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.24036320">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quadratic persistence of Segre varieties and a linear gap between biquadratic SOS rank and Zarankiewicz bounds">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/segre-persistence-bsr/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>Quadratic persistence of Segre varieties and a linear gap between biquadratic SOS rank and Zarankiewicz bounds</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-11-08">2026-11-08</time><span></span><span>DOI <a href="https://doi.org/10.5281/zenodo.24036320">10.5281/zenodo.24036320</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:186">🧮 Sums of squares &amp; real algebraic geometry</span><span class="tag" style="--h:186">🕸️ Combinatorics &amp; graphs</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag" style="--h:148">🦉 Isabelle/HOL</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">🧮 Biquadratic sums of squares (BSR)</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="qp_bsr.pdf" title="PDF, 337 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.24036320" rel="noopener" title="10.5281/zenodo.24036320"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/24036320" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/segre-persistence-bsr/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/segre-persistence-bsr/index.html?lab=cor:bsr" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Labs (2)</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Isabelle/SegrePersistence" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Isabelle + Lean</a><a class="pill pill-es" href="https://zenodo.org/records/24036320/files/qp_bsr_es.pdf?download=1" rel="noopener" title="qp_bsr_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a><a class="pill pill-suplemento" href="https://zenodo.org/records/24036320/files/supplement.zip?download=1" rel="noopener" title="supplement.zip"><span class="pi" aria-hidden="true">📎</span>Supplement</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>We compute the quadratic persistence of the Segre varieties P<sup>m-1</sup>×P<sup>2</sup> and P<sup>m-1</sup>×P<sup>3</sup> for every m ≥ 2: the values are m and ⌈4m/3⌉. By the Pythagoras-number bound of Blekherman, Sinn, Smith and Velasco, some m×4 biquadratic sums of squares require at least ⌊8m/3⌋ real bilinear squares. This exceeds both the second order and the augmented second order Zarankiewicz numbers at m = 21 and for every m ≥ 23, and the gap is at least m/6 − O(1). In every width n ≥ 3 we prove qp ≤ n⌈m/3⌉, so the gap is at least (n−3)m/6 − O(1) for fixed n ≥ 4, and we certify exact values in widths five and six. We construct rational forms whose rational length exceeds their real length by exactly three, and a covering bound of the same authors gives BSR(m,n) ≤ mn − max(m,n) + 1, hence 8 ≤ BSR(4,3) ≤ 9.</p><p>English and Spanish versions, LaTeX sources and the scripts and certificates that check the ranks are included. Parts of the proofs are formalized in Isabelle/HOL and Lean 4 (<a href="https://github.com/karlesmarin/formalizations" rel="noopener">https://github.com/karlesmarin/formalizations</a>); the companion site <a href="https://karlesmarin.github.io/blueprints/segre-persistence-bsr/" rel="noopener">https://karlesmarin.github.io/blueprints/segre-persistence-bsr/</a> says, for each statement, what is formalized and what is checked by computation. We worked with an AI assistant.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="qp_bsr.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (337 kB)</a></p>
+    <p class="note">Identical to the file qp_bsr.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Quadratic persistence of Segre varieties and a linear gap between biquadratic SOS rank and Zarankiewicz bounds. Zenodo, 2026. doi:10.5281/zenodo.24036320</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026quadratic,
+  author    = {Carles Marín Muñoz},
+  title     = {Quadratic persistence of Segre varieties and a linear gap between biquadratic SOS rank and Zarankiewicz bounds},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24036320},
+  url       = {https://doi.org/10.5281/zenodo.24036320}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/24036320">Zenodo</a></p></footer>
+</body>
+</html>

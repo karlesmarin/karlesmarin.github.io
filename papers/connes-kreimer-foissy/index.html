@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How a Tree Remembers Its Cuts: the Connes--Kreimer--Foissy Hopf Algebra of Rooted Trees, Machine-Checked in Lean 4</title>
+<meta name="description" content="A machine-checked formalization in Lean 4 / Mathlib of the Connes--Kreimer / Butcher / Foissy Hopf algebra of (planar) rooted trees — the combinatorial Hopf algebra behind perturbative renormalization and the order theory of Runge--Kutta methods. The admissible-cut coproduct, its coassociativity …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/connes-kreimer-foissy/">
+<meta name="citation_title" content="How a Tree Remembers Its Cuts: the Connes--Kreimer--Foissy Hopf Algebra of Rooted Trees, Machine-Checked in Lean 4">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/06/19">
+<meta name="citation_online_date" content="2026/06/19">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/connes-kreimer-foissy/rooted-trees-hopf-lean.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/connes-kreimer-foissy/">
+<meta name="citation_doi" content="10.5281/zenodo.20762280">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.20762280">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="Lean 4; Mathlib; Hopf algebra; Connes-Kreimer; Butcher group; rooted trees; renormalization; pre-Lie algebra; formalization of mathematics; interactive theorem proving">
+<meta name="DC.title" content="How a Tree Remembers Its Cuts: the Connes--Kreimer--Foissy Hopf Algebra of Rooted Trees, Machine-Checked in Lean 4">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.20762280">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How a Tree Remembers Its Cuts: the Connes--Kreimer--Foissy Hopf Algebra of Rooted Trees, Machine-Checked in Lean 4">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/connes-kreimer-foissy/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>How a Tree Remembers Its Cuts: the Connes--Kreimer--Foissy Hopf Algebra of Rooted Trees, Machine-Checked in Lean 4</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-06-19">2026-06-19</time><span></span><span>DOI <a href="https://doi.org/10.5281/zenodo.20762280">10.5281/zenodo.20762280</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:186">🕸️ Combinatorics &amp; graphs</span><span class="tag" style="--h:186">🧩 Algebra</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag tag-serie">🌳 Rooted trees, Hopf algebras and Runge–Kutta</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="rooted-trees-hopf-lean.pdf" title="PDF, 539 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.20762280" rel="noopener" title="10.5281/zenodo.20762280"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/20762280" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/20762280/files/rooted-trees-hopf-lean-es.pdf?download=1" rel="noopener" title="rooted-trees-hopf-lean-es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>A machine-checked formalization in Lean 4 / Mathlib of the Connes--Kreimer / Butcher / Foissy Hopf algebra of (planar) rooted trees — the combinatorial Hopf algebra behind perturbative renormalization and the order theory of Runge--Kutta methods. The admissible-cut coproduct, its coassociativity (proved up to <code>List.Perm</code> and lifted to an equality of Mathlib linear maps), the bialgebra compatibility, and a connected-graded antipode are assembled into a genuine Mathlib <code>HopfAlgebra</code> instance, all <code>sorry</code>-free; <code>#print axioms</code> reports only <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>.</p><p>To the best of our knowledge — after a documented search of Lean/Mathlib, the Isabelle/HOL Archive of Formal Proofs, and Coq/Rocq — this is the first combinatorial renormalization Hopf algebra of rooted trees registered in any proof assistant. The mathematics is classical throughout; the contribution is the formalization and a reusable certified core. This is the planar (Foissy, noncommutative) version; the commutative quotient, B-series order conditions, the free pre-Lie algebra, and Birkhoff/BPHZ renormalization are deferred follow-on work.</p><p>A large language model was used as a coding assistant; every statement was independently checked by the Lean kernel, and all mathematics and claims are the author's. English and Spanish editions of the paper are included, with the Lean source.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="rooted-trees-hopf-lean.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (539 kB)</a></p>
+    <p class="note">Identical to the file rooted-trees-hopf-lean.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, How a Tree Remembers Its Cuts: the Connes--Kreimer--Foissy Hopf Algebra of Rooted Trees, Machine-Checked in Lean 4. Zenodo, 2026. doi:10.5281/zenodo.20762280</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026how,
+  author    = {Carles Marín Muñoz},
+  title     = {How a Tree Remembers Its Cuts: the Connes--Kreimer--Foissy Hopf Algebra of Rooted Trees, Machine-Checked in Lean 4},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20762280},
+  url       = {https://doi.org/10.5281/zenodo.20762280}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/20762280">Zenodo</a></p></footer>
+</body>
+</html>

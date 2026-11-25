@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Predicting How Transformers Attend, Part III: From Attention to Residual Computation — Separating Transport, Writing, and Commitment</title>
+<meta name="description" content="Third paper in the “Predicting How Transformers Attend” series (Marín 2026), following Part I (Zenodo doi:10.5281/zenodo.19826343), which introduced the Thermodynamic Attention Framework and the closed-form predictor for the attention-decay exponent γ, and Part II (doi:10.5281/zenodo.19960573), the …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/transformers-attend-III/">
+<meta name="citation_title" content="Predicting How Transformers Attend, Part III: From Attention to Residual Computation — Separating Transport, Writing, and Commitment">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/07/10">
+<meta name="citation_online_date" content="2026/07/10">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/transformers-attend-III/attend_part3.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/transformers-attend-III/">
+<meta name="citation_doi" content="10.5281/zenodo.21288264">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.21288264">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="transformer; attention mechanism; residual stream; residual computation; depth axis; Jacobian lens; logit lens; direct logit attribution; mechanistic interpretability; global workspace; transport operator; commitment depth; readability knee; RoPE; rotary position embedding; attention decay; critical exponents; scaling ladder; Pythia; pre-registration; falsification; honest revision; Thermodynamic Attention Framework; Lean Mathlib4; machine verification; LLM; deep learning">
+<meta name="DC.title" content="Predicting How Transformers Attend, Part III: From Attention to Residual Computation — Separating Transport, Writing, and Commitment">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.21288264">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Predicting How Transformers Attend, Part III: From Attention to Residual Computation — Separating Transport, Writing, and Commitment">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/transformers-attend-III/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:268">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Computing · AI-LLM" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="1"><rect x="3.0" y="3.0" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="6.7" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="6.7" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="10.4" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="14.1" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="17.8" y="17.8" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/></g></svg></span>Computing · AI-LLM</p>
+    <h1>Predicting How Transformers Attend, Part III: From Attention to Residual Computation — Separating Transport, Writing, and Commitment</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-07-10">2026-07-10</time><span>Version v1</span><span>DOI <a href="https://doi.org/10.5281/zenodo.21288264">10.5281/zenodo.21288264</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:268">🤖 Transformers &amp; LLM</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag tag-serie">🤖 How Transformers Attend</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="attend_part3.pdf" title="PDF, 1.1 MB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.21288264" rel="noopener" title="10.5281/zenodo.21288264"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/21288264" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/21288264/files/attend_part3_es.pdf?download=1" rel="noopener" title="attend_part3_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>Third paper in the “Predicting How Transformers Attend” series (Marín 2026), following Part I (Zenodo doi:10.5281/zenodo.19826343), which introduced the Thermodynamic Attention Framework and the closed-form predictor for the attention-decay exponent γ, and Part II (doi:10.5281/zenodo.19960573), the six-axis decomposition. Parts I and II characterised the <em>distance</em> axis of attention; this paper opens the orthogonal <em>depth</em> axis.</p><p>Its starting observation: the single interpretability question “is the answer here yet?” silently conflates four distinct statements about the residual stream — that information is <strong>present</strong>, <strong>linearly decodable</strong>, <strong>written</strong>, and <strong>used</strong>. The paper shows these are separate, independently measurable observables, and decomposes residual computation into three: <strong>transport</strong> (the mean input–output Jacobian; the Jacobian lens), <strong>net injection</strong> (direct logit attribution, DLA), and <strong>commitment</strong> (the depth at which the running decision locks). The DLA decomposition is <em>exact</em>: with the final normalisation frozen the output logit equals the sum of per-layer contributions (validated to 7.6×10<sup>−6</sup>, norm-aware for LayerNorm and RMSNorm).</p><p>Empirically the paper reports the only ladder-complete Jacobian-lens readability suite across a Pythia scale ladder (70M–2.8B) with cross-family anchors (Llama-2/3, Qwen2.5/3, GPT-2). The readability <em>knee</em> is a family property (Pythia 0.54–0.75 of depth, Llama 0.81–0.84) and the Jacobian-lens <em>advantage band</em> is strikingly heterogeneous (absent at d_head = 256; up to 68× at layer 1 of Qwen2.5-3B).</p><p>The paper's pivot is a structural theorem: the advantage band is <strong>not</strong> a “workspace” of stored content but a property of the transport <em>operator</em> itself (J<sub>ℓ</sub> = ∏<sub>k≥ℓ</sub>(I + w′<sub>k</sub>)), which forces a strong anticorrelation (Spearman −0.80 for net injection, pythia-410m; replicated on pythia-2.8b and Qwen3-1.7b) between Jacobian-lens advantage and net injection. A generic denoised mean operator saturates as an estimator at N ≈ 20 prompts and already beats the per-prompt oracle, so the lens advantage measures generic linear transport, not prompt-specific content. This sharpens — and does not contradict — the causal “global workspace” result of Lindsey et al. (Anthropic, 2026): a lens advantage is a hypothesis generator, not causal evidence. Across families the <em>observables</em> generalise but their <em>chronology</em> does not: a single number, Δ<sub>prep</sub> = τ<sub>write</sub> − τ<sub>decode</sub>, classifies families cleanly (Type A ≥ 0.5 vs Type B ≤ 0.3, no overlap).</p><p>Honest revisions, each by a pre-registered discriminant design and reported in the same register as surviving results: three hyperparameter predictors of the knee are <em>refuted</em> (the L_crit formula — discriminant pythia-1b, predicted 0.94, observed 0.688; a universal constant ≈0.69, killed by the full ladder; the RoPE fraction, inconclusive by a frozen control rule). L_crit is not discarded — it governs a distinct, causally-validated attention-regime transition, decoupled from the knee. τ<sub>commit</sub> is architectural, not a deep law. The relation of the chronology to the Part I exponent γ is left <em>inconclusive</em> (two γ-measurement protocols disagree and the direction of any co-ordination flips between them). All experiments are pre-registered with frozen decision rules; the load-bearing algebraic identities are machine-verified in Lean 4/Mathlib in a companion formalization paper (a separate release). English (14 pages) and Spanish (15 pages) editions are included. Prepared with the assistance of an AI system (Claude, Anthropic); the research and all claims are the author's responsibility.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="attend_part3.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (1.1 MB)</a></p>
+    <p class="note">Identical to the file attend_part3.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Predicting How Transformers Attend, Part III: From Attention to Residual Computation — Separating Transport, Writing, and Commitment. Zenodo, 2026. doi:10.5281/zenodo.21288264</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026predicting,
+  author    = {Carles Marín Muñoz},
+  title     = {Predicting How Transformers Attend, Part III: From Attention to Residual Computation — Separating Transport, Writing, and Commitment},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21288264},
+  url       = {https://doi.org/10.5281/zenodo.21288264}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/21288264">Zenodo</a></p></footer>
+</body>
+</html>

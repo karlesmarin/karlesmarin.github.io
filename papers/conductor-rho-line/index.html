@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where the character values of Sp(2m) at a torsion element fail to generate the ring of integers</title>
+<meta name="description" content="Take every irreducible character of Sp(2m) and evaluate them all at one element of finite order. They generate a ring. This note locates and describes what that ring is missing from the ring of integers — its conductor — and finds Stickelberger&#x27;s ideal and a relative class number waiting there. Let …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/conductor-rho-line/">
+<meta name="citation_title" content="Where the character values of Sp(2m) at a torsion element fail to generate the ring of integers">
+<meta name="citation_author" content="Carles Marin Munoz">
+<meta name="citation_publication_date" content="2026/09/30">
+<meta name="citation_online_date" content="2026/09/30">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/conductor-rho-line/conductor_rho_line.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/conductor-rho-line/">
+<meta name="citation_doi" content="10.5281/zenodo.23061900">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.23061900">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="orders in number fields; conductor of an order; real cyclotomic field; Stickelberger ideal; Sinnott index; relative class number; Gorenstein ring; almost Gorenstein ring; Cohen-Macaulay type; characters at elements of finite order; symplectic group; Bernoulli numbers; Maillet determinant; musical scales; exact computation; math.NT; math.AC; math.RT">
+<meta name="DC.title" content="Where the character values of Sp(2m) at a torsion element fail to generate the ring of integers">
+<meta name="DC.creator" content="Carles Marin Munoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.23061900">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where the character values of Sp(2m) at a torsion element fail to generate the ring of integers">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/conductor-rho-line/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>Where the character values of Sp(2m) at a torsion element fail to generate the ring of integers</h1>
+    <p class="authors">Carles Marin Munoz</p>
+    <p class="facts"><time datetime="2026-09-30">2026-09-30</time><span>Version 3</span><span>DOI <a href="https://doi.org/10.5281/zenodo.23061900">10.5281/zenodo.23061900</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:186">🎵 Mathematics of music</span><span class="tag" style="--h:186">💠 Number theory &amp; characters</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag tag-serie">💠 Characters at torsion elements</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="conductor_rho_line.pdf" title="PDF, 1.0 MB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.23061900" rel="noopener" title="10.5281/zenodo.23061900"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/23061900" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/23061900/files/conductor_rho_line_es.pdf?download=1" rel="noopener" title="conductor_rho_line_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p><strong>Take every irreducible character of Sp(2m) and evaluate them all at one element of finite order. They generate a ring. This note locates and describes what that ring is missing from the ring of integers — its conductor — and finds Stickelberger's ideal and a relative class number waiting there.</strong></p>
+
+<p>Let ξ be a primitive q-th root of unity and let g have eigenvalues ξ<sup>±1</sup>, …, ξ<sup>±m</sup>, with 1 ≤ m &lt; q/2. The character values generate A = <strong>Z</strong>[e<sub>1</sub>(η), …, e<sub>m</sub>(η)] inside the ring of integers O = <strong>Z</strong>[ξ+ξ<sup>−1</sup>] of the real cyclotomic field, with η<sub>j</sub> = ξ<sup>j</sup>+ξ<sup>−j</sup>. Apart from known points where A = <strong>Z</strong>, it is an order, and its conductor is the subject.</p>
+
+<p><strong>Four things are proved.</strong> Write h = 2m, the Coxeter number of type C<sub>m</sub>, and q = p<sup>v</sup>q′ with p not dividing q′, d = φ(q′)/2.</p>
+
+<ol>
+<li><strong>Which primes.</strong> Every prime of the index divides q; and for q′ outside {1,2,3,4,6}, a prime p | q divides it <em>exactly when</em> q′ divides h, h+1 or h+2 — the same three families of integer points at which g is conjugate to all its prime-to-q powers. The combinatorial input is a lemma on scales that also answers a question about musical tuning.</li>
+<li><strong>What the defect looks like.</strong> At each such prime the conductor is a power of the radical, the order has a single maximal ideal above p with residue field <strong>F</strong><sub>p</sub>, and the first graded layer has the dimension of the cyclic module over <strong>F</strong><sub>p</sub>[(<strong>Z</strong>/q′)<sup>×</sup>] generated by an explicit <em>first-moment function</em> of the segment {±1, …, ±m}. Both lengths, a Gorenstein criterion in layers and the Cohen–Macaulay type follow.</li>
+<li><strong>Why class numbers appear.</strong> On the stable families that first moment is Stickelberger's sawtooth, or the same sawtooth shifted by half a period — and a single identity, 2 ŝ<sub>n</sub>(c) = s<sub>n</sub>(2c) − s<sub>n</sub>(c), governs both regimes. The maximal minors of the moment matrix are Sinnott's index of the Stickelberger ideal times (2q′)<sup>d</sup>/w<sub>q′</sub>, a unit at odd p not dividing q′, so the conductor at p is the radical <em>exactly when</em> p does not divide h<sup>−</sup>(<strong>Q</strong>(ζ<sub>q′</sub>)), provided p does not divide ⌈m/q′⌉ (on the half-period families, ⌈2m/q′⌉), and a simple divisor of h<sup>−</sup> gives the square of the radical and a Gorenstein local ring. On the shifted sawtooth the subgroup generated by 2 decides everything, with almost Gorenstein rings of type 2δ−1; and the index closes, v<sub>p</sub>([O:A]) = 2d−1−W<sub>1</sub>, whenever the first layer is more than half full.</li>
+<li><strong>Below and beyond.</strong> When p divides the multiplicity there is a <em>universal ladder</em> of layers at the degrees P−p<sup>j</sup>, P = p<sup>v<sub>p</sub>(N)</sup>, whose first term is Kontsevich's finite logarithm; and at degree P the theory <em>descends</em> to the first layer of a smaller order of the same family, an equality that complex conjugation — not a formal argument — is what pins down. There, when p does not divide h<sup>−</sup>, the layer is W<sub>P</sub> = d if −1 lies in ⟨2⟩ modulo q′ and d−d/t otherwise, t the order of 2; the hypothesis on h<sup>−</sup> cannot be dropped.</li>
+</ol>
+
+<p><strong>What is not ours, said plainly.</strong> The note carries a section that states, line by line, what is proved here and what rests on the work of others: Amiot on scales; Sinnott's index formula in the form of Bernard and Kučera, and Kučera's evaluation of one maximal minor of the moment matrix; Kac on the regular element σ<sub>M</sub> of order h+1, which appears in Macdonald; Pianzola on the ring as the image of <strong>Z</strong>[P]<sup>W</sup>; Carlitz–Olson on Maillet's determinant; Girstmair on the cosecant numbers and the rank over <strong>Q</strong> of their Galois conjugates; Kuribayashi's rank of the rectangular matrix; the Euler factor of the shifted sawtooth, which is in Kanemitsu–Kuzumaki and in Kučera; the length characterisation of Gorenstein rings after Bass, Herzog–Kunz and Huneke–Swanson; Campillo–Delgado–Kiyek on the symmetric criterion; Marseglia's formula for the type; Barucci–Fröberg on almost Gorenstein rings. Where no earlier statement was found, that is said as a search result. The arithmetic input is classical and <strong>no priority is claimed for it</strong>: for those statements, what is ours is the matrix form and what it gives for the orders A<sub>m</sub>(q).</p>
+
+<p><strong>Every number is checked, and the checks travel.</strong> Each figure and each number labelled <em>measured</em> or <em>observed</em> comes with the script that produces it and its archived output: 153 files in the ancillary archive, in a flat directory that reads and writes only inside itself, with a README mapping every number to its script and its run. Three controls run over the whole package: that nothing published quotes private correspondence, that nothing published reads a file that does not travel with it, and that every claim made by a figure caption holds against the data the figure draws.</p>
+
+<p><strong>Included:</strong> the note in English (32 pp) and Spanish (33 pp), and the ancillary archive of scripts and their runs.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="conductor_rho_line.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (1.0 MB)</a></p>
+    <p class="note">Identical to the file conductor_rho_line.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marin Munoz, Where the character values of Sp(2m) at a torsion element fail to generate the ring of integers. Zenodo, 2026. doi:10.5281/zenodo.23061900</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026where,
+  author    = {Carles Marin Munoz},
+  title     = {Where the character values of Sp(2m) at a torsion element fail to generate the ring of integers},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23061900},
+  url       = {https://doi.org/10.5281/zenodo.23061900}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/23061900">Zenodo</a></p></footer>
+</body>
+</html>

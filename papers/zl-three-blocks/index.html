@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why three blocks? The limited augmented Zarankiewicz number in fixed width</title>
+<meta name="description" content="The limited augmented Zarankiewicz number $z_L(m,n)$ of Qi, Cui and Xu bounds the maximum sum-of-squares rank of $m\times n$ biquadratic forms from below: it counts the cells of a maximum $C_4$-free set in the $m\times n$ grid together with pairs of further cells that avoid two forbidden patterns. …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/zl-three-blocks/">
+<meta name="citation_title" content="Why three blocks? The limited augmented Zarankiewicz number in fixed width">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/11/01">
+<meta name="citation_online_date" content="2026/11/01">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/zl-three-blocks/zl_hollow_triangles.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/zl-three-blocks/">
+<meta name="citation_doi" content="10.5281/zenodo.23860725">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.23860725">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="Zarankiewicz problem; limited augmented Zarankiewicz number; sum-of-squares rank; biquadratic forms; extremal combinatorics; linear programming duality; rational certificates; Presburger arithmetic; simple games; exhaustive search; Lean 4; Isabelle/HOL; formal verification">
+<meta name="DC.title" content="Why three blocks? The limited augmented Zarankiewicz number in fixed width">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.23860725">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why three blocks? The limited augmented Zarankiewicz number in fixed width">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/zl-three-blocks/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>Why three blocks? The limited augmented Zarankiewicz number in fixed width</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-11-01">2026-11-01</time><span>Version 2</span><span>DOI <a href="https://doi.org/10.5281/zenodo.23860725">10.5281/zenodo.23860725</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:186">🧮 Sums of squares &amp; real algebraic geometry</span><span class="tag" style="--h:186">🕸️ Combinatorics &amp; graphs</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag" style="--h:148">🦉 Isabelle/HOL</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">🧮 Biquadratic sums of squares (BSR)</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="zl_hollow_triangles.pdf" title="PDF, 886 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.23860725" rel="noopener" title="10.5281/zenodo.23860725"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/23860725" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/zl-three-blocks/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/zl-three-blocks/index.html?lab=def" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Labs (5)</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Isabelle/AFP/Limited_Augmented_Zarankiewicz" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Isabelle + Lean</a><a class="pill pill-es" href="https://zenodo.org/records/23860725/files/zl_triangulos_huecos.pdf?download=1" rel="noopener" title="zl_triangulos_huecos.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a><a class="pill pill-suplemento" href="https://zenodo.org/records/23860725/files/zl-three-blocks-supplement.zip?download=1" rel="noopener" title="zl-three-blocks-supplement.zip"><span class="pi" aria-hidden="true">📎</span>Supplement</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>The limited augmented Zarankiewicz number $z_L(m,n)$ of Qi, Cui and Xu bounds the maximum sum-of-squares rank of $m\times n$ biquadratic forms from below: it counts the cells of a maximum $C_4$-free set in the $m\times n$ grid together with pairs of further cells that avoid two forbidden patterns. We determine $z_L(m,3)=\lfloor3m/2\rfloor+2$ for every $m\ge3$, answering a question of Qi, Löfberg and Chen, with a proof formalized in Lean; it also shows that the gap to their weak variant grows like $m/6$. For a fixed number $n$ of columns we prove that each new row adds $\rho_n$ pairs up to a bounded error, where $\rho_n$ is a rational number given by finitely many linear programs, and that the error is eventually periodic. Pairs placed around a hollow triangle of three column blocks give $\rho_n\ge\lambda_n=n/3-1/2+O(1/n)$; balanced blocks are optimal within this family, and $\rho_n=\lambda_n$ for $n\le6$ by rational dual certificates checked in exact arithmetic; we conjecture equality for all $n$. Consequently, in every fixed width the original criterion stays linearly below the recursive-line, signed and second-order ones. We also reduce Lebedev's canonical base to a graph parameter whose sharp bound is due to Hof, which gives its slope $\lfloor(n-1)^2/4\rfloor/(n-1)$ for every $n$; we find the exact value of $z_L(m,4)$ for every $m\ge6$ by certified computation, fourteen new exact values by exhaustive computer search (eight of them instances of the three- and four-column formulas), and a three-dimensional analogue in which the naive bound of one quarter fails already in $3\times3\times5$, the smallest such box. The admissibility lemmas behind the constructions are formalized in Isabelle/HOL.</p><p><strong>Version 2.</strong> Changes from version 1: the sharp bound on the graph parameter in Theorem D is due to Hof (2016, Thm. 7.2; Hof, Kern, Kurz and Paulusma, SAGT 2018), and the theorem's contribution is the reduction to it; the integer program over row types is exact for n ≤ 4 only, and no value of the table rests on it for n ≥ 5 (the supplement's program now refuses n ≥ 5); eight of the fourteen new values are instances of Theorems A and E; in Question 1, three-block shadows attain the optimal value for n ≤ 6, which is not a classification of the optimal programs.</p><p>Companion site (blueprint): <a href="https://karlesmarin.github.io/blueprints/zl-three-blocks/" rel="noopener">https://karlesmarin.github.io/blueprints/zl-three-blocks/</a></p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="zl_hollow_triangles.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (886 kB)</a></p>
+    <p class="note">Identical to the file zl_hollow_triangles.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Why three blocks? The limited augmented Zarankiewicz number in fixed width. Zenodo, 2026. doi:10.5281/zenodo.23860725</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026why,
+  author    = {Carles Marín Muñoz},
+  title     = {Why three blocks? The limited augmented Zarankiewicz number in fixed width},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23860725},
+  url       = {https://doi.org/10.5281/zenodo.23860725}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/23860725">Zenodo</a></p></footer>
+</body>
+</html>

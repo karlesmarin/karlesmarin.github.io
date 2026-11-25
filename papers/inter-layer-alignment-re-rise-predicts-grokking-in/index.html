@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inter-Layer Alignment Re-Rise Predicts Grokking in Transformers: A Pilot Study</title>
+<meta name="description" content="We identify an internal signal that detects impending grokking ∼3,000 training steps before the accuracy transition without any knowledge of the learned algorithm. The signal is a non-monotonic re-rise of inter-layer CKA (Ob01, between layers 0 and 1 of a small transformer): after an initial drop …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/inter-layer-alignment-re-rise-predicts-grokking-in/">
+<meta name="citation_title" content="Inter-Layer Alignment Re-Rise Predicts Grokking in Transformers: A Pilot Study">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/03/23">
+<meta name="citation_online_date" content="2026/03/23">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/inter-layer-alignment-re-rise-predicts-grokking-in/main.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/inter-layer-alignment-re-rise-predicts-grokking-in/">
+<meta name="citation_doi" content="10.5281/zenodo.19194911">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.19194911">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="grokking,; mechanistic interpretability,; centered kernel alignment,; CKA,; utual   information,; MINE,; transformers,; modular arithmetic,; emergent generalization,; inter-layer coordination,; Fourier algorithm">
+<meta name="DC.title" content="Inter-Layer Alignment Re-Rise Predicts Grokking in Transformers: A Pilot Study">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.19194911">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Inter-Layer Alignment Re-Rise Predicts Grokking in Transformers: A Pilot Study">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/inter-layer-alignment-re-rise-predicts-grokking-in/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:268">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Computing · AI-LLM" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="1"><rect x="3.0" y="3.0" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="6.7" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="6.7" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="10.4" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="10.4" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="14.1" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="14.1" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/><rect x="3.0" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="6.7" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="10.4" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="14.1" y="17.8" width="3.1" height="3.1" rx=".5" /><rect x="17.8" y="17.8" width="3.1" height="3.1" rx=".5" fill="currentColor" fill-opacity=".55"/></g></svg></span>Computing · AI-LLM</p>
+    <h1>Inter-Layer Alignment Re-Rise Predicts Grokking in Transformers: A Pilot Study</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-03-23">2026-03-23</time><span></span><span>DOI <a href="https://doi.org/10.5281/zenodo.19194911">10.5281/zenodo.19194911</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag" style="--h:268">🤖 Transformers &amp; LLM</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="main.pdf" title="PDF, 884 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.19194911" rel="noopener" title="10.5281/zenodo.19194911"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/19194911" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>We identify an internal signal that detects impending grokking ∼3,000 training steps<br>before the accuracy transition  without any knowledge of the learned algorithm. The<br>signal is a non-monotonic re-rise of inter-layer CKA (Ob01, between layers 0 and 1 of<br>a small transformer): after an initial drop during memorization, Ob01 begins rising again at<br>step ≈750 exclusively in models that will grokk. This re-rise discriminates grokking from<br>non-grokking in 16/16 vs 0/5 seeds (Fisher exact p = 0.000049; one-sample t = 4.51,<br>p &lt; 0.001), with onset consistently ∼3,297 ± 461 steps before the accuracy jump. The signal replicates across two primes (p = 97, p = 113) and across a structurally distinct modular<br>task: modular multiplication (6/6 seeds, onset step 750, lead 3,083±186 steps)  identical onset to addition despite dierent underlying algorithms. A task-contrast experiment<br>with k-sparse parity reveals the boundary of the signal's scope: parity generalizes quickly<br>but Ob01 drops rather than rises  the opposite dynamic. This demarcates a meaningful<br>distinction: the re-rise is a signature of tasks requiring distributed inter-layer coordination (Fourier-type algorithms), not of grokking or generalization in general. Practically,<br>the re-rise onset provides an early-termination criterion within the modular arithmetic family: runs showing no re-rise by step 1,000 do not grokk in any tested conguration, enabling<br>diagnosis thousands of steps before any test accuracy signal appears. We motivate Ob01 via<br>O(X, Y ) = I(X; Y )/H(Y ) and hierarchical predictive coding theory, while being explicit<br>that CKA is a linear proxy for O, not an estimator of it. Replacing CKA with MINE or<br>kNN MI estimators is the priority follow-up.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="main.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (884 kB)</a></p>
+    <p class="note">Identical to the file main.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, Inter-Layer Alignment Re-Rise Predicts Grokking in Transformers: A Pilot Study. Zenodo, 2026. doi:10.5281/zenodo.19194911</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026interlayer,
+  author    = {Carles Marín Muñoz},
+  title     = {Inter-Layer Alignment Re-Rise Predicts Grokking in Transformers: A Pilot Study},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.19194911},
+  url       = {https://doi.org/10.5281/zenodo.19194911}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/19194911">Zenodo</a></p></footer>
+</body>
+</html>

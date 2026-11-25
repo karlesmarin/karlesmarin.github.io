@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a Determinant&#x27;s Derivative Knows: Jacobi&#x27;s Formula and Newton&#x27;s Identity for Matrix Traces in Lean 4</title>
+<meta name="description" content="A machine-checked formalization, in Lean 4 / Mathlib, of Jacobi&#x27;s formula (det M)′ = tr(adj M·M′) for a matrix of polynomials, and of Newton&#x27;s identity for matrix traces — the logarithmic derivative of the reversed characteristic polynomial collects the trace power sums, (charpolyRev M)′ = …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/jacobi-newton/">
+<meta name="citation_title" content="What a Determinant&#x27;s Derivative Knows: Jacobi&#x27;s Formula and Newton&#x27;s Identity for Matrix Traces in Lean 4">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/06/07">
+<meta name="citation_online_date" content="2026/06/07">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/jacobi-newton/jacobi-newton-lean.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/jacobi-newton/">
+<meta name="citation_doi" content="10.5281/zenodo.20578470">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.20578470">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="Lean 4; Mathlib; formalization of mathematics; interactive theorem proving; Jacobi&#x27;s formula; Newton&#x27;s identities; characteristic polynomial; matrix trace; resolvent; Faddeev-LeVerrier; Ihara zeta function; non-backtracking operator; spectral graph theory">
+<meta name="DC.title" content="What a Determinant&#x27;s Derivative Knows: Jacobi&#x27;s Formula and Newton&#x27;s Identity for Matrix Traces in Lean 4">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.20578470">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What a Determinant&#x27;s Derivative Knows: Jacobi&#x27;s Formula and Newton&#x27;s Identity for Matrix Traces in Lean 4">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/jacobi-newton/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>What a Determinant&#x27;s Derivative Knows: Jacobi&#x27;s Formula and Newton&#x27;s Identity for Matrix Traces in Lean 4</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-06-07">2026-06-07</time><span></span><span>DOI <a href="https://doi.org/10.5281/zenodo.20578470">10.5281/zenodo.20578470</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:186">🕸️ Combinatorics &amp; graphs</span><span class="tag" style="--h:186">🧩 Algebra</span><span class="tag" style="--h:186">📉 Analysis &amp; real roots</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag tag-serie">🕸️ Graphs, walks and matchings, machine-checked</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="jacobi-newton-lean.pdf" title="PDF, 518 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.20578470" rel="noopener" title="10.5281/zenodo.20578470"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/20578470" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/jacobi-newton/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Formalizations/Combinatorics/SimpleGraph/Ihara" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Lean</a><a class="pill pill-es" href="https://zenodo.org/records/20578470/files/jacobi-newton-lean-es.pdf?download=1" rel="noopener" title="jacobi-newton-lean-es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>A machine-checked formalization, in Lean 4 / Mathlib, of <strong>Jacobi's formula</strong> (det M)′ = tr(adj M·M′) for a matrix of polynomials, and of <strong>Newton's identity for matrix traces</strong> — the logarithmic derivative of the reversed characteristic polynomial collects the trace power sums, (charpolyRev M)′ = −charpolyRev M·∑<sub>k</sub> tr(M<sup>k+1</sup>)X<sup>k</sup>. The engine is a <strong>resolvent series</strong> (I−XM)<sup>−1</sup> = ∑<sub>k</sub> M<sup>k</sup>X<sup>k</sup> over formal power series. As an application these compose with the author's earlier formalization of <em>Bass's determinant formula</em> (doi:10.5281/zenodo.20573120) to read the Ihara non-backtracking counts N<sub>k</sub> = tr(B<sup>k</sup>) off the adjacency spectrum, and to prove combinatorially that tr(B<sup>k</sup>) counts closed non-backtracking walks.</p>
+<p>All headline results are sorry-free (axioms: propext, Classical.choice, Quot.sound). It formalizes classical mathematics and claims no new theorem; the novelty is the formalization — Jacobi's algebraic formula and the matrix-trace Newton identity, for which a search of Mathlib, the Isabelle/HOL Archive of Formal Proofs, Coq/Rocq, HOL Light and Mizar found no prior machine-checked proof. Honest boundary: tr(B<sup>k</sup>) counts <em>rooted</em> closed walks, not geodesic classes, and the prime-geodesic Euler product is mapped, not built. English and Spanish editions are included.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="jacobi-newton-lean.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (518 kB)</a></p>
+    <p class="note">Identical to the file jacobi-newton-lean.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, What a Determinant&#x27;s Derivative Knows: Jacobi&#x27;s Formula and Newton&#x27;s Identity for Matrix Traces in Lean 4. Zenodo, 2026. doi:10.5281/zenodo.20578470</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026what,
+  author    = {Carles Marín Muñoz},
+  title     = {What a Determinant&#x27;s Derivative Knows: Jacobi&#x27;s Formula and Newton&#x27;s Identity for Matrix Traces in Lean 4},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20578470},
+  url       = {https://doi.org/10.5281/zenodo.20578470}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/20578470">Zenodo</a></p></footer>
+</body>
+</html>

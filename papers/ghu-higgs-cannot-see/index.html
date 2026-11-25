@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the Higgs Potential Cannot See: Bulk Matter That Cannot Help Select a Boundary Condition (Part V)</title>
+<meta name="description" content="The one-loop Wilson-line potential of this model is one operator traced twice — a dimension and an index — and the discrete boundary-condition sign multiplies the index alone. Winding parity is the O(4) component label. Part III&#x27;s translation matrix U₆ = P₂P₀⁻¹ has det = −1, so one trip round the …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/ghu-higgs-cannot-see/">
+<meta name="citation_title" content="What the Higgs Potential Cannot See: Bulk Matter That Cannot Help Select a Boundary Condition (Part V)">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/07/31">
+<meta name="citation_online_date" content="2026/07/31">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/ghu-higgs-cannot-see/ghu_observability.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/ghu-higgs-cannot-see/">
+<meta name="citation_doi" content="10.5281/zenodo.21727095">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.21727095">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="gauge-Higgs unification; Wilson line; Hosotani mechanism; orbifold; boundary conditions; equivalence classes; effective potential; Higgs potential; two Higgs doublet model; Schur function; orthogonal group; non-identity component; twining character; 2-quotient; Dynkin index; SU(4); Lean 4; formal verification; exact computation; extra dimensions; hep-ph; hep-th">
+<meta name="DC.title" content="What the Higgs Potential Cannot See: Bulk Matter That Cannot Help Select a Boundary Condition (Part V)">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.21727095">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What the Higgs Potential Cannot See: Bulk Matter That Cannot Help Select a Boundary Condition (Part V)">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/ghu-higgs-cannot-see/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:36">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Physics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(0 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(60 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(120 12 12)" stroke-width="1.3"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span>Physics</p>
+    <h1>What the Higgs Potential Cannot See: Bulk Matter That Cannot Help Select a Boundary Condition (Part V)</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-07-31">2026-07-31</time><span>Version v1</span><span>DOI <a href="https://doi.org/10.5281/zenodo.21727095">10.5281/zenodo.21727095</a></span><span><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="license noopener">Apache 2.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag" style="--h:36">🌌 Gauge–Higgs unification</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag" style="--h:148">📜 Certificates (exact, SAT/SMT)</span><span class="tag tag-serie">🌌 Gauge–Higgs unification series</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="ghu_observability.pdf" title="PDF, 793 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.21727095" rel="noopener" title="10.5281/zenodo.21727095"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/21727095" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-es" href="https://zenodo.org/records/21727095/files/ghu_observability_es.pdf?download=1" rel="noopener" title="ghu_observability_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p><strong>The one-loop Wilson-line potential of this model is one operator traced twice — a dimension and an index — and the discrete boundary-condition sign multiplies the index alone.</strong></p><p><strong>Winding parity is the O(4) component label.</strong> Part III's translation matrix U₆ = P₂P₀⁻¹ has det = −1, so one trip round the compact direction applies a reflection. The even-winding half of the potential is therefore a character on the identity component of O(4) and the odd-winding half a character on the reflection coset: Σλ = sλ(1,1,t,t⁻¹), a graded dimension whose coefficients are non-negative and can never cancel, and Dλ = sλ(1,−1,t,t⁻¹), the object of Part IV, an index that can.</p><p><strong>Three published potentials, reproduced.</strong> Akamatsu, Hirose, Maru and Nago write their one-loop coefficients as {A + B(−1)^k₂}; that pair is exactly (Σ ± D)/2, and their twelve printed numbers come out with nothing fitted, the gauge sector after the antiperiodic twist they state themselves. Haba–Yamashita (a different group, a different orbifold, a different derivation) and Kawamura, Kodaira, Kojima and Yamashita follow from the same mode counts. The dictionary is the inverse Z₂ transform, and it needs no adjustment because there is nothing to adjust.</p><p><strong>The theorem.</strong> Each matter multiplet carries a discrete boundary sign — in the notation Haba, Hosotani and Kawamura have used since 2004, the product η = η₀η₁ of the two orbifold-parity signs — and it multiplies the coset character and nothing else. Hence (λ,η) ~ (λ*, η(−1)^λ₁) is an observational identity, and η is unobservable <em>exactly</em> on Part IV's vanishing class <em>Z</em>: for those multiplets the boundary condition has no consequence any measurement of this Higgs sector can see. The blind class is counted in closed form — ⌈(k+1)²/2⌉ at λ₁ = 2k+1, and never for λ₁ even — and the count is machine-checked in Lean 4, chained to the certificate Part III already carried, so that it is a theorem about the bialternant determinant and not about a predicate chosen to be countable.</p><p><strong>The other half of the dichotomy.</strong> Invisibility has a second, disjoint cause that has nothing to do with matter: a boundary condition may have no reflection coset at all. The block pair (#{P₀=+1}, #{P₁=&amp;minus;1}) is a <em>complete</em> class invariant, so the classes of rank N are exactly the (N+1)² of Haba–Hosotani–Kawamura, recovered rather than assumed, and exactly ⌊(N+1)²/2⌋ of them admit a coset sector — machine-checked in Lean 4 for every N, not swept over a range.</p><p><strong>One step past a single multiplet, and it is free.</strong> If every non-blind multiplet of a matter content carries the same effective sign ηᵢζᵢ, the content is blind if and only if every multiplet in it is: <em>collective blindness requires sign frustration</em>. That removes the structurally simple half of the degeneracy over contents and leaves the frustrated half, which is the next paper.</p><p><strong>Included:</strong> the paper in English and Spanish; two sorry-free Lean 4 certificates (the blind count and the boundary-condition census), depending only on propext, Classical.choice and Quot.sound; every script that regenerates a quoted number, with its archived output; and the gates the artifact must pass before publication — among them one that opens the papers we cite and checks our quotations and their equation numbers against them.</p><p><strong>Honesty ledger.</strong> Part IV states its closed form as <em>verified and not proved</em>, and every statement here that rests on it inherits exactly that standing; what does <em>not</em> depend on it is the criterion that identity computes, which is Part III's theorem, so the blind class, its count and its Lean certificate stand regardless. That the relation above generates <em>all</em> observational collisions is verified with 0 exceptions among 910 pairs and is not proved, and is stated as an Observation rather than as part of the theorem. That Σλ alone separates a multiplet up to conjugation is verified over 969 multiplets and not proved. A claim of an earlier draft — that the coset half is the only observable in the model that sees charge conjugation — is false, is contradicted in print, and is retracted inside the paper rather than removed from it.</p><p><strong>Scope.</strong> Every statement is about a <em>model</em>: T²/Z₂ with U₅ = 1, at one loop, with boundary conditions that can be simultaneously diagonalised. The theorem is <em>per multiplet</em>. A closed form for the potential is not a closed form for the Higgs mass, which needs the true minimum; and everything that runs the machinery forwards — predicting a spectrum rather than excluding one — is deliberately held over.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="ghu_observability.pdf"><span class="pi" aria-hidden="true">📕</span>Download the PDF (793 kB)</a></p>
+    <p class="note">Identical to the file ghu_observability.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, What the Higgs Potential Cannot See: Bulk Matter That Cannot Help Select a Boundary Condition (Part V). Zenodo, 2026. doi:10.5281/zenodo.21727095</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026what,
+  author    = {Carles Marín Muñoz},
+  title     = {What the Higgs Potential Cannot See: Bulk Matter That Cannot Help Select a Boundary Condition (Part V)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21727095},
+  url       = {https://doi.org/10.5281/zenodo.21727095}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/21727095">Zenodo</a></p></footer>
+</body>
+</html>

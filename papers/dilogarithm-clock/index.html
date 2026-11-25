@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Clock That Never Ticks: a machine-checked path from the dilogarithm to quantum speed limits in Lean 4</title>
+<meta name="description" content="Mathlib&#x27;s source contains a comment referring to the dilogarithm Li₂, a function the library does not have. We fill that hole and follow the questions where they lead. The result is a sorry-free Lean 4 development containing the real dilogarithm with Euler&#x27;s reflection identity, Landen&#x27;s …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/dilogarithm-clock/">
+<meta name="citation_title" content="The Clock That Never Ticks: a machine-checked path from the dilogarithm to quantum speed limits in Lean 4">
+<meta name="citation_author" content="Marín Muñoz, Carles">
+<meta name="citation_publication_date" content="2026/10/26">
+<meta name="citation_online_date" content="2026/10/26">
+<meta name="citation_pdf_url" content="https://zenodo.org/records/23671607/files/clock-never-ticks.pdf?download=1">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/dilogarithm-clock/">
+<meta name="citation_doi" content="10.5281/zenodo.23671607">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.23671607">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="Lean 4; Mathlib; Isabelle/HOL; formal verification; interactive theorem proving; machine-checked proof; dilogarithm; polylogarithm; Clausen function; Catalan&#x27;s constant; Fejer-Jackson inequality; positive trigonometric sums; thermodynamic Bethe ansatz; quantum speed limit; Margolus-Levitin; Mandelstam-Tamm; Zielinski-Zych; Hausdorff moment sequences; special functions">
+<meta name="DC.title" content="The Clock That Never Ticks: a machine-checked path from the dilogarithm to quantum speed limits in Lean 4">
+<meta name="DC.creator" content="Marín Muñoz, Carles">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.23671607">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Clock That Never Ticks: a machine-checked path from the dilogarithm to quantum speed limits in Lean 4">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/dilogarithm-clock/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:36">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/">🏛️ Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Physics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(0 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(60 12 12)" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="10" ry="3.9" transform="rotate(120 12 12)" stroke-width="1.3"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span>Physics</p>
+    <h1>The Clock That Never Ticks: a machine-checked path from the dilogarithm to quantum speed limits in Lean 4</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-10-26">2026-10-26</time><span>Version v2</span><span>DOI <a href="https://doi.org/10.5281/zenodo.23671607">10.5281/zenodo.23671607</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag tag-area" style="--h:186"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg>Mathematics</span><span class="tag tag-area" style="--h:148"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Proof · Formalizations" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-width="1.7"/><path d="M7.6 12.3L10.6 15.3L16.6 9" stroke-width="2"/></svg>Proof · Formalizations</span><span class="tag tag-area" style="--h:334"><svg class="ai ai-s" viewBox="0 0 24 24" role="img" aria-label="Lab" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5H20.5M3.5 11.5H20.5" stroke-width="1.4" opacity=".6"/><circle cx="15" cy="6.5" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="11.5" r="2" fill="currentColor" stroke="none"/><rect x="6" y="15.5" width="12" height="5" rx="2.5" stroke-width="1.5"/><path d="M11 16.9L13.6 18L11 19.1Z" fill="currentColor" stroke="none"/></svg>Lab</span><span class="tag" style="--h:36">🧲 Quantum control &amp; speed limits</span><span class="tag" style="--h:186">📉 Analysis &amp; real roots</span><span class="tag" style="--h:148">🔬 Lean 4</span><span class="tag" style="--h:148">🦉 Isabelle/HOL</span><span class="tag" style="--h:334">🧪 Labs in the browser</span><span class="tag tag-serie">🌀 The dilogarithm, machine-checked</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="https://zenodo.org/records/23671607/files/clock-never-ticks.pdf?download=1" rel="noopener" title="PDF on Zenodo, 668 kB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.23671607" rel="noopener" title="10.5281/zenodo.23671607"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/23671607" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/dilogarithm-clock/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/dilogarithm-clock/index.html?lab=thm:fj" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Labs (2)</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Isabelle/ZielinskiZych" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Isabelle + Lean</a><a class="pill pill-es" href="https://zenodo.org/records/23671607/files/clock-never-ticks-es.pdf?download=1" rel="noopener" title="clock-never-ticks-es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>Mathlib's source contains a comment referring to the dilogarithm Li₂, a function the library does not have. We fill that hole and follow the questions where they lead. The result is a sorry-free Lean 4 development containing the real dilogarithm with Euler's reflection identity, Landen's transformation, the duplication formula, and the golden-ratio ladder Li₂(1/φ²) = π²/15 − ln²φ, Li₂(1/φ) = π²/10 − ln²φ (derived from a 3×3 linear system, no five-term relation needed); the Rogers value L(1/φ²) = π²/15, equivalently the Lee–Yang effective central charge c_eff = 2/5; the Clausen function Cl₂ and <em>Catalan's constant</em> G = Cl₂(π/2); the <em>Fejér–Jackson inequality</em> Σ_{k≤M} sin(kθ)/k &gt; 0 on (0, π); the positivity Cl₂(θ) ≥ sin(θ)/2 by an asymptotics-free Abel summation; and the <em>Margolus–Levitin</em> and (an L¹ form of the) <em>Mandelstam–Tamm</em> quantum speed limits. When version 1 appeared (June 2026) none of these was in Lean; Isabelle's Archive of Formal Proofs already had the polylogarithm of integer order with its duplication formula (Eberl, 2023), which our search had missed.</p><p>The pieces assemble into the ending the title promises: the quantum state with populations ∝ 1/n² on equally spaced levels has divergent first and second energy moments (both textbook speed limits give no bound) and yet <em>never</em> reaches a state orthogonal to itself (a "tick", in this paper, is exactly that). Version 2 is exact about why. Its lowest level carries 6/π² &gt; 1/2 of the population, which alone forbids orthogonality (Uffink's cut-off inequality), and the fractional-moment speed limits of Zieliński and Zych reduce, as their order tends to zero, to exactly this criterion. The dilogarithm says more: the modulus of the autocorrelation never drops below 1/2, its value at half period. For the whole family p_n ∝ n^(−s), s &gt; 1, we formalize the exact floor inf_θ |S(θ)| = 1 − 2^(1−s), from |Li_s(z)| ≥ η(s) on the unit circle for every real s &gt; 0; it holds also for 1 &lt; s &lt; s* ≈ 1.7286, where no level dominates and none of the Margolus–Levitin, Mandelstam–Tamm or Zieliński–Zych bounds certifies that orthogonality never occurs. We also formalize the Zieliński–Zych bound for orders up to 1, including the inequality behind it, and exact examples showing that log-convex or three times monotone populations need not have their smallest autocorrelation modulus at half period.</p><p>We are exact about the boundary: every identity and inequality here is classical; the contribution is the machine-checked development, its assembly, and the place of the zeta-state theorem among the speed limits. Every named theorem depends only on the three standard axioms.</p><p><strong>Version 2 (October 2026).</strong> Corrections: the polylogarithm of integer order with its duplication formula was in Isabelle's Archive of Formal Proofs before version 1 (Eberl, 2023), and version 1 said the dilogarithm was absent from every proof assistant; the never-orthogonal theorem follows in one line from the dominant lowest level, and the reason the clock never ticks is that level, not the heavy spectral tail; the floor |S| ≥ 1/2 follows from Fejér (1937), is stated for Li₂ by Boyer and Parry, and is now a Lean theorem; Remark 1 of version 1 is Hurwitz's 1913 theorem; two, not three, positivity proofs of the development share one shape; the golden values do not need Abel's relation, but that route is Landen's, not new; one bibliographic entry completed. Additions: the floor 1 − 2^(1−s) of every zeta state; the Zieliński–Zych limits and their limit of small order; exact counterexamples for three times monotone and log-convex populations. The full list is Appendix C of the paper.</p><p><strong>Companion blueprint</strong> (every result with its dependencies and its Lean and Isabelle code): <a href="https://karlesmarin.github.io/blueprints/dilogarithm-clock/" rel="noopener">https://karlesmarin.github.io/blueprints/dilogarithm-clock/</a>. English and Spanish editions.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p><a class="pill pill-pdf big" href="https://zenodo.org/records/23671607/files/clock-never-ticks.pdf?download=1"><span class="pi" aria-hidden="true">📕</span>Download the PDF (668 kB)</a></p>
+    <p class="note">The PDF is served by Zenodo.</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, The Clock That Never Ticks: a machine-checked path from the dilogarithm to quantum speed limits in Lean 4. Zenodo, 2026. doi:10.5281/zenodo.23671607</p>
+    <details><summary>BibTeX</summary><pre>@misc{Marn2026the,
+  author    = {Marín Muñoz, Carles},
+  title     = {The Clock That Never Ticks: a machine-checked path from the dilogarithm to quantum speed limits in Lean 4},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23671607},
+  url       = {https://doi.org/10.5281/zenodo.23671607}
+}</pre></details>
+  </section>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/23671607">Zenodo</a></p></footer>
+</body>
+</html>
