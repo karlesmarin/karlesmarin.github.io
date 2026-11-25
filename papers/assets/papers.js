@@ -1,4 +1,4 @@
-// encaje: asset de excovery.publicaciones (JS ligero del índice: filtros, inclinación 3D, figura de cabecera); el contenido no depende de él.
+// encaje: asset de excovery.publicaciones (JS ligero del índice: filtros, desplegar todo, inclinación 3D, figura de cabecera); el contenido no depende de él.
 (function () {
   'use strict';
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -16,6 +16,13 @@
     var q = tools.querySelector('input[type=search]'), sel = tools.querySelector('select');
     var out = tools.querySelector('.count'), empty = document.querySelector('.empty');
     var area = '', subs = {};
+    // what the search reads: title, authors, keywords, DOI (data-q) and the folded part (abstract, tags, links),
+    // which is in the static HTML even while the card is closed; read once, before MathJax touches the formulas
+    cards.forEach(function (c) {
+      var more = c.querySelector('.more-body'), tz = c.querySelector('.teaser');
+      c._q = (c.dataset.q + ' ' + (tz ? tz.textContent : '') + ' ' + (more ? more.textContent : ''))
+        .replace(/\s+/g, ' ').toLowerCase();
+    });
     function has(list, k) { return (' ' + list + ' ').indexOf(' ' + k + ' ') >= 0; }
     function apply() {
       var t = (q.value || '').toLowerCase().trim().split(/\s+/).filter(Boolean), y = sel.value, n = 0;
@@ -23,14 +30,21 @@
       cards.forEach(function (c) {
         var ok = (!area || has(c.dataset.areas, area)) &&
           (!anySub.length || anySub.some(function (s) { return has(c.dataset.subs, s); })) &&
-          (!y || c.dataset.year === y) && t.every(function (w) { return c.dataset.q.indexOf(w) >= 0; });
+          (!y || c.dataset.year === y) && t.every(function (w) { return c._q.indexOf(w) >= 0; });
         c.hidden = !ok; if (ok) n++;
       });
       document.querySelectorAll('section.group').forEach(function (s) {
         s.hidden = !s.querySelector('.card:not([hidden])');
       });
-      out.value = n + ' of ' + cards.length;
+      // with an area picked: the chip number (main area, = the section) plus the cross-listed ones, said apart
+      var chip = area && tools.querySelector('.chip[data-area="' + area + '"]');
+      var cross = chip ? +chip.dataset.cross : 0, extra = '';
+      if (chip && cross && !anySub.length && !y && !t.length) {
+        extra = ' (' + chip.dataset.main + ' + ' + cross + ' cross-listed)';
+      }
+      out.value = n + ' of ' + cards.length + extra;
       empty.hidden = n > 0;
+      syncAll();
     }
     function pick(k) {
       area = area === k ? '' : k; subs = {};
@@ -45,14 +59,53 @@
         var k = b.dataset.sub; subs[k] = !subs[k]; b.setAttribute('aria-pressed', subs[k] ? 'true' : 'false'); apply();
       });
     });
+    // ---------------------------------------------------------- Expand all / Collapse all (the visible cards)
+    var allBtn = tools.querySelector('.expand-all');
+    function shown() { return cards.filter(function (c) { return !c.hidden; }); }
+    function syncAll() {
+      if (!allBtn) return;
+      var vis = shown(), anyClosed = vis.some(function (c) { var d = c.querySelector('details.more'); return d && !d.open; });
+      allBtn.textContent = anyClosed || !vis.length ? 'Expand all' : 'Collapse all';
+      allBtn.setAttribute('aria-pressed', anyClosed || !vis.length ? 'false' : 'true');
+    }
+    tools._sync = syncAll;
+    if (allBtn) {
+      allBtn.addEventListener('click', function () {
+        var open = allBtn.getAttribute('aria-pressed') !== 'true';
+        shown().forEach(function (c) { var d = c.querySelector('details.more'); if (d) d.open = open; });
+        syncAll();
+      });
+    }
     // a capture can open an area: index.html#area=physics
     var m = /area=([a-z-]+)/.exec(location.hash);
     if (m) pick(m[1]);
     q.addEventListener('input', apply); sel.addEventListener('change', apply);
     apply();
   }
+  function syncAll() { if (tools && tools._sync) tools._sync(); }
 
-  // ------------------------------------------------------------ 3D tilt that follows the pointer
+  // ------------------------------------------------------------ folded cards: aria-expanded and state on the card
+  cards.forEach(function (c) {
+    var d = c.querySelector('details.more');
+    if (!d) return;
+    var s = d.querySelector('summary');
+    function st() {
+      s.setAttribute('aria-expanded', d.open ? 'true' : 'false');
+      c.classList.toggle('is-open', d.open);
+      if (d.open) { c.classList.remove('is-tilt'); c.style.removeProperty('--rx'); c.style.removeProperty('--ry'); }
+    }
+    st();
+    d.addEventListener('toggle', function () { st(); syncAll(); });
+  });
+  // a capture can open one card: index.html#open=<slug>
+  var mo = /open=([a-z0-9-]+)/.exec(location.hash);
+  if (mo) {
+    var link = document.querySelector('.card-title a[href="' + mo[1] + '/"]');
+    var dd = link && link.closest('.card').querySelector('details.more');
+    if (dd) { dd.open = true; setTimeout(function () { dd.closest('.card').scrollIntoView({ block: 'start' }); }, 0); }
+  }
+
+  // ------------------------------------------------------------ 3D tilt that follows the pointer (not on an open card)
   function tilt(c, px, py) {   // px, py in [0, 1]
     c.style.setProperty('--ry', ((px - 0.5) * 9).toFixed(2) + 'deg');
     c.style.setProperty('--rx', ((0.5 - py) * 7).toFixed(2) + 'deg');
@@ -60,6 +113,7 @@
   if (!reduce && !touch) {
     cards.forEach(function (c) {
       c.addEventListener('pointermove', function (ev) {
+        if (c.classList.contains('is-open')) return;
         var r = c.getBoundingClientRect();
         tilt(c, (ev.clientX - r.left) / r.width, (ev.clientY - r.top) / r.height);
       });
