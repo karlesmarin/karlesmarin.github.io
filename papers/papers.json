@@ -374,7 +374,7 @@
    "serie": "dilogarithm"
   },
   {
-   "rec": "24536373",
+   "rec": "24541288",
    "concepto": "24536372",
    "slug": "dyck-divisors",
    "titulo": "How Many Dyck Words Do the Divisors of an Integer Make? Exact Counts and Quasipolynomial Growth",
@@ -383,7 +383,7 @@
    ],
    "fecha": "2026-11-25",
    "pdf": "Marin_Dyck_words_of_divisors.pdf",
-   "md5": "e8e9b7f1953843a4044f4050c3ae91f3",
+   "md5": "8bf984bfd2e25cdba700e7b90e981548",
    "pdf_url": "https://karlesmarin.github.io/papers/dyck-divisors/Marin_Dyck_words_of_divisors.pdf",
    "areas": [
     "mathematics",
