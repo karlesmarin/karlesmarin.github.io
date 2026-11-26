@@ -854,7 +854,8 @@
     "proof/lean",
     "lab/browser-labs"
    ],
-   "serie": "ghu"
+   "serie": "ghu",
+   "arxiv": "2609.02630"
   },
   {
    "rec": "20600326",
@@ -1159,6 +1160,50 @@
     "proof/certificates"
    ],
    "serie": "ghu"
+  },
+  {
+   "rec": "2608.09619",
+   "concepto": "arXiv:2608.09619",
+   "slug": "schur-twisted-three-factors",
+   "titulo": "Schur polynomials twisted by roots of unity and reciprocal pairs: exactly three factors, and where they vanish",
+   "autores": [
+    "Carles Marín"
+   ],
+   "fecha": "2026-08-10",
+   "pdf": "",
+   "md5": "",
+   "pdf_url": "https://arxiv.org/pdf/2608.09619",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/lean"
+   ],
+   "serie": "",
+   "arxiv": "2608.09619"
+  },
+  {
+   "rec": "2608.18302",
+   "concepto": "arXiv:2608.18302",
+   "slug": "schur-twisted-torsion-filters",
+   "titulo": "Schur polynomials twisted by roots of unity and reciprocal pairs: torsion filters, fusion quotients, and total unimodularity at odd order",
+   "autores": [
+    "Carles Marín"
+   ],
+   "fecha": "2026-08-18",
+   "pdf": "",
+   "md5": "",
+   "pdf_url": "https://arxiv.org/pdf/2608.18302",
+   "areas": [
+    "mathematics"
+   ],
+   "subareas": [
+    "mathematics/combinatorics"
+   ],
+   "serie": "",
+   "arxiv": "2608.18302"
   },
   {
    "rec": "24036320",
@@ -1547,6 +1592,29 @@
     "proof/isabelle"
    ],
    "serie": ""
+  },
+  {
+   "rec": "2611.19437",
+   "concepto": "arXiv:2611.19437",
+   "slug": "z2m-21-4-hole-extensions",
+   "titulo": "On z_2M(21,4): the Hole Extensions of the Chen–Chen Configuration Are Reducible, and the Extremal Configurations of z₂(21,4) Are Not Unique",
+   "autores": [
+    "Carles Marín",
+    "Liqun Qi",
+    "Gaohang Yu"
+   ],
+   "fecha": "2026-11-14",
+   "pdf": "",
+   "md5": "",
+   "pdf_url": "https://arxiv.org/pdf/2611.19437",
+   "areas": [
+    "mathematics"
+   ],
+   "subareas": [
+    "mathematics/combinatorics"
+   ],
+   "serie": "",
+   "arxiv": "2611.19437"
   },
   {
    "rec": "23860725",
