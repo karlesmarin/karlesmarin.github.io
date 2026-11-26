@@ -739,6 +739,28 @@
    "serie": "graph-walks-lean"
   },
   {
+   "rec": "24561280",
+   "concepto": "24561279",
+   "slug": "maximum-number-of-spanning-trees-of-a-multigraph-with-m",
+   "titulo": "Maximum number of spanning trees of a multigraph with m edges: exact values for m ≤ 22",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-26",
+   "pdf": "kenyon_Tm_note.pdf",
+   "md5": "f355446aa67853d4ddcf2e6f5c6275df",
+   "pdf_url": "https://karlesmarin.github.io/papers/maximum-number-of-spanning-trees-of-a-multigraph-with-m/kenyon_Tm_note.pdf",
+   "areas": [
+    "mathematics",
+    "proof"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/certificates"
+   ],
+   "serie": ""
+  },
+  {
    "rec": "24250501",
    "concepto": "24250500",
    "slug": "memory-floors",
