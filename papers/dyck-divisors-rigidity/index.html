@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity</title>
+<meta name="description" content="For the Dyck words of Rodríguez Caballero attached to integers with odd part r^a s^b, we study the excess E(a,b) between the number of cells of the associated line arrangement and the number of distinct words. A semilinear dimension criterion characterises linear excess, and a finite affine …">
+<link rel="canonical" href="https://karlesmarin.github.io/papers/dyck-divisors-rigidity/">
+<meta name="citation_title" content="How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity">
+<meta name="citation_author" content="Carles Marín Muñoz">
+<meta name="citation_publication_date" content="2026/11/27">
+<meta name="citation_online_date" content="2026/11/27">
+<meta name="citation_pdf_url" content="https://karlesmarin.github.io/papers/dyck-divisors-rigidity/Marin_Dyck_words_of_divisors_II.pdf">
+<meta name="citation_abstract_html_url" content="https://karlesmarin.github.io/papers/dyck-divisors-rigidity/">
+<meta name="citation_doi" content="10.5281/zenodo.24572754">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_technical_report_institution" content="Zenodo">
+<meta name="citation_technical_report_number" content="10.5281/zenodo.24572754">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="Dyck words; divisors; line arrangements; semilinear sets; Presburger arithmetic; computer-assisted proof; affine certificates">
+<meta name="DC.title" content="How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity">
+<meta name="DC.creator" content="Carles Marín Muñoz">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.24572754">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity">
+<meta property="og:url" content="https://karlesmarin.github.io/papers/dyck-divisors-rigidity/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/papers.css?v=8a5b73bc">
+<link rel="icon" href="../assets/diamante.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/diamante-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/diamante-180.png">
+<meta property="og:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta property="og:image:alt" content="Five glowing panels joined by a thread of light: mathematics, physics, computing, a browser lab and a machine-checked proof. Between the panels, blue diamonds linked by rainbows; above, the words: Under different disguises, it is all deeply connected.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://karlesmarin.github.io/papers/assets/cabecera.png">
+<meta name="theme-color" content="#0b1433">
+<meta name="color-scheme" content="light dark">
+</head>
+<body class="paper-page" style="--h:186">
+<a class="skip" href="#abstract">Skip to abstract</a>
+<header class="band">
+  <div class="band-in">
+    <nav class="crumbs"><a href="../">← All papers</a><span aria-hidden="true">·</span><a href="https://karlesmarin.github.io/blueprints/"><span class="te" aria-hidden="true">🏛️</span> Atlas of blueprints</a></nav>
+    <p class="area"><span class="area-emoji"><svg class="ai" viewBox="0 0 24 24" role="img" aria-label="Mathematics" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12.00,2.80 17.91,4.95 21.06,10.40 19.97,16.60 15.15,20.65 8.85,20.65 4.03,16.60 2.94,10.40 6.09,4.95" stroke-width="1.5"/><path d="M12.00 2.80L21.06 10.40M12.00 2.80L19.97 16.60M12.00 2.80L15.15 20.65M12.00 2.80L8.85 20.65M12.00 2.80L4.03 16.60M12.00 2.80L2.94 10.40" stroke-width="1" opacity=".85"/></svg></span>Mathematics</p>
+    <h1>How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity</h1>
+    <p class="authors">Carles Marín Muñoz</p>
+    <p class="facts"><time datetime="2026-11-27">2026-11-27</time><span>Version 1</span><span>DOI <a href="https://doi.org/10.5281/zenodo.24572754">10.5281/zenodo.24572754</a></span><span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></span></p>
+    <p class="tags"><span class="tag" style="--h:186"><span class="te" aria-hidden="true">🕸️</span> Combinatorics &amp; graphs</span><span class="tag" style="--h:148"><span class="te" aria-hidden="true">📜</span> Certificates (exact, SAT/SMT)</span><span class="tag" style="--h:148"><span class="te" aria-hidden="true">🦉</span> Isabelle/HOL</span><span class="tag" style="--h:334"><span class="te" aria-hidden="true">🧪</span> Labs in the browser</span></p>
+    <nav class="pills" aria-label="Links"><a class="pill pill-pdf" href="Marin_Dyck_words_of_divisors_II.pdf" target="_blank" rel="noopener" title="PDF, 2.0 MB"><span class="pi" aria-hidden="true">📕</span>PDF</a><a class="pill pill-doi" href="https://doi.org/10.5281/zenodo.24572754" rel="noopener" title="10.5281/zenodo.24572754"><span class="pi" aria-hidden="true">🔗</span>DOI</a><a class="pill pill-zenodo" href="https://zenodo.org/records/24572754" rel="noopener"><span class="pi" aria-hidden="true">🗄️</span>Zenodo</a><a class="pill pill-blueprint" href="https://karlesmarin.github.io/blueprints/dyck-divisors-rigidity/" rel="noopener"><span class="pi" aria-hidden="true">📘</span>Blueprint</a><a class="pill pill-labs" href="https://karlesmarin.github.io/blueprints/dyck-divisors-rigidity/index.html?lab=thm:rigid" rel="noopener" title="Interactive labs of the blueprint"><span class="pi" aria-hidden="true">🧪</span>Labs (6)</a><a class="pill pill-formal" href="https://github.com/karlesmarin/formalizations/tree/main/Isabelle/CaballeroDyckWords/Caballero_Setting" rel="noopener" title="Formalization in karlesmarin/formalizations"><span class="pi" aria-hidden="true">🔬</span>Isabelle</a><a class="pill pill-es" href="https://zenodo.org/records/24572754/preview/Marin_Dyck_words_of_divisors_II_es.pdf" target="_blank" rel="noopener" title="Marin_Dyck_words_of_divisors_II_es.pdf"><span class="pi" aria-hidden="true">🇪🇸</span>Español</a></nav>
+  </div>
+</header>
+<main class="paper-main">
+  <section id="abstract" class="abstract">
+    <h2>Abstract</h2>
+    <p>For the Dyck words of Rodríguez Caballero attached to integers with odd part r^a s^b, we study the excess E(a,b) between the number of cells of the associated line arrangement and the number of distinct words. A semilinear dimension criterion characterises linear excess, and a finite affine certificate gives a sufficient test for each fixed a. We obtain an explicit linear term and period bound for the cell count, a wall-crossing weight, antichain and fibre bounds, and a fixed number of power sums that determines the word.</p><p>Exact certificates, checked by a separate verifier and combined with a written reduction, give E(a,b)=Θ_a(b) for a=2,3,4,5 and hence W(a,b)=C_a b²+O_a(b), including C_5=7657/210. We prove a structural result in the all-positive chamber for every a≥2 and explain the nonintegral shifts by the denominator a+1. For a=3 a further computer-assisted lemma confines coincidences to a neighbourhood of 25 lines; nine explicit families produce coincidences and lead to a compact conjectural formula for E(3,b), checked by exact enumeration. We also give exact intersections of distinct two-prime shapes and a sampled analysis of ambiguity among integers. The written reduction and affinity argument remain premises of the computer-assisted result, and the formula for E(3,b) remains conjectural. Selected statements are checked in Isabelle/HOL. This record includes English and Spanish versions and a reproducibility package with code, exact data, logs and certificates. The research used an AI assistant.</p><p><strong>Companion blueprint.</strong> <a href="https://karlesmarin.github.io/blueprints/dyck-divisors-rigidity/" rel="noopener">https://karlesmarin.github.io/blueprints/dyck-divisors-rigidity/</a> presents the statements with their proof and verification status, dependencies, figures and six interactive labs. The English and Spanish PDFs are also available there.</p>
+  </section>
+  <section class="fulltext">
+    <h2>Full text</h2>
+    <p class="pills"><a class="pill pill-pdf big" href="Marin_Dyck_words_of_divisors_II.pdf" target="_blank" rel="noopener"><span class="pi" aria-hidden="true">📕</span>Read the PDF (2.0 MB)</a></p>
+    <p class="note">Identical to the file Marin_Dyck_words_of_divisors_II.pdf of the Zenodo record (same MD5 checksum).</p>
+  </section>
+  <section class="cite">
+    <h2>Cite</h2>
+    <p>Carles Marín Muñoz, How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity. Zenodo, 2026. doi:10.5281/zenodo.24572754</p>
+    <details><summary>BibTeX</summary><pre>@misc{Carles2026how,
+  author    = {Carles Marín Muñoz},
+  title     = {How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24572754},
+  url       = {https://doi.org/10.5281/zenodo.24572754}
+}</pre></details>
+  </section>
+  <nav class="pager" aria-label="More papers"><a class="pager-all" href="../">All papers</a><a class="pager-next" href="../maximum-number-of-spanning-trees-of-a-multigraph-with-m/" rel="next"><span class="pager-dir">Next paper →</span><span class="pager-title">Maximum number of spanning trees of a multigraph with m edges: exact values for m ≤ 22</span></a></nav>
+</main>
+<footer class="foot"><p><img class="mark" src="../assets/diamante.svg" width="22" height="22" alt=""> <a href="../">All papers</a> · <a href="https://karlesmarin.github.io/blueprints/">Atlas of blueprints</a> · Record on <a href="https://zenodo.org/records/24572754">Zenodo</a></p></footer>
+</body>
+</html>

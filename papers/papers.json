@@ -399,6 +399,31 @@
    "serie": ""
   },
   {
+   "rec": "24572754",
+   "concepto": "24572753",
+   "slug": "dyck-divisors-rigidity",
+   "titulo": "How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-27",
+   "pdf": "Marin_Dyck_words_of_divisors_II.pdf",
+   "md5": "0d20c5eddd16bb72ab03f44e44504128",
+   "pdf_url": "https://karlesmarin.github.io/papers/dyck-divisors-rigidity/Marin_Dyck_words_of_divisors_II.pdf",
+   "areas": [
+    "mathematics",
+    "proof",
+    "lab"
+   ],
+   "subareas": [
+    "mathematics/combinatorics",
+    "proof/certificates",
+    "proof/isabelle",
+    "lab/browser-labs"
+   ],
+   "serie": ""
+  },
+  {
    "rec": "19986818",
    "concepto": "19986817",
    "slug": "erratum-predicting-how-transformers-attend-5-2-theorem-5-2",

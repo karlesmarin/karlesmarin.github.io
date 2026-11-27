@@ -30,16 +30,17 @@
 
 <!-- PAPERS:START (generado por excovery.publicaciones; no editar a mano) -->
 
-## 📚 All papers (72)
+## 📚 All papers (73)
 
 <sub>Updated automatically from Zenodo and arXiv. Newest first within each area.</sub>
 
 <details open>
-<summary><b>🔷 Mathematics</b> · 47</summary>
+<summary><b>🔷 Mathematics</b> · 48</summary>
 
 | Date | Paper | Links |
 |---|---|---|
-| 2026-11-26 | 📄 [Maximum number of spanning trees of a multigraph with m edges: exact values for m ≤ 22](https://karlesmarin.github.io/papers/maximum-number-of-spanning-trees-of-a-multigraph-with-m/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24561280) |
+| 2026-11-27 | 🔢 [How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity](https://karlesmarin.github.io/papers/dyck-divisors-rigidity/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24572754) · [📘 blueprint](https://karlesmarin.github.io/blueprints/dyck-divisors-rigidity/) · [🧪 labs](https://karlesmarin.github.io/blueprints/dyck-divisors-rigidity/index.html?lab=thm:rigid) |
+| 2026-11-26 | 🌳 [Maximum number of spanning trees of a multigraph with m edges: exact values for m ≤ 22](https://karlesmarin.github.io/papers/maximum-number-of-spanning-trees-of-a-multigraph-with-m/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24561280) · [📘 blueprint](https://karlesmarin.github.io/blueprints/kenyon-spanning-trees/) · [🧪 labs](https://karlesmarin.github.io/blueprints/kenyon-spanning-trees/index.html?lab=thm:cert) |
 | 2026-11-25 | 🔢 [How Many Dyck Words Do the Divisors of an Integer Make? Exact Counts and Quasipolynomial Growth](https://karlesmarin.github.io/papers/dyck-divisors/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24541288) · [📘 blueprint](https://karlesmarin.github.io/blueprints/dyck-divisors/) · [🧪 labs](https://karlesmarin.github.io/blueprints/dyck-divisors/index.html?lab=lem:reduction) |
 | 2026-11-25 | 🧮 [Every m×4 biquadratic sum of squares is a sum of 3m−1 squares (5 ≤ m ≤ 16)](https://karlesmarin.github.io/papers/bsr-m-four/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24522234) · [📘 blueprint](https://karlesmarin.github.io/blueprints/bsr-m-four/) · [🧪 labs](https://karlesmarin.github.io/blueprints/bsr-m-four/index.html?lab=thm:main) |
 | 2026-11-21 | ⬡ [Rational sums-of-squares lengths of biquadratic forms and orthogonal dilations](https://karlesmarin.github.io/papers/real-rational-integer/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24413664) · [📘 blueprint](https://karlesmarin.github.io/blueprints/real-rational-integer/) · [🧪 labs](https://karlesmarin.github.io/blueprints/real-rational-integer/index.html?lab=thm:gap) |
