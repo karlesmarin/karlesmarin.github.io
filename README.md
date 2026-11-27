@@ -30,15 +30,16 @@
 
 <!-- PAPERS:START (generado por excovery.publicaciones; no editar a mano) -->
 
-## 📚 All papers (73)
+## 📚 All papers (74)
 
 <sub>Updated automatically from Zenodo and arXiv. Newest first within each area.</sub>
 
 <details open>
-<summary><b>🔷 Mathematics</b> · 48</summary>
+<summary><b>🔷 Mathematics</b> · 49</summary>
 
 | Date | Paper | Links |
 |---|---|---|
+| 2026-11-27 | 📄 [A divisor-sum criterion for Kassel--Reutenauer polynomial divisibility modulo odd primes](https://karlesmarin.github.io/papers/a-divisor-sum-criterion-for-kassel-reutenauer-polynomial/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24573486) |
 | 2026-11-27 | 🔢 [How Many Dyck Words Do the Divisors of an Integer Make? II. Generic Rigidity and Persistent Ambiguity](https://karlesmarin.github.io/papers/dyck-divisors-rigidity/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24572754) · [📘 blueprint](https://karlesmarin.github.io/blueprints/dyck-divisors-rigidity/) · [🧪 labs](https://karlesmarin.github.io/blueprints/dyck-divisors-rigidity/index.html?lab=thm:rigid) |
 | 2026-11-26 | 🌳 [Maximum number of spanning trees of a multigraph with m edges: exact values for m ≤ 22](https://karlesmarin.github.io/papers/maximum-number-of-spanning-trees-of-a-multigraph-with-m/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24561280) · [📘 blueprint](https://karlesmarin.github.io/blueprints/kenyon-spanning-trees/) · [🧪 labs](https://karlesmarin.github.io/blueprints/kenyon-spanning-trees/index.html?lab=thm:cert) |
 | 2026-11-25 | 🔢 [How Many Dyck Words Do the Divisors of an Integer Make? Exact Counts and Quasipolynomial Growth](https://karlesmarin.github.io/papers/dyck-divisors/) | [🔗 DOI](https://doi.org/10.5281/zenodo.24541288) · [📘 blueprint](https://karlesmarin.github.io/blueprints/dyck-divisors/) · [🧪 labs](https://karlesmarin.github.io/blueprints/dyck-divisors/index.html?lab=lem:reduction) |

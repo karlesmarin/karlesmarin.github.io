@@ -22,6 +22,26 @@
    "serie": ""
   },
   {
+   "rec": "24573486",
+   "concepto": "24573485",
+   "slug": "a-divisor-sum-criterion-for-kassel-reutenauer-polynomial",
+   "titulo": "A divisor-sum criterion for Kassel--Reutenauer polynomial divisibility modulo odd primes",
+   "autores": [
+    "Carles Marín Muñoz"
+   ],
+   "fecha": "2026-11-27",
+   "pdf": "Marin_Kassel_Reutenauer_mod_p_note.pdf",
+   "md5": "82995ded4c25d9a75b1842fa37a0e8a4",
+   "pdf_url": "https://karlesmarin.github.io/papers/a-divisor-sum-criterion-for-kassel-reutenauer-polynomial/Marin_Kassel_Reutenauer_mod_p_note.pdf",
+   "areas": [
+    "mathematics"
+   ],
+   "subareas": [
+    "mathematics/number-theory"
+   ],
+   "serie": ""
+  },
+  {
    "rec": "20787671",
    "concepto": "20787670",
    "slug": "airy-function",
